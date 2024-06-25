@@ -1,0 +1,6 @@
+@WorldVolunteerNetwork.API_HostAddress = http://localhost:5270
+
+GET {{WorldVolunteerNetwork.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
