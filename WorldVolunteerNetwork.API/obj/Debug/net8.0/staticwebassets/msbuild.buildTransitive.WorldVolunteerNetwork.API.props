@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\WorldVolunteerNetwork.API.props" />
+</Project>

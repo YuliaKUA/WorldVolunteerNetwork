@@ -15,3 +15,4 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Infrastructure\obj\De
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Infrastructure\obj\Debug\net8.0\WorldVolunteerNetwork.Infrastructure.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Infrastructure\obj\Debug\net8.0\WorldVolunteerNetwork.Infrastructure.genruntimeconfig.cache
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Infrastructure\obj\Debug\net8.0\ref\WorldVolunteerNetwork.Infrastructure.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Infrastructure\obj\Debug\net8.0\WorldVolunteerNetwork.Infrastructure.sourcelink.json

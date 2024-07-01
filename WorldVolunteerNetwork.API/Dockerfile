@@ -9,6 +9,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["WorldVolunteerNetwork.API/WorldVolunteerNetwork.API.csproj", "WorldVolunteerNetwork.API/"]
+COPY ["WorldVolunteerNetwork.Domain/WorldVolunteerNetwork.Domain.csproj", "WorldVolunteerNetwork.Domain/"]
+COPY ["WorldVolunteerNetwork.Infrastructure/WorldVolunteerNetwork.Infrastructure.csproj", "WorldVolunteerNetwork.Infrastructure/"]
 RUN dotnet restore "./WorldVolunteerNetwork.API/WorldVolunteerNetwork.API.csproj"
 COPY . .
 WORKDIR "/src/WorldVolunteerNetwork.API"
