@@ -1,8 +1,10 @@
-﻿using System;
+﻿using CSharpFunctionalExtensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WorldVolunteerNetwork.Domain.Common;
 using WorldVolunteerNetwork.Domain.ValueObjects;
 
 namespace WorldVolunteerNetwork.Domain.Entities
@@ -10,56 +12,120 @@ namespace WorldVolunteerNetwork.Domain.Entities
     public partial class Post
     {
         public const int MAX_PROPERTY_LENGHT = 500;
+        public const int MAX_NAME_LENGHT = 250;
         private Post() { }
 
-        public Post(
-
+        private Post(
             string name,
-            Location location,
-            float? payment,
-            float? reward,
             string? duration,
             string? employment,
             string? restriction,
-            DateTime? submissionDeadline,
             string? description,
+            float? payment,
+            float? reward,
+            Location location,
             PhoneNumber contactNumber,
-            Status status,
+            PostStatus status,
             Requirement requirement,
-            List<Photo> photos)
+            DateTimeOffset submissionDeadline,
+            DateTimeOffset dateCreate
+            )
         {
 
             Name = name;
-            Location = location;
-            Payment = payment;
-            Reward = reward;
             Duration = duration;
             Employment = employment;
             Restriction = restriction;
-            SubmissionDeadline = submissionDeadline;
             Description = description;
+            Location = location;
             ContactNumber = contactNumber;
             Status = status;
             Requirement = requirement;
-            _photos = photos;
+            Payment = payment;
+            Reward = reward;
+            SubmissionDeadline = submissionDeadline;
+            DateCreate = dateCreate;
         }
 
         public Guid Id { get; private set; }
+
         public string Name { get; private set; } = string.Empty;
-        public Location Location { get; private set; }
-        public float? Payment { get; private set; }
-        public float? Reward { get; private set; }
         public string? Duration { get; private set; }
         public string? Employment { get; private set; }
         public string? Restriction { get; private set; }
-        public DateTime? SubmissionDeadline { get; private set; }
         public string? Description { get; private set; }
+
+        public Location Location { get; private set; }
         public PhoneNumber ContactNumber { get; private set; }
-        public Status Status { get; private set; }
-        public DateTime DateCreate { get; private set; } = DateTime.Now;
+        public PostStatus Status { get; private set; }
         public Requirement Requirement { get; private set; }
+
+        public float? Payment { get; private set; }
+        public float? Reward { get; private set; }
+
+        public DateTimeOffset SubmissionDeadline { get; private set; }
+        public DateTimeOffset DateCreate { get; private set; }
 
         public IReadOnlyList<Photo> Photos => _photos;
         private readonly List<Photo> _photos = [];
+
+
+        public static Result<Post, Error> Create(
+            string name,
+            string? duration,
+            string? employment,
+            string? restriction,
+            string? description,
+            float? payment,
+            float? reward,
+            Location location,
+            PhoneNumber contactNumber,
+            PostStatus status,
+            Requirement requirement,
+            DateTimeOffset submissionDeadline,
+            DateTimeOffset dateCreate
+            )
+        {
+            if (name.IsEmpty())
+            {
+                return Errors.General.ValueIsRequired();
+            }
+            if (name.Length > MAX_NAME_LENGHT)
+            {
+                return Errors.General.InvalidLength();
+            }
+            if (duration.IsEmpty())
+            {
+                return Errors.General.ValueIsRequired();
+            }
+            if (employment.IsEmpty())
+            {
+                return Errors.General.ValueIsRequired();
+            }
+            if (restriction.IsEmpty())
+            {
+                return Errors.General.ValueIsRequired();
+            }
+            if (description.IsEmpty())
+            {
+                return Errors.General.ValueIsRequired();
+            }
+
+            return new Post(
+                name,
+                duration,
+                employment,
+                restriction,
+                description,
+                payment,
+                reward,
+                location,
+                contactNumber,
+                status,
+                requirement,
+                submissionDeadline,
+                dateCreate
+                );
+        }
     }
 }

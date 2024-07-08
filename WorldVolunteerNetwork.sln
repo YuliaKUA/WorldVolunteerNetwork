@@ -5,6 +5,7 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldVolunteerNetwork.API", "WorldVolunteerNetwork.API\WorldVolunteerNetwork.API.csproj", "{34B7B851-F7DF-47F0-9719-C139811E2936}"
 	ProjectSection(ProjectDependencies) = postProject
+		{4219C0D8-E768-44CE-9A64-61631E574FB7} = {4219C0D8-E768-44CE-9A64-61631E574FB7}
 		{C98D88B9-95CF-417F-AC53-AF7B7821878B} = {C98D88B9-95CF-417F-AC53-AF7B7821878B}
 	EndProjectSection
 EndProject
@@ -12,10 +13,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldVolunteerNetwork.Domai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldVolunteerNetwork.Infrastructure", "WorldVolunteerNetwork.Infrastructure\WorldVolunteerNetwork.Infrastructure.csproj", "{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}"
 	ProjectSection(ProjectDependencies) = postProject
+		{1753346A-19F0-4DEB-936D-05B29152E19E} = {1753346A-19F0-4DEB-936D-05B29152E19E}
 		{C98D88B9-95CF-417F-AC53-AF7B7821878B} = {C98D88B9-95CF-417F-AC53-AF7B7821878B}
 	EndProjectSection
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B5948728-653C-4C75-AFBB-3963DC7A2613}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "..\Contracts\Contracts.csproj", "{4219C0D8-E768-44CE-9A64-61631E574FB7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C98D88B9-95CF-417F-AC53-AF7B7821878B} = {C98D88B9-95CF-417F-AC53-AF7B7821878B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldVolunteerNetwork.Application", "..\WorldVolunteerNetwork.Application\WorldVolunteerNetwork.Application.csproj", "{1753346A-19F0-4DEB-936D-05B29152E19E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +48,14 @@ Global
 		{B5948728-653C-4C75-AFBB-3963DC7A2613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5948728-653C-4C75-AFBB-3963DC7A2613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5948728-653C-4C75-AFBB-3963DC7A2613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4219C0D8-E768-44CE-9A64-61631E574FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4219C0D8-E768-44CE-9A64-61631E574FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4219C0D8-E768-44CE-9A64-61631E574FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4219C0D8-E768-44CE-9A64-61631E574FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1753346A-19F0-4DEB-936D-05B29152E19E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1753346A-19F0-4DEB-936D-05B29152E19E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1753346A-19F0-4DEB-936D-05B29152E19E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1753346A-19F0-4DEB-936D-05B29152E19E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

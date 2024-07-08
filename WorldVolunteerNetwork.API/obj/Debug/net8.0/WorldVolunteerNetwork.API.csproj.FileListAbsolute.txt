@@ -258,3 +258,8 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\CSharpFunctionalExtensions.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\Contracts.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\Contracts.pdb
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\WorldVolunteerNetwork.Application.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\WorldVolunteerNetwork.Application.pdb

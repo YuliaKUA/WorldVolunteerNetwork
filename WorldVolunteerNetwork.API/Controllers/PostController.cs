@@ -1,33 +1,35 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using WorldVolunteerNetwork.Domain.Entities;
-using WorldVolunteerNetwork.Infrastructure;
-using static WorldVolunteerNetwork.API.Contracts.PostController;
+using Contracts.Requests;
+using WorldVolunteerNetwork.Application;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public partial class PostController : ControllerBase
+    public class PostController : ControllerBase
     {
-        private readonly WorldVolunteerNetworkDbContext _dbContext;
+        private readonly PostsService _postService;
 
-        public PostController(WorldVolunteerNetworkDbContext dbContext)
+        public PostController(PostsService postsService)
         {
-            _dbContext = dbContext;
+            _postService = postsService;
         }
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreatePostRequest request, CancellationToken ct)
         {
-            return Ok();
+            var idResult = await _postService.CreatePost(request, ct);
+            if (idResult.IsFailure)
+                return BadRequest(idResult.Error);
+
+            return Ok(idResult.Value);
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var posts = await _dbContext.Posts.ToListAsync();
-            return Ok(posts);
+            //var posts = await _dbContext.Posts.ToListAsync();
+            return Ok();
         }
     }
 }

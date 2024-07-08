@@ -10,3 +10,4 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Domain\obj\Debug\net8
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Domain\obj\Debug\net8.0\WorldVolunteerNetwork.Domain.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Domain\obj\Debug\net8.0\ref\WorldVolunteerNetwork.Domain.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Domain\obj\Debug\net8.0\WorldVolunteerNetwork.Domain.sourcelink.json
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Domain\obj\Debug\net8.0\WorldVolunteerNetwork.Domain.csproj.AssemblyReference.cache

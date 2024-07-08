@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WorldVolunteerNetwork.Domain\WorldVolunteerNetwork.Domain.csproj" />
+    <ProjectReference Include="..\..\WorldVolunteerNetwork.Application\WorldVolunteerNetwork.Application.csproj" />
   </ItemGroup>
 
 </Project>

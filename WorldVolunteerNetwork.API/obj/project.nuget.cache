@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "v1/0xPQrNNmf4APVBtMr4hV5HKhTqPxNFVwgU4q4W2bvpVmjF12Au75pQoXuJ3H2ukeo63sLi3j0SnqmPKKuUw==",
+  "dgSpecHash": "tY1vyx1XVm12oYe3myXnMTpX1KSBsxWsCYLdo7KH3rMbcVwF1JntK9oLNGN6D4drIPWydB3L0tH5GpfRrAYtzg==",
   "success": true,
   "projectFilePath": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yulia\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Yulia\\.nuget\\packages\\csharpfunctionalextensions\\2.42.5\\csharpfunctionalextensions.2.42.5.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\efcore.namingconventions\\8.0.3\\efcore.namingconventions.8.0.3.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

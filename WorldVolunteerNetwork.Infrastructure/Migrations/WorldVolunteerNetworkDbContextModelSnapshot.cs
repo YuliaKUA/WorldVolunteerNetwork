@@ -59,7 +59,7 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<DateTime>("DateCreate")
+                    b.Property<DateTimeOffset>("DateCreate")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("date_create");
 
@@ -98,8 +98,7 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                         .HasColumnType("real")
                         .HasColumnName("reward");
 
-                    b.Property<DateTime?>("SubmissionDeadline")
-                        .IsRequired()
+                    b.Property<DateTimeOffset>("SubmissionDeadline")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("submission_deadline");
 

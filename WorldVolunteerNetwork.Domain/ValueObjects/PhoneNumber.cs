@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using CSharpFunctionalExtensions;
+using System.Text.RegularExpressions;
+using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.Domain.ValueObjects
 {
@@ -11,16 +13,17 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
             Number = number;
         }
 
-        public static PhoneNumber Create(string input)
+        public static Result<PhoneNumber, Error> Create(string input)
         {
             if (input.IsEmpty())
             {
-                throw new ArgumentNullException(nameof(input));
+                //return Result.Failure<PhoneNumber, Error>(new Error("value.is.required", "value is required"));
+                return Errors.General.ValueIsRequired();
             }
 
             if (Regex.IsMatch(input, russionPhoneRegex) == false)
             {
-                throw new ArgumentException();
+                return Errors.General.ValueIsInvalid("phone number");
             }
             return new PhoneNumber(input);
         }
