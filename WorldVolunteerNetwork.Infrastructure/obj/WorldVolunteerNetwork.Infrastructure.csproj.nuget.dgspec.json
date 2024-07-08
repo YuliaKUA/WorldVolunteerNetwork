@@ -70,14 +70,14 @@
         }
       }
     },
-    "C:\\Project\\net\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj": {
+    "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Project\\net\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj",
+        "projectUniqueName": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj",
         "projectName": "WorldVolunteerNetwork.Application",
-        "projectPath": "C:\\Project\\net\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj",
+        "projectPath": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj",
         "packagesPath": "C:\\Users\\Yulia\\.nuget\\packages\\",
-        "outputPath": "C:\\Project\\net\\WorldVolunteerNetwork.Application\\obj\\",
+        "outputPath": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -251,8 +251,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Project\\net\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj": {
-                "projectPath": "C:\\Project\\net\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj"
+              "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj": {
+                "projectPath": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj"
               }
             }
           }

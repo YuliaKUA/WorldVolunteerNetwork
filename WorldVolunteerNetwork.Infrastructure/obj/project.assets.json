@@ -8015,8 +8015,8 @@
     },
     "WorldVolunteerNetwork.Application/1.0.0": {
       "type": "project",
-      "path": "../../WorldVolunteerNetwork.Application/WorldVolunteerNetwork.Application.csproj",
-      "msbuildProject": "../../WorldVolunteerNetwork.Application/WorldVolunteerNetwork.Application.csproj"
+      "path": "../WorldVolunteerNetwork.Application/WorldVolunteerNetwork.Application.csproj",
+      "msbuildProject": "../WorldVolunteerNetwork.Application/WorldVolunteerNetwork.Application.csproj"
     },
     "WorldVolunteerNetwork.Domain/1.0.0": {
       "type": "project",
@@ -8071,8 +8071,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Project\\net\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj": {
-              "projectPath": "C:\\Project\\net\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj"
+            "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj": {
+              "projectPath": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj"
             }
           }
         }
