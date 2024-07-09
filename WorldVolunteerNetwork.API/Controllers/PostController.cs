@@ -1,30 +1,49 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WorldVolunteerNetwork.Domain.Entities;
-using static WorldVolunteerNetwork.API.Contracts.PostController;
+using Contracts.Requests;
+using WorldVolunteerNetwork.Application;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
-    public partial class PostController : ControllerBase
+    public class PostController : ApplicationController
     {
+        private readonly PostsService _postService;
+        //private readonly IValidator<CreatePostRequest> _validator;
+
+        public PostController(PostsService postsService)
+        {
+            _postService = postsService;
+            //_validator = validator;
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreatePostRequest request, CancellationToken ct)
         {
-            var post = new Post(
-                request.Name,
-                request.Location,
-                request.Payment,
-                request.Reward,
-                request.Duration,
-                request.Employment,
-                request.Restriction,
-                request.SubmissionDeadline,
-                request.Description,
-                request.Photo
-                );
+            /// ! App uses auto-validation (see SharpFluentValidation library)
 
+            //var result = await _validator.ValidateAsync(request, ct);
+            //if (result.IsValid == false)
+            //{
+            //    return BadRequest(result.Errors);
+            //}
+
+            var idResult = await _postService.CreatePost(request, ct);
+
+            if (idResult.IsFailure)
+            {
+                return BadRequest(idResult.Error);
+            }
+
+            return Ok(idResult.Value);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            //var posts = await _dbContext.Posts.ToListAsync();
             return Ok();
+
+            //throw new Exception("Trouble!");
         }
     }
 }

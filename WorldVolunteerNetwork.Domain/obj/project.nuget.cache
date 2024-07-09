@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ConO4SlGBqoBDhTUdnRwy4as0CJDWQCxQlRb0wrpUB1DmX7ToaH6MrY861aBYtt7k7wMTKSPyLnA36+Wbks6+w==",
+  "dgSpecHash": "QJVRWfjMM05ze5lDTu+WwLqWV32GcVl59xZxuUsYOI51vqVm6gdl+qpUBnigpRGt8koyHNFdqcg1th3QvccULA==",
   "success": true,
   "projectFilePath": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Domain\\WorldVolunteerNetwork.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Yulia\\.nuget\\packages\\csharpfunctionalextensions\\2.42.5\\csharpfunctionalextensions.2.42.5.nupkg.sha512"
+  ],
   "logs": []
 }

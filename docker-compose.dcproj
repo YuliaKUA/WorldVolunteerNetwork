@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>2e06462c-884f-4820-af3f-c15bcc7a8cf2</ProjectGuid>
+    <ProjectGuid>b5948728-653c-4c75-afbb-3963dc7a2613</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>worldvolunteernetwork.api</DockerServiceName>
