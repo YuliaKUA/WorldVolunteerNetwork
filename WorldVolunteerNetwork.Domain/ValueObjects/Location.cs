@@ -6,6 +6,8 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
 {
     public record Location
     {
+        public const int MIN_PROPERTY_LENGHT = 1;
+        public const int MAX_PROPERTY_LENGHT = 100;
         public Location(string postalCode, string country, string city, string street, string building)
         {
             PostalCode = postalCode;
@@ -23,25 +25,31 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
 
         public static Result<Location, Error> Create(string postalCode, string country, string city, string street, string building)
         {
-            if (postalCode.IsEmpty())
+            postalCode = postalCode.Trim();
+            country = country.Trim();
+            city = city.Trim();
+            street = street.Trim();
+            building = building.Trim();
+
+            if (postalCode.Length is < MIN_PROPERTY_LENGHT or > MAX_PROPERTY_LENGHT)
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("postal code");
             }
-            if (country.IsEmpty())
+            if (country.Length is < MIN_PROPERTY_LENGHT or > MAX_PROPERTY_LENGHT)
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("country");
             }
-            if (city.IsEmpty())
+            if (city.Length is < MIN_PROPERTY_LENGHT or > MAX_PROPERTY_LENGHT)
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("city");
             }
-            if (street.IsEmpty())
+            if (street.Length is < MIN_PROPERTY_LENGHT or > MAX_PROPERTY_LENGHT)
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("street");
             }
-            if (building.IsEmpty())
+            if (building.Length is < MIN_PROPERTY_LENGHT or > MAX_PROPERTY_LENGHT)
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("building");
             }
 
             return new Location(postalCode, country, city, street, building);

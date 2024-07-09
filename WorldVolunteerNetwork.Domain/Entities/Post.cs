@@ -88,7 +88,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
         {
             if (name.IsEmpty())
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("post name");
             }
             if (name.Length > MAX_NAME_LENGHT)
             {
@@ -96,19 +96,19 @@ namespace WorldVolunteerNetwork.Domain.Entities
             }
             if (duration.IsEmpty())
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("post duration");
             }
             if (employment.IsEmpty())
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("post employment");
             }
             if (restriction.IsEmpty())
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("post restriction");
             }
             if (description.IsEmpty())
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("post description");
             }
 
             return new Post(

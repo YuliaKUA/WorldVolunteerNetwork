@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Wr15cscFDQh0gouuOPTRK4M49JipKaxRN4J/L46Wx0oyp3vEZNgTB1fB0rCTHAoUceVG9TRYwVsICW1dWTzCxQ==",
+  "dgSpecHash": "F96ZfgcEQEg9iLW1Ule3oM98bWqLpZ/ObsYHKAnnQonaIeiu+EDWN8+0XAjcrI6MaoQpd2YqLOFFeIwkt/ZfMg==",
   "success": true,
   "projectFilePath": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\Yulia\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\csharpfunctionalextensions\\2.42.5\\csharpfunctionalextensions.2.42.5.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\efcore.namingconventions\\8.0.3\\efcore.namingconventions.8.0.3.nupkg.sha512",
+    "C:\\Users\\Yulia\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
+    "C:\\Users\\Yulia\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.2\\fluentvalidation.dependencyinjectionextensions.11.9.2.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
@@ -128,6 +130,8 @@
     "C:\\Users\\Yulia\\.nuget\\packages\\nuget.projectmodel\\6.9.1\\nuget.projectmodel.6.9.1.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\nuget.protocol\\6.9.1\\nuget.protocol.6.9.1.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\nuget.versioning\\6.9.1\\nuget.versioning.6.9.1.nupkg.sha512",
+    "C:\\Users\\Yulia\\.nuget\\packages\\sharpgrip.fluentvalidation.autovalidation.mvc\\1.4.0\\sharpgrip.fluentvalidation.autovalidation.mvc.1.4.0.nupkg.sha512",
+    "C:\\Users\\Yulia\\.nuget\\packages\\sharpgrip.fluentvalidation.autovalidation.shared\\1.4.0\\sharpgrip.fluentvalidation.autovalidation.shared.1.4.0.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\system.composition\\7.0.0\\system.composition.7.0.0.nupkg.sha512",

@@ -22,21 +22,11 @@ namespace WorldVolunteerNetwork.Application
                 request.Country,
                 request.City,
                 request.Street,
-                request.Building);
-            if (location.IsFailure)
-                return location.Error;
+                request.Building).Value;
 
-            var contactNumber = PhoneNumber.Create(request.ContactNumber);
-            if (contactNumber.IsFailure)
-                return contactNumber.Error;
-
-            var status = PostStatus.Create(request.PostStatus);
-            if (status.IsFailure)
-                return status.Error;
-
-            var requirement = Requirement.Create(request.Age, request.Gender);
-            if (requirement.IsFailure)
-                return requirement.Error;
+            var contactNumber = PhoneNumber.Create(request.ContactNumber).Value;
+            var status = PostStatus.Create(request.PostStatus).Value;
+            var requirement = Requirement.Create(request.Age, request.Gender).Value;
 
             var post = Post.Create(
                 request.Name,
@@ -46,10 +36,10 @@ namespace WorldVolunteerNetwork.Application
                 request.Description,
                 request.Payment,
                 request.Reward,
-                location.Value,
-                contactNumber.Value,
-                status.Value,
-                requirement.Value,
+                location,
+                contactNumber,
+                status,
+                requirement,
                 request.SubmissionDeadline,
                 request.DateCreate);
 
@@ -57,7 +47,7 @@ namespace WorldVolunteerNetwork.Application
             if (idResult.IsFailure)
                 return idResult.Error;
 
-            return post.Value.Id;
+            return idResult;
         }
     }
 }

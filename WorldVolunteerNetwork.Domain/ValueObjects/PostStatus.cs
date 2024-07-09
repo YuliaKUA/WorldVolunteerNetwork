@@ -21,7 +21,7 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
         {
             if (input.IsEmpty())
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("post status");
             }
             var status = input.Trim().ToUpper();
             if (_all.Any(p => p.Value.ToUpper() == status) == false)

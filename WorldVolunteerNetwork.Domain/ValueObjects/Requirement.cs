@@ -24,11 +24,11 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
         {
             if (age.IsEmpty())
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("age");
             }
             if (gender.IsEmpty())
             {
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("gender");
             }
 
             return new Requirement(age, gender);

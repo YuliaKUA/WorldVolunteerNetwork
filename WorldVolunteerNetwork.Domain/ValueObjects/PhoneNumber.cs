@@ -18,7 +18,7 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
             if (input.IsEmpty())
             {
                 //return Result.Failure<PhoneNumber, Error>(new Error("value.is.required", "value is required"));
-                return Errors.General.ValueIsRequired();
+                return Errors.General.ValueIsRequired("phone number");
             }
 
             if (Regex.IsMatch(input, russionPhoneRegex) == false)

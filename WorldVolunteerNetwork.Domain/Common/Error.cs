@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using WorldVolunteerNetwork.Domain.Common;
 
@@ -15,8 +16,18 @@ namespace WorldVolunteerNetwork.Domain.Common
             Message = message;
         }
 
-        public string Code { get; set; }
-        public string Message { get; set; }
+        public string Code { get; }
+        public string Message { get; }
+
+        public string Serialize()
+        {
+            return JsonSerializer.Serialize(this);
+        }
+
+        public static Error? Deserialize(string serialized)
+        {
+            return JsonSerializer.Deserialize<Error>(serialized);
+        }
     }
 }
 
@@ -29,14 +40,16 @@ public static class Errors
             var forId = id == null ? "" : $" for Id {id}";
             return new("record.not.found", $"Record not found{forId}");
         }
-        public static Error ValueIsRequired()
+        public static Error ValueIsRequired(string? name)
         {
-            return new("value.is.required", "Value is required");
+            var label = name ?? "Value";
+            return new("value.is.required", $"{label} is required");
         }
 
-        public static Error ValueIsInvalid(string name)
+        public static Error ValueIsInvalid(string? name)
         {
-            return new("value.is.invalid", $"{name} is invalid");
+            var label = name ?? "Value";
+            return new("value.is.invalid", $"{label} is invalid");
         }
         public static Error InvalidLength(string? name = null)
         {

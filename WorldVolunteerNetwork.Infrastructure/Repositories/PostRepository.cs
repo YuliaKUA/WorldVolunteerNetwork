@@ -21,6 +21,8 @@ namespace WorldVolunteerNetwork.Infrastructure.Repositories
         public async Task<Result<Guid, Error>> Add(Post post, CancellationToken ct)
         {
             await _dbContext.Posts.AddAsync(post, ct);
+
+
             var result = await _dbContext.SaveChangesAsync(ct);
 
             if (result == 0)
