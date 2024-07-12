@@ -59,7 +59,7 @@ namespace WorldVolunteerNetwork.Application.Services
 
             var postDtos = posts.Select(p => p.ToDto());
 
-            return new GetPostsResponse(postDtos);
+            return new GetPostsResponse(postDtos, 1);
         }
     }
 }

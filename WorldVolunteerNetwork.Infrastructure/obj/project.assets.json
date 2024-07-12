@@ -8145,8 +8145,8 @@
     },
     "Contracts/1.0.0": {
       "type": "project",
-      "path": "../../Contracts/Contracts.csproj",
-      "msbuildProject": "../../Contracts/Contracts.csproj"
+      "path": "../Contracts/Contracts.csproj",
+      "msbuildProject": "../Contracts/Contracts.csproj"
     },
     "WorldVolunteerNetwork.Application/1.0.0": {
       "type": "project",

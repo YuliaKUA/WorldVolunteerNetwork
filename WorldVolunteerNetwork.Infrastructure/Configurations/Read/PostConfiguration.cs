@@ -12,10 +12,10 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Read
 
             builder.HasKey(p => p.Id);
 
-            builder
-                .HasMany(p => p.Photos)
-                .WithOne()
-                .HasForeignKey(ph => ph.PostId);
+            //builder
+            //    .HasMany(p => p.Photos)
+            //    .WithOne()
+            //    .HasForeignKey(ph => ph.PostId);
 
         }
     }

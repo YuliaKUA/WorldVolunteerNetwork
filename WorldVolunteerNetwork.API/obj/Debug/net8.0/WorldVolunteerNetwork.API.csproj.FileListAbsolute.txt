@@ -28,7 +28,6 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.csproj.AssemblyReference.cache
-C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVol.FBC9B7EF.Up2Date
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\WorldVolunteerNetwork.Domain.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\WorldVolunteerNetwork.Domain.pdb
@@ -267,3 +266,4 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\SharpGrip.FluentValidation.AutoValidation.Mvc.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\SharpGrip.FluentValidation.AutoValidation.Shared.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.MvcApplicationPartsAssemblyInfo.cs

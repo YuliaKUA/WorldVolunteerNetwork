@@ -16,8 +16,8 @@ namespace WorldVolunteerNetwork.Application.Mapping
                 p.Status.Value,
                 p.Reward,
                 p.SubmissionDeadline,
-                p.DateCreate,
-                p.Photos);
+                p.DateCreate);
+            //p.Photos);
         }
     }
 }

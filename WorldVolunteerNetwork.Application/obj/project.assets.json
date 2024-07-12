@@ -231,8 +231,8 @@
     },
     "Contracts/1.0.0": {
       "type": "project",
-      "path": "../../Contracts/Contracts.csproj",
-      "msbuildProject": "../../Contracts/Contracts.csproj"
+      "path": "../Contracts/Contracts.csproj",
+      "msbuildProject": "../Contracts/Contracts.csproj"
     },
     "WorldVolunteerNetwork.Domain/1.0.0": {
       "type": "project",
@@ -283,8 +283,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Project\\net\\Contracts\\Contracts.csproj": {
-              "projectPath": "C:\\Project\\net\\Contracts\\Contracts.csproj"
+            "C:\\Project\\net\\WorldVolunteerNetwork\\Contracts\\Contracts.csproj": {
+              "projectPath": "C:\\Project\\net\\WorldVolunteerNetwork\\Contracts\\Contracts.csproj"
             },
             "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Domain\\WorldVolunteerNetwork.Domain.csproj": {
               "projectPath": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Domain\\WorldVolunteerNetwork.Domain.csproj"
