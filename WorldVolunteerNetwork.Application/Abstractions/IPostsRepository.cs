@@ -12,5 +12,6 @@ namespace WorldVolunteerNetwork.Application.Abstractions
     public interface IPostsRepository
     {
         Task<Result<Guid, Error>> Add(Post post, CancellationToken ct);
+        Task<IReadOnlyList<Post>> GetByPage(int page, int size, CancellationToken ct);
     }
 }

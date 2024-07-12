@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Contracts.Requests;
-using WorldVolunteerNetwork.Application;
+using WorldVolunteerNetwork.Application.Services;
+using Contracts.Posts.Requests;
+using WorldVolunteerNetwork.Infrastructure.Queries;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
@@ -38,12 +39,13 @@ namespace WorldVolunteerNetwork.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(
+            [FromServices] GetPostsQuery query,
+            [FromQuery] GetPostsRequest request,
+            CancellationToken ct)
         {
-            //var posts = await _dbContext.Posts.ToListAsync();
-            return Ok();
-
-            //throw new Exception("Trouble!");
+            var response = await query.Handle(request, ct);
+            return Ok(response);
         }
     }
 }

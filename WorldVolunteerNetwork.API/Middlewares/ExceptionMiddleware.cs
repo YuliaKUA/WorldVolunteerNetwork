@@ -4,6 +4,7 @@ using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.API.Middlewares
 {
+    //Error handler(catches and puts errors in context.Response)
     public class ExceptionMiddleware
     {
         private readonly RequestDelegate _next;
@@ -28,11 +29,9 @@ namespace WorldVolunteerNetwork.API.Middlewares
 
                 var error = new Error("server.iternal", ex.Message);
 
-                var stringError = JsonSerializer.Serialize(error);
-
+                context.Response.ContentType = "application/json";
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
-                await context.Response.WriteAsync(stringError);
+                await context.Response.WriteAsJsonAsync(error);
             }
         }
 

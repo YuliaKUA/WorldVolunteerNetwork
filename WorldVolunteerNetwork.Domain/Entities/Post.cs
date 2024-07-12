@@ -68,6 +68,8 @@ namespace WorldVolunteerNetwork.Domain.Entities
 
         public IReadOnlyList<Photo> Photos => _photos;
         private readonly List<Photo> _photos = [];
+        public IReadOnlyList<Vaccination> Vaccinations => _vaccinations;
+        private readonly List<Vaccination> _vaccinations = [];
 
 
         public static Result<Post, Error> Create(
@@ -88,7 +90,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
         {
             if (name.IsEmpty())
             {
-                return Errors.General.ValueIsRequired("post name");
+                return Errors.General.ValueIsRequired("post: name");
             }
             if (name.Length > MAX_NAME_LENGHT)
             {
@@ -96,19 +98,19 @@ namespace WorldVolunteerNetwork.Domain.Entities
             }
             if (duration.IsEmpty())
             {
-                return Errors.General.ValueIsRequired("post duration");
+                return Errors.General.ValueIsRequired("post: duration");
             }
             if (employment.IsEmpty())
             {
-                return Errors.General.ValueIsRequired("post employment");
+                return Errors.General.ValueIsRequired("post: employment");
             }
             if (restriction.IsEmpty())
             {
-                return Errors.General.ValueIsRequired("post restriction");
+                return Errors.General.ValueIsRequired("post: restriction");
             }
             if (description.IsEmpty())
             {
-                return Errors.General.ValueIsRequired("post description");
+                return Errors.General.ValueIsRequired("post: description");
             }
 
             return new Post(

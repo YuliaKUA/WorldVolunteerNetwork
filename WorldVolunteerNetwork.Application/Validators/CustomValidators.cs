@@ -9,6 +9,8 @@ using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.Application.Validators
 {
+    //IRuleBuilder class extension (see 'RuleFor' in CPRValidator for example)
+    //in order not to write again the verifications implemented in Create()
     public static class CustomValidators
     {
         public static IRuleBuilderOptions<T, TElement> MustBeValueObject<T, TElement, TValueObject>(

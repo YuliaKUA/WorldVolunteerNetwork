@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using WorldVolunteerNetwork.Infrastructure;
+using WorldVolunteerNetwork.Infrastructure.DbContexts;
 
 #nullable disable
 
 namespace WorldVolunteerNetwork.Infrastructure.Migrations
 {
-    [DbContext(typeof(WorldVolunteerNetworkDbContext))]
+    [DbContext(typeof(WorldVolunteerNetworkWriteDbContext))]
     [Migration("20240702170351_Initial")]
     partial class Initial
     {

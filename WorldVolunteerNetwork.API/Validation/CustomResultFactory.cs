@@ -4,7 +4,7 @@ using SharpGrip.FluentValidation.AutoValidation.Mvc.Results;
 using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.API.Validation;
-
+//Fluent validation: override for auto validation
 public class CustomResultFactory : IFluentValidationAutoValidationResultFactory
 {
     public IActionResult CreateActionResult(

@@ -1,4 +1,4 @@
-﻿using Contracts.Requests;
+﻿using Contracts.Posts.Requests;
 using FluentValidation;
 using System;
 using System.Collections.Generic;

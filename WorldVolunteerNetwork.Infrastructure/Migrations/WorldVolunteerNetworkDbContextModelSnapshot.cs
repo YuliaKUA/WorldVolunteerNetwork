@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using WorldVolunteerNetwork.Infrastructure;
+using WorldVolunteerNetwork.Infrastructure.DbContexts;
 
 #nullable disable
 
 namespace WorldVolunteerNetwork.Infrastructure.Migrations
 {
-    [DbContext(typeof(WorldVolunteerNetworkDbContext))]
+    [DbContext(typeof(WorldVolunteerNetworkWriteDbContext))]
     partial class WorldVolunteerNetworkDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -4,7 +4,7 @@ using WorldVolunteerNetwork.API.Middlewares;
 using WorldVolunteerNetwork.API.Validation;
 using WorldVolunteerNetwork.Application;
 using WorldVolunteerNetwork.Application.Abstractions;
-using WorldVolunteerNetwork.Infrastructure;
+using WorldVolunteerNetwork.Infrastructure.DbContexts;
 using WorldVolunteerNetwork.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,7 +21,8 @@ builder.Services.AddFluentValidationAutoValidation(configuration =>
 
 builder.Services.AddScoped<IPostsRepository, PostRepository>();
 
-builder.Services.AddScoped<WorldVolunteerNetworkDbContext>();
+builder.Services.AddScoped<WorldVolunteerNetworkWriteDbContext>();
+builder.Services.AddScoped<WorldVolunteerNetworkReadDbContext>();
 
 builder.Services.AddHttpLogging(option => { });
 
