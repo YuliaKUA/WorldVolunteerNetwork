@@ -18,9 +18,7 @@ C:\Project\net\WorldVolunteerNetwork.Application\obj\Debug\net8.0\ref\WorldVolun
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Application\bin\Debug\net8.0\WorldVolunteerNetwork.Application.deps.json
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Application\bin\Debug\net8.0\WorldVolunteerNetwork.Application.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Application\bin\Debug\net8.0\WorldVolunteerNetwork.Application.pdb
-C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Application\bin\Debug\net8.0\Contracts.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Application\bin\Debug\net8.0\WorldVolunteerNetwork.Domain.dll
-C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Application\bin\Debug\net8.0\Contracts.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Application\bin\Debug\net8.0\WorldVolunteerNetwork.Domain.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Application\obj\Debug\net8.0\WorldVolunteerNetwork.Application.csproj.AssemblyReference.cache
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Application\obj\Debug\net8.0\WorldVolunteerNetwork.Application.GeneratedMSBuildEditorConfig.editorconfig

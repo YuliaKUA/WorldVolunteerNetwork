@@ -1,23 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Contracts.Requests;
-using WorldVolunteerNetwork.Application;
+using WorldVolunteerNetwork.Application.Posts.CreatePost;
+using WorldVolunteerNetwork.Infrastructure.Queries.Posts;
+using WorldVolunteerNetwork.Application.Posts.GetPosts;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
     [Route("[controller]")]
     public class PostController : ApplicationController
     {
-        private readonly PostsService _postService;
-        //private readonly IValidator<CreatePostRequest> _validator;
-
-        public PostController(PostsService postsService)
-        {
-            _postService = postsService;
-            //_validator = validator;
-        }
-
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreatePostRequest request, CancellationToken ct)
+        public async Task<IActionResult> Create(
+            [FromServices] CreatePostsService postsService,
+            [FromBody] CreatePostRequest request, 
+            CancellationToken ct)
         {
             /// ! App uses auto-validation (see SharpFluentValidation library)
 
@@ -27,7 +22,7 @@ namespace WorldVolunteerNetwork.API.Controllers
             //    return BadRequest(result.Errors);
             //}
 
-            var idResult = await _postService.CreatePost(request, ct);
+            var idResult = await postsService.Handle(request, ct);
 
             if (idResult.IsFailure)
             {
@@ -37,13 +32,24 @@ namespace WorldVolunteerNetwork.API.Controllers
             return Ok(idResult.Value);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get()
+        [HttpGet("ef-core")]
+        public async Task<IActionResult> Get(
+            [FromServices] GetPostsQuery query,
+            [FromQuery] GetPostsRequest request,
+            CancellationToken ct)
         {
-            //var posts = await _dbContext.Posts.ToListAsync();
-            return Ok();
+            var response = await query.Handle(request, ct);
+            return Ok(response);
+        }
 
-            //throw new Exception("Trouble!");
+        [HttpGet("dapper")]
+        public async Task<IActionResult> Get(
+            [FromServices] GetAllPostsQuery query,
+            [FromQuery] GetPostsRequest request,
+            CancellationToken ct)
+        {
+            var response = await query.Handle();
+            return Ok(response);
         }
     }
 }

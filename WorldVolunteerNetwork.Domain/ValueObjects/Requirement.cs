@@ -10,9 +10,6 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
     {
         public string? Age { get; private set; }
         public string? Gender { get; private set; }
-        [NotMapped]
-        public IReadOnlyList<Vaccination> Vaccinations => _vaccinations;
-        private readonly List<Vaccination> _vaccinations = [];
 
         public Requirement(string age, string gender)
         {

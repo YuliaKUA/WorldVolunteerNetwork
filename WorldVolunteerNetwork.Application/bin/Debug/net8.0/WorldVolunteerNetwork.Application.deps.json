@@ -9,7 +9,6 @@
       "WorldVolunteerNetwork.Application/1.0.0": {
         "dependencies": {
           "CSharpFunctionalExtensions": "2.42.5",
-          "Contracts": "1.0.0",
           "FluentValidation.DependencyInjectionExtensions": "11.9.2",
           "SharpGrip.FluentValidation.AutoValidation.Mvc": "1.4.0",
           "WorldVolunteerNetwork.Domain": "1.0.0"
@@ -69,11 +68,6 @@
           }
         }
       },
-      "Contracts/1.0.0": {
-        "runtime": {
-          "Contracts.dll": {}
-        }
-      },
       "WorldVolunteerNetwork.Domain/1.0.0": {
         "dependencies": {
           "CSharpFunctionalExtensions": "2.42.5"
@@ -131,11 +125,6 @@
       "sha512": "sha512-X1tecd17OBUIEs9i/I9uqaSs4OXs0qLXMYsiKsTKmIl4xGsWu7hF0umM2jtvblhUvPskZMYNMiaoGJitwT0xxg==",
       "path": "sharpgrip.fluentvalidation.autovalidation.shared/1.4.0",
       "hashPath": "sharpgrip.fluentvalidation.autovalidation.shared.1.4.0.nupkg.sha512"
-    },
-    "Contracts/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "WorldVolunteerNetwork.Domain/1.0.0": {
       "type": "project",
