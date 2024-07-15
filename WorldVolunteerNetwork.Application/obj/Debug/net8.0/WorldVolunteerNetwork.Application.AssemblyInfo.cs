@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorldVolunteerNetwork.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f8f8a1b6cfeb445d2110da88f7fac6af9ba13db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3546b725f39851bac27304b79c368ab63333729a")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorldVolunteerNetwork.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorldVolunteerNetwork.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

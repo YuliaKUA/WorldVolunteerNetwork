@@ -1,4 +1,4 @@
-﻿using Contracts.Posts.Dtos;
+﻿using WorldVolunteerNetwork.Application.Dtos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;

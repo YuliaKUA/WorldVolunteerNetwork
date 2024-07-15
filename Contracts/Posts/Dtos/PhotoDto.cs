@@ -1,9 +1,10 @@
 ﻿namespace Contracts.Posts.Dtos
 {
-    public record PhotoDto(
-        Guid Id,
-        string Path,
-        bool IsMain,
-        Guid PostId
-        );
+    public class PhotoDto
+    {
+        public Guid Id { get; init; }
+        public string Path { get; init; } = string.Empty;
+        public bool IsMain { get; init; }
+        public Guid PostId { get; init; }
+    }
 }

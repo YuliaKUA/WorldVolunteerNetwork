@@ -1,28 +1,23 @@
-using FluentValidation;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
 using WorldVolunteerNetwork.API.Middlewares;
 using WorldVolunteerNetwork.API.Validation;
 using WorldVolunteerNetwork.Application;
-using WorldVolunteerNetwork.Application.Abstractions;
-using WorldVolunteerNetwork.Infrastructure.DbContexts;
-using WorldVolunteerNetwork.Infrastructure.Repositories;
+using WorldVolunteerNetwork.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
-builder.Services.AddApplication();
+builder.Services
+    .AddApplication()
+    .AddInfrastructure();
 
 builder.Services.AddFluentValidationAutoValidation(configuration =>
 {
     configuration.OverrideDefaultResultFactoryWith<CustomResultFactory>();
 });
 
-builder.Services.AddScoped<IPostsRepository, PostRepository>();
-
-builder.Services.AddScoped<WorldVolunteerNetworkWriteDbContext>();
-builder.Services.AddScoped<WorldVolunteerNetworkReadDbContext>();
 
 builder.Services.AddHttpLogging(option => { });
 
