@@ -1,14 +1,14 @@
 ﻿using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.API.Validation;
-//For vflidation: wrapper so that the response from the api is always in the same style
+
 public class Envelope
 {
     private Envelope(object? result, Error? error)
     {
         Result = result;
-        ErrorCode = error?.Code;
-        ErrorMessage = error?.Message;
+        ErrorCode = error.Code;
+        ErrorMessage = error.Message;
         TimeGenerated = DateTime.Now;
     }
 

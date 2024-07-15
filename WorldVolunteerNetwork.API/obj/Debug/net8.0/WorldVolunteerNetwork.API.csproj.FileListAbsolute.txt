@@ -28,6 +28,7 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.csproj.AssemblyReference.cache
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVol.FBC9B7EF.Up2Date
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\WorldVolunteerNetwork.Domain.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\WorldVolunteerNetwork.Domain.pdb
@@ -258,11 +259,11 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\CSharpFunctionalExtensions.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\Contracts.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\Contracts.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\WorldVolunteerNetwork.Application.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\WorldVolunteerNetwork.Application.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\FluentValidation.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\SharpGrip.FluentValidation.AutoValidation.Mvc.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\SharpGrip.FluentValidation.AutoValidation.Shared.dll
-C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\Dapper.dll
