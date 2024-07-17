@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WorldVolunteerNetwork.Application.Posts.GetPosts;
+using WorldVolunteerNetwork.Application.Features.Posts.GetPosts;
 using WorldVolunteerNetwork.Infrastructure.DbContexts;
 
 namespace WorldVolunteerNetwork.Infrastructure.Queries.Posts

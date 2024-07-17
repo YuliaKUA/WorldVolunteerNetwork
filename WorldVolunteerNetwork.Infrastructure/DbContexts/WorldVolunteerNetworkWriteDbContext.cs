@@ -14,6 +14,7 @@ namespace WorldVolunteerNetwork.Infrastructure.DbContexts
         }
 
         public DbSet<Post> Posts => Set<Post>();
+        public DbSet<Organizer> Organizers => Set<Organizer>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

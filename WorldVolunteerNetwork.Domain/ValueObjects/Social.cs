@@ -10,6 +10,7 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
         public static readonly Social WhatsApp = new(nameof(WhatsApp));
         public static readonly Social VK = new(nameof(VK));
         public static readonly Social FaceBook = new(nameof(FaceBook));
+        public static readonly Social YouTube = new(nameof(YouTube));
 
         private static readonly Social[] _all = [Telegram, Instargam, WhatsApp, VK, FaceBook];
         public string Value { get; }

@@ -23,6 +23,37 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Organizer", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<bool>("ActsBehalfCharitableOrganization")
+                        .HasColumnType("boolean")
+                        .HasColumnName("acts_behalf_charitable_organization");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("description");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("name");
+
+                    b.Property<int>("YearsVolunteeringExperience")
+                        .HasColumnType("integer")
+                        .HasColumnName("years_volunteering_experience");
+
+                    b.HasKey("Id")
+                        .HasName("pk_organizers");
+
+                    b.ToTable("organizers", (string)null);
+                });
+
             modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Photo", b =>
                 {
                     b.Property<Guid>("Id")
@@ -33,6 +64,10 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                     b.Property<bool>("IsMain")
                         .HasColumnType("boolean")
                         .HasColumnName("is_main");
+
+                    b.Property<Guid?>("OrganizerId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("organizer_id");
 
                     b.Property<string>("Path")
                         .IsRequired()
@@ -45,6 +80,9 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
 
                     b.HasKey("Id")
                         .HasName("pk_photos");
+
+                    b.HasIndex("OrganizerId")
+                        .HasDatabaseName("ix_photos_organizer_id");
 
                     b.HasIndex("PostId")
                         .HasDatabaseName("ix_photos_post_id");
@@ -82,6 +120,10 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("name");
+
+                    b.Property<Guid?>("OrganizerId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("organizer_id");
 
                     b.Property<float?>("Payment")
                         .IsRequired()
@@ -168,7 +210,45 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                     b.HasKey("Id")
                         .HasName("pk_posts");
 
+                    b.HasIndex("OrganizerId")
+                        .HasDatabaseName("ix_posts_organizer_id");
+
                     b.ToTable("posts", (string)null);
+                });
+
+            modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.SocialMedia", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("link");
+
+                    b.Property<Guid?>("OrganizerId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("organizer_id");
+
+                    b.ComplexProperty<Dictionary<string, object>>("Social", "WorldVolunteerNetwork.Domain.Entities.SocialMedia.Social#Social", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("text")
+                                .HasColumnName("social");
+                        });
+
+                    b.HasKey("Id")
+                        .HasName("pk_social_media");
+
+                    b.HasIndex("OrganizerId")
+                        .HasDatabaseName("ix_social_media_organizer_id");
+
+                    b.ToTable("social_media", (string)null);
                 });
 
             modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Vaccination", b =>
@@ -192,20 +272,41 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                         .HasColumnName("post_id");
 
                     b.HasKey("Id")
-                        .HasName("pk_vaccination");
+                        .HasName("pk_vaccinations");
 
                     b.HasIndex("PostId")
-                        .HasDatabaseName("ix_vaccination_post_id");
+                        .HasDatabaseName("ix_vaccinations_post_id");
 
-                    b.ToTable("vaccination", (string)null);
+                    b.ToTable("vaccinations", (string)null);
                 });
 
             modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Photo", b =>
                 {
+                    b.HasOne("WorldVolunteerNetwork.Domain.Entities.Organizer", null)
+                        .WithMany("Photos")
+                        .HasForeignKey("OrganizerId")
+                        .HasConstraintName("fk_photos_organizers_organizer_id");
+
                     b.HasOne("WorldVolunteerNetwork.Domain.Entities.Post", null)
                         .WithMany("Photos")
                         .HasForeignKey("PostId")
                         .HasConstraintName("fk_photos_posts_post_id");
+                });
+
+            modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Post", b =>
+                {
+                    b.HasOne("WorldVolunteerNetwork.Domain.Entities.Organizer", null)
+                        .WithMany("Posts")
+                        .HasForeignKey("OrganizerId")
+                        .HasConstraintName("fk_posts_organizers_organizer_id");
+                });
+
+            modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.SocialMedia", b =>
+                {
+                    b.HasOne("WorldVolunteerNetwork.Domain.Entities.Organizer", null)
+                        .WithMany("SocialMedias")
+                        .HasForeignKey("OrganizerId")
+                        .HasConstraintName("fk_social_media_organizers_organizer_id");
                 });
 
             modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Vaccination", b =>
@@ -213,7 +314,16 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                     b.HasOne("WorldVolunteerNetwork.Domain.Entities.Post", null)
                         .WithMany("Vaccinations")
                         .HasForeignKey("PostId")
-                        .HasConstraintName("fk_vaccination_posts_post_id");
+                        .HasConstraintName("fk_vaccinations_posts_post_id");
+                });
+
+            modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Organizer", b =>
+                {
+                    b.Navigation("Photos");
+
+                    b.Navigation("Posts");
+
+                    b.Navigation("SocialMedias");
                 });
 
             modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Post", b =>

@@ -56,5 +56,11 @@ public static class Errors
             var label = name == null ? " " : $" {name} ";
             return new("invalid.string.length", $"Invalid{label}length");
         }
+
+        public static Error CanNotBeSave(string? name)
+        {
+            var label = name ?? "Value";
+            return new("record.saving", $"{label} can not be save");
+        }
     }
 }

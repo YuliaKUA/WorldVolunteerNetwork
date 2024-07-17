@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
-using WorldVolunteerNetwork.Application.Posts.CreatePost;
+using WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer;
+using WorldVolunteerNetwork.Application.Features.Organizers.CreatePost;
 
 namespace WorldVolunteerNetwork.Application
 {
@@ -17,6 +18,7 @@ namespace WorldVolunteerNetwork.Application
         private static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddScoped<CreatePostsService>();
+            services.AddScoped<CreateOrganizersService>();
             
             return services;
         }

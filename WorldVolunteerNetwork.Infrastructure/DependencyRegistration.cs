@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using WorldVolunteerNetwork.Application.Abstractions;
+using WorldVolunteerNetwork.Application.Features.Organizers;
+using WorldVolunteerNetwork.Application.Features.Posts;
 using WorldVolunteerNetwork.Infrastructure.DbContexts;
 using WorldVolunteerNetwork.Infrastructure.Queries.Posts;
 using WorldVolunteerNetwork.Infrastructure.Repositories;
@@ -20,7 +21,8 @@ namespace WorldVolunteerNetwork.Infrastructure
 
         private static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IPostsRepository, PostRepository>(); 
+            services.AddScoped<IPostsRepository, PostRepository>();
+            services.AddScoped<IOrganizersRepository, OrganizerRepository>();
 
             return services;
         }

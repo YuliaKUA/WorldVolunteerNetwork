@@ -1,4 +1,7 @@
-﻿using WorldVolunteerNetwork.Domain.ValueObjects;
+﻿using CSharpFunctionalExtensions;
+using System.Collections.Generic;
+using WorldVolunteerNetwork.Domain.Common;
+using WorldVolunteerNetwork.Domain.ValueObjects;
 
 namespace WorldVolunteerNetwork.Domain.Entities
 {
@@ -9,16 +12,17 @@ namespace WorldVolunteerNetwork.Domain.Entities
             string name,
             string? description,
             int volunteeringExperience,
-            PhoneNumber phoneNumber,
             bool actsBehalfCharitableOrganization,
-            Photo mainPhoto)
+            IEnumerable<SocialMedia> socialMedias
+            //List<Photo> photos
+            )
         {
             Name = name;
             Description = description;
-            VolunteeringExperience = volunteeringExperience;
-            PhoneNumber = phoneNumber;
+            YearsVolunteeringExperience = volunteeringExperience;
             ActsBehalfCharitableOrganization = actsBehalfCharitableOrganization;
-            MainPhoto = mainPhoto;
+            _socialMedias = socialMedias.ToList();
+            //_photos = photos;
         }
 
         public Guid Id { get; private set; }
@@ -26,13 +30,15 @@ namespace WorldVolunteerNetwork.Domain.Entities
         public string Name { get; private set; }
         public string? Description { get; private set; }
 
-        public int VolunteeringExperience { get; private set; }
+        public int YearsVolunteeringExperience { get; private set; }
 
-        public PhoneNumber PhoneNumber { get; private set; }
-        public Photo MainPhoto { get; private set; }
-        public Account Account { get; private set; }
+        //public Account Account { get; private set; }
 
         public bool ActsBehalfCharitableOrganization { get; private set; } = false;
+
+        
+        private readonly List<Photo> _photos = [];
+        public IReadOnlyList<Photo> Photos => _photos;
 
 
         private readonly List<SocialMedia> _socialMedias = [];
@@ -46,6 +52,32 @@ namespace WorldVolunteerNetwork.Domain.Entities
         public void PublishPost(Post post)
         {
             _posts.Add(post);
+        }
+
+        public static Result<Organizer, Error> Create(
+            string name,
+            string? description,
+            int volunteeringExperience,
+            bool actsBehalfCharitableOrganization,
+            IEnumerable<SocialMedia> socialMedias
+            )
+        {
+            if (name.IsEmpty())
+            {
+                return Errors.General.ValueIsRequired("organizer: name");
+            }
+            if (description.IsEmpty())
+            {
+                return Errors.General.ValueIsRequired("organizer: description");
+            }
+
+            return new Organizer(
+                name,
+                description,
+                volunteeringExperience,
+                actsBehalfCharitableOrganization, 
+                socialMedias
+                );
         }
     }
 }

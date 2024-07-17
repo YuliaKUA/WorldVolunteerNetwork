@@ -3,6 +3,42 @@
   "WorkspaceRootPath": "C:\\Project\\net\\WorldVolunteerNetwork\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.infrastructure\\repositories\\organizerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|solutionrelative:worldvolunteernetwork.infrastructure\\repositories\\organizerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.application\\features\\organizers\\createpost\\createpostsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|solutionrelative:worldvolunteernetwork.application\\features\\organizers\\createpost\\createpostsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.application\\features\\organizers\\createorganizer\\createorganizersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|solutionrelative:worldvolunteernetwork.application\\features\\organizers\\createorganizer\\createorganizersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.application\\features\\organizers\\createpost\\createpostrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|solutionrelative:worldvolunteernetwork.application\\features\\organizers\\createpost\\createpostrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.application\\features\\organizers\\iorganizersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|solutionrelative:worldvolunteernetwork.application\\features\\organizers\\iorganizersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.api\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|solutionrelative:worldvolunteernetwork.api\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.api\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|solutionrelative:worldvolunteernetwork.api\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.application\\features\\posts\\ipostsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|solutionrelative:worldvolunteernetwork.application\\features\\posts\\ipostsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.infrastructure\\repositories\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|solutionrelative:worldvolunteernetwork.infrastructure\\repositories\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.infrastructure\\queries\\posts\\getallpostsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|solutionrelative:worldvolunteernetwork.infrastructure\\queries\\posts\\getallpostsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 193,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,15 +58,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "CreateOrganizersService.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Organizers\\CreateOrganizer\\CreateOrganizersService.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Application\\Features\\Organizers\\CreateOrganizer\\CreateOrganizersService.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Organizers\\CreateOrganizer\\CreateOrganizersService.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.Application\\Features\\Organizers\\CreateOrganizer\\CreateOrganizersService.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA1wCEAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T20:04:39.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PostController.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.API\\Controllers\\PostController.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.API\\Controllers\\PostController.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.API\\Controllers\\PostController.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.API\\Controllers\\PostController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T19:43:23.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreatePostRequest.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Organizers\\CreatePost\\CreatePostRequest.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Application\\Features\\Organizers\\CreatePost\\CreatePostRequest.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Organizers\\CreatePost\\CreatePostRequest.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.Application\\Features\\Organizers\\CreatePost\\CreatePostRequest.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T19:36:17.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IOrganizersRepository.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Organizers\\IOrganizersRepository.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Application\\Features\\Organizers\\IOrganizersRepository.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Organizers\\IOrganizersRepository.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.Application\\Features\\Organizers\\IOrganizersRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T19:24:37.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IPostsRepository.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Posts\\IPostsRepository.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Application\\Features\\Posts\\IPostsRepository.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Posts\\IPostsRepository.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.Application\\Features\\Posts\\IPostsRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T19:15:05.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "GetAllPostsQuery.cs",
               "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Infrastructure\\Queries\\Posts\\GetAllPostsQuery.cs",
               "RelativeDocumentMoniker": "WorldVolunteerNetwork.Infrastructure\\Queries\\Posts\\GetAllPostsQuery.cs",
               "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Infrastructure\\Queries\\Posts\\GetAllPostsQuery.cs",
               "RelativeToolTip": "WorldVolunteerNetwork.Infrastructure\\Queries\\Posts\\GetAllPostsQuery.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAAwCMAAAAyAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-15T18:37:56.979Z",
+              "WhenOpened": "2024-07-17T19:06:34.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrganizerRepository.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Infrastructure\\Repositories\\OrganizerRepository.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Infrastructure\\Repositories\\OrganizerRepository.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Infrastructure\\Repositories\\OrganizerRepository.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.Infrastructure\\Repositories\\OrganizerRepository.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowBUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T19:04:04.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PostRepository.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Infrastructure\\Repositories\\PostRepository.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Infrastructure\\Repositories\\PostRepository.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Infrastructure\\Repositories\\PostRepository.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.Infrastructure\\Repositories\\PostRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T19:03:54.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreatePostsService.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Organizers\\CreatePost\\CreatePostsService.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Application\\Features\\Organizers\\CreatePost\\CreatePostsService.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Organizers\\CreatePost\\CreatePostsService.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.Application\\Features\\Organizers\\CreatePost\\CreatePostsService.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowDwAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T18:58:41.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrganizerController.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.API\\Controllers\\OrganizerController.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.API\\Controllers\\OrganizerController.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.API\\Controllers\\OrganizerController.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.API\\Controllers\\OrganizerController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T22:46:13.103Z",
               "EditorCaption": ""
             }
           ]

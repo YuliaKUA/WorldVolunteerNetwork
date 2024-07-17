@@ -1,9 +1,12 @@
 ﻿using Dapper;
 using WorldVolunteerNetwork.Application.Dtos;
-using WorldVolunteerNetwork.Application.Posts.GetPosts;
+using WorldVolunteerNetwork.Application.Features.Posts.GetPosts;
 
 namespace WorldVolunteerNetwork.Infrastructure.Queries.Posts
 {
+    // See SQRS pattern
+    // These methods are only used in the controller (with other models - response)
+    // isolated from repositories
     public class GetAllPostsQuery
     {
         private readonly SqlConnectionFactory _sqlConnectionFactory;
