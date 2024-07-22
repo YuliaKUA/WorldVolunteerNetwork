@@ -1,12 +1,11 @@
 ﻿using CSharpFunctionalExtensions;
-using System.Collections.Generic;
 using WorldVolunteerNetwork.Domain.Common;
-using WorldVolunteerNetwork.Domain.ValueObjects;
 
 namespace WorldVolunteerNetwork.Domain.Entities
 {
     public class Organizer
     {
+        public const int PHOTO_COUNT_LIMIT = 5;
         private Organizer() { }
         private Organizer(
             string name,
@@ -52,6 +51,15 @@ namespace WorldVolunteerNetwork.Domain.Entities
         public void PublishPost(Post post)
         {
             _posts.Add(post);
+        }
+
+        public Result<bool, Error> AddPhoto(Photo photo)
+        {
+            if (_photos.Count > PHOTO_COUNT_LIMIT)
+                return Errors.Organizers.PhotoCountLimit(PHOTO_COUNT_LIMIT);
+            
+            _photos.Add(photo);
+            return true;
         }
 
         public static Result<Organizer, Error> Create(

@@ -8,6 +8,6 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers
     {
         Task Add(Organizer organizer, CancellationToken ct);
         Task<Result<Organizer, Error>> GetById(Guid id, CancellationToken ct);
-        Task<Result<Guid, Error>> Save(Organizer organizer, CancellationToken ct);
+        Task<Result<int, Error>> Save(CancellationToken ct);
     }
 }

@@ -6,8 +6,7 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
 {
     public record Location
     {
-        public const int MIN_PROPERTY_LENGHT = 1;
-        public const int MAX_PROPERTY_LENGHT = 100;
+        public const int POSTAL_CODE_LENGTH = 6;
         public Location(string postalCode, string country, string city, string street, string building)
         {
             PostalCode = postalCode;
@@ -28,28 +27,27 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
             postalCode = postalCode.Trim();
             country = country.Trim();
             city = city.Trim();
-            street = street.Trim();
             building = building.Trim();
 
-            if (postalCode.Length is < MIN_PROPERTY_LENGHT or > MAX_PROPERTY_LENGHT)
+            if (postalCode.Length != POSTAL_CODE_LENGTH)
             {
-                return Errors.General.ValueIsRequired("postal code");
+                return Errors.General.ValueIsRequired(nameof(postalCode));
             }
-            if (country.Length is < MIN_PROPERTY_LENGHT or > MAX_PROPERTY_LENGHT)
+            if (country.Length is < Constraints.MINIMUM_TITLE_LENGTH or > Constraints.SHORT_TITLE_LENGTH)
             {
-                return Errors.General.ValueIsRequired("country");
+                return Errors.General.ValueIsRequired(nameof(country));
             }
-            if (city.Length is < MIN_PROPERTY_LENGHT or > MAX_PROPERTY_LENGHT)
+            if (city.Length is < Constraints.MINIMUM_TITLE_LENGTH or > Constraints.SHORT_TITLE_LENGTH)
             {
-                return Errors.General.ValueIsRequired("city");
+                return Errors.General.ValueIsRequired(nameof(city));
             }
-            if (street.Length is < MIN_PROPERTY_LENGHT or > MAX_PROPERTY_LENGHT)
+            if (street.Length is <Constraints.MINIMUM_TITLE_LENGTH or > Constraints.SHORT_TITLE_LENGTH)
             {
-                return Errors.General.ValueIsRequired("street");
+                return Errors.General.ValueIsRequired(nameof(street));
             }
-            if (building.Length is < MIN_PROPERTY_LENGHT or > MAX_PROPERTY_LENGHT)
+            if (building.Length is < Constraints.MINIMUM_TITLE_LENGTH or > Constraints.SHORT_TITLE_LENGTH)
             {
-                return Errors.General.ValueIsRequired("building");
+                return Errors.General.ValueIsRequired(nameof(building));
             }
 
             return new Location(postalCode, country, city, street, building);

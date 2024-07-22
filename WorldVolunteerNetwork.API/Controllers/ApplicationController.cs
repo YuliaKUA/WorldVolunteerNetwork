@@ -15,13 +15,13 @@ namespace WorldVolunteerNetwork.API.Controllers
 
         protected IActionResult BadRequest(Error? error)
         {
-            var envelope = Envelope.Error(error);
+            var envelope = Envelope.Ok(error);
             return base.BadRequest(envelope);
         }
 
         protected IActionResult NotFound(Error? error)
         {
-            var envelope = Envelope.Error(error);
+            var envelope = Envelope.Ok(error);
             return base.NotFound(envelope);
         }
     }

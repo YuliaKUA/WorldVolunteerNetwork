@@ -7,11 +7,11 @@ using WorldVolunteerNetwork.Domain.ValueObjects;
 
 namespace WorldVolunteerNetwork.Application.Features.Organizers.CreatePost
 {
-    public class CreatePostsService
+    public class CreatePostsHandler
     {
         private readonly IPostsRepository _postsRepository;
         private readonly IOrganizersRepository _organizersRepository;
-        public CreatePostsService(IPostsRepository postsRepository, IOrganizersRepository organizersRepository)
+        public CreatePostsHandler(IPostsRepository postsRepository, IOrganizersRepository organizersRepository)
         {
             _postsRepository = postsRepository;
             _organizersRepository = organizersRepository;
@@ -58,13 +58,13 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreatePost
             // add post to organizer
             organizer.Value.PublishPost(post.Value);
 
-            var idResult = await _organizersRepository.Save(organizer.Value, ct);
+            var idResult = await _organizersRepository.Save(ct);
 
             if (idResult.IsFailure)
                 return idResult.Error;
 
 
-            return idResult;
+            return organizer.Value.Id;
         }
 
         //public async Task<GetPostsResponse> Get(GetPostsRequest request, CancellationToken ct)

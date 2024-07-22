@@ -1,8 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.RegularExpressions;
 using WorldVolunteerNetwork.Domain.Common;
-using WorldVolunteerNetwork.Domain.Entities;
 
 namespace WorldVolunteerNetwork.Domain.ValueObjects
 {
@@ -21,11 +18,19 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
         {
             if (age.IsEmpty())
             {
-                return Errors.General.ValueIsRequired("age");
+                return Errors.General.ValueIsRequired(nameof(age));
+            }
+            if (!int.TryParse(age, out int n))
+            {
+                return Errors.General.ItsNotNumber(nameof(age));
+            }
+            if (Convert.ToInt32(age) < Constraints.MINIMUM_AGE)
+            {
+                return Errors.General.ValueIsInvalid(nameof(age));
             }
             if (gender.IsEmpty())
             {
-                return Errors.General.ValueIsRequired("gender");
+                return Errors.General.ValueIsRequired(nameof(gender));
             }
 
             return new Requirement(age, gender);

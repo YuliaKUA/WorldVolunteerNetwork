@@ -34,7 +34,7 @@ namespace WorldVolunteerNetwork.Infrastructure.Repositories
             return organizer;
         }
 
-        public async Task<Result<Guid, Error>> Save(Organizer organizer, CancellationToken ct)
+        public async Task<Result<int, Error>> Save(CancellationToken ct)
         {
             //_writeDbContext.Organizers.Attach(organizer);
             //var state = _writeDbContext.Entry(organizer).State;
@@ -42,9 +42,22 @@ namespace WorldVolunteerNetwork.Infrastructure.Repositories
             var result = await _writeDbContext.SaveChangesAsync(ct);
 
             if (result == 0)
-                return Errors.General.CanNotBeSave("Organizer");
+                return Errors.General.SaveFailure("Organizer");
 
-            return organizer.Id;
+            return result;
+        }
+
+        public async Task<Result<int, Error>> Attach(CancellationToken ct)
+        {
+            //_writeDbContext.Organizers.Attach(organizer);
+            //var state = _writeDbContext.Entry(organizer).State;
+
+            var result = await _writeDbContext.SaveChangesAsync(ct);
+
+            if (result == 0)
+                return Errors.General.SaveFailure("Organizer");
+
+            return result;
         }
     }
 }

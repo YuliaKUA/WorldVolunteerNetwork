@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreatePost;
+using WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto;
 
 namespace WorldVolunteerNetwork.Application
 {
@@ -9,16 +10,17 @@ namespace WorldVolunteerNetwork.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddServices();
+            services.AddHandlers();
             services.AddValidatorsFromAssembly(typeof(DependencyRegistration).Assembly);
 
             return services;
         }
 
-        private static IServiceCollection AddServices(this IServiceCollection services)
+        private static IServiceCollection AddHandlers(this IServiceCollection services)
         {
-            services.AddScoped<CreatePostsService>();
-            services.AddScoped<CreateOrganizersService>();
+            services.AddScoped<CreatePostsHandler>();
+            services.AddScoped<CreateOrganizersHandler>();
+            services.AddScoped<UploadOrganizerPhotoHandler>();
             
             return services;
         }

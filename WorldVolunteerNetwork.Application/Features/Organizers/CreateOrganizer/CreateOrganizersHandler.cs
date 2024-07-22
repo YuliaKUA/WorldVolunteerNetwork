@@ -5,10 +5,10 @@ using WorldVolunteerNetwork.Domain.ValueObjects;
 
 namespace WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer
 {
-    public class CreateOrganizersService
+    public class CreateOrganizersHandler
     {
         private readonly IOrganizersRepository _organizersRepository;
-        public CreateOrganizersService(IOrganizersRepository organizersRepository)
+        public CreateOrganizersHandler(IOrganizersRepository organizersRepository)
         {
             _organizersRepository = organizersRepository;
         }
@@ -31,11 +31,11 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer
 
             await _organizersRepository.Add(organizer.Value, ct);
 
-            var idResult = await _organizersRepository.Save(organizer.Value, ct);
+            var idResult = await _organizersRepository.Save(ct);
             if (idResult.IsFailure)
                 return idResult.Error;
 
-            return idResult;
+            return organizer.Value.Id;
         }
     }
 }

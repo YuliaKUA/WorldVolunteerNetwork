@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Results;
-using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.API.Validation;
 //Fluent validation: override for auto validation
@@ -13,14 +12,19 @@ public class CustomResultFactory : IFluentValidationAutoValidationResultFactory
     {
         if (validationProblemDetails is null)
         {
-            return new BadRequestObjectResult("Invalid error");
+            throw new("ValidationProblemDetails is null");
         }
-        var validationError = validationProblemDetails.Errors.First();
-        var errorString = validationError.Value.First();
-        var error = Error.Deserialize(errorString);
+        List<Envelope.ErrorInfo> errorInfos = [];
+        foreach (var (invalidField, validationErrors) in validationProblemDetails.Errors)
+        {
+            var errors = validationErrors
+                .Select(Domain.Common.Error.Deserialize)
+                .Select(e => new Envelope.ErrorInfo(e, invalidField));
 
+            errorInfos.AddRange(errors);
+        }
 
-        var envelope = Envelope.Error(error);
+        var envelope = Envelope.Error(errorInfos);
 
         return new BadRequestObjectResult(envelope);
     }
