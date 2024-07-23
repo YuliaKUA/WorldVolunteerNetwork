@@ -20,7 +20,7 @@ namespace WorldVolunteerNetwork.Infrastructure.ClientServices
             _logger = logger;
         }
 
-        public async Task<Result<string, Error>> UploadPhoto(IFormFile photo, Guid photoId)
+        public async Task<Result<string, Error>> UploadPhoto(IFormFile photo, string path)
         {
             try
             {
@@ -37,8 +37,6 @@ namespace WorldVolunteerNetwork.Infrastructure.ClientServices
 
                 await using (var stream = photo.OpenReadStream())
                 {
-                    var path = photoId + Path.GetExtension(photo.FileName);
-
                     var putObjectArgs = new PutObjectArgs()
                         .WithBucket(PhotoBucket)
                         .WithStreamData(stream)
@@ -50,6 +48,37 @@ namespace WorldVolunteerNetwork.Infrastructure.ClientServices
                     return response.ObjectName;
                 }
 
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return Errors.General.SaveFailure("photo");
+            }
+        }
+
+        public async Task<Result<bool, Error>> RemovePhoto(string path)
+        {
+            try
+            {
+                var bucketExistsArgs = new BucketExistsArgs()
+                    .WithBucket(PhotoBucket);
+                var bucketExist = await _minioClient.BucketExistsAsync(bucketExistsArgs);
+
+                if (bucketExist == false)
+                {
+                    var makeBucketArgs = new MakeBucketArgs()
+                        .WithBucket(PhotoBucket);
+                    await _minioClient.MakeBucketAsync(makeBucketArgs);
+                }
+
+
+                var removeObjectArgs = new RemoveObjectArgs()
+                    .WithBucket(PhotoBucket)
+                    .WithObject(path);
+
+                await _minioClient.RemoveObjectAsync(removeObjectArgs);
+                return true;
 
             }
             catch (Exception ex)

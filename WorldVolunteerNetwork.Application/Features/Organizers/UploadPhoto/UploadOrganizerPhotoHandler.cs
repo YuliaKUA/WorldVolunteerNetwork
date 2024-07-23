@@ -28,24 +28,17 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto
             }
 
             var photoId = Guid.NewGuid();
-
-            // upload photo to minio
-            var path = await _minioProvider.UploadPhoto(request.File, photoId);
-            if (path.IsFailure)
-            {
-                return path.Error;
-            }
+            var path = photoId + Path.GetExtension(request.File.FileName);
 
             // create photo
             var photo = Photo.Create(
-                path.Value,
+                path,
                 request.isMain);
 
             if (photo.IsFailure)
             {
                 return photo.Error;
             }
-
 
             // upload photo for organizer
             var isSuccessUpload = organizer.Value.AddPhoto(photo.Value);
@@ -54,10 +47,18 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto
                 return isSuccessUpload.Error;
             }
 
+            // upload photo to minio
+            var objectName = await _minioProvider.UploadPhoto(request.File, path);
+            if (objectName.IsFailure)
+            {
+                return objectName.Error;
+            }
+
             // save photo to DB (for organizer)
             var result = await _organizersRepository.Save(ct);
             if (result.IsFailure)
             {
+                await _minioProvider.RemovePhoto(path);
                 return result.Error;
             }
 

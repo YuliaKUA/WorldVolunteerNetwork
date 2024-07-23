@@ -1,15 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WorldVolunteerNetwork.Domain.Common;
 using WorldVolunteerNetwork.Domain.ValueObjects;
 
 namespace WorldVolunteerNetwork.Domain.Entities
 {
-    public partial class Post
+    public partial class Post : Common.Entity
     {
         public const int MAX_PROPERTY_LENGHT = 500;
         public const int MAX_NAME_LENGHT = 250;

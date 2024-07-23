@@ -3,7 +3,7 @@ using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.Domain.Entities
 {
-    public class Organizer
+    public class Organizer : Common.Entity
     {
         public const int PHOTO_COUNT_LIMIT = 5;
         private Organizer() { }
@@ -55,7 +55,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
 
         public Result<bool, Error> AddPhoto(Photo photo)
         {
-            if (_photos.Count > PHOTO_COUNT_LIMIT)
+            if (_photos.Count >= PHOTO_COUNT_LIMIT)
                 return Errors.Organizers.PhotoCountLimit(PHOTO_COUNT_LIMIT);
             
             _photos.Add(photo);

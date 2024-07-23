@@ -24,6 +24,8 @@ namespace WorldVolunteerNetwork.Infrastructure.Repositories
         {
             var organizer = await _writeDbContext.Organizers
                 .Include(o => o.Posts)
+                .Include(o => o.Photos)
+                .Include(o => o.SocialMedias)
                 .FirstOrDefaultAsync(o => o.Id == id, cancellationToken: ct);
 
             if (organizer is null)
@@ -35,19 +37,6 @@ namespace WorldVolunteerNetwork.Infrastructure.Repositories
         }
 
         public async Task<Result<int, Error>> Save(CancellationToken ct)
-        {
-            //_writeDbContext.Organizers.Attach(organizer);
-            //var state = _writeDbContext.Entry(organizer).State;
-
-            var result = await _writeDbContext.SaveChangesAsync(ct);
-
-            if (result == 0)
-                return Errors.General.SaveFailure("Organizer");
-
-            return result;
-        }
-
-        public async Task<Result<int, Error>> Attach(CancellationToken ct)
         {
             //_writeDbContext.Organizers.Attach(organizer);
             //var state = _writeDbContext.Entry(organizer).State;

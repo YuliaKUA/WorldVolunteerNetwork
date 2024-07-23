@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorldVolunteerNetwork.Domain.Entities
 {
-    public class Vaccination
+    public class Vaccination : Common.Entity
     {
         private Vaccination() { }
         public Vaccination(string name, DateTime applied)

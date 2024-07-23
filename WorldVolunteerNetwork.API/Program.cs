@@ -19,7 +19,9 @@ builder.Services.AddFluentValidationAutoValidation(configuration =>
 });
 
 
-builder.Services.AddHttpLogging(option => { });
+builder.Services.AddHttpLogging(options => { });
+
+builder.Services.AddHostedService<Cleaner>();
 
 var app = builder.Build();
 
@@ -38,3 +40,16 @@ app.UseSwaggerUI();
 app.MapControllers();
 
 app.Run();
+
+
+public class Cleaner : BackgroundService
+{
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        while (!stoppingToken.IsCancellationRequested)
+        {
+            Console.WriteLine(".....");
+            await Task.Delay(3000, stoppingToken);
+        }
+    }
+}

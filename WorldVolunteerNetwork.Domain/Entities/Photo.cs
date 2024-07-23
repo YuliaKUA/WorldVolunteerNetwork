@@ -3,7 +3,7 @@ using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.Domain.Entities
 {
-    public class Photo
+    public class Photo : Common.Entity
     {
         private Photo() { }
         private Photo(string path, bool isMain)

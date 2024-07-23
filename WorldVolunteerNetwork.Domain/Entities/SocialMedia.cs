@@ -4,7 +4,7 @@ using WorldVolunteerNetwork.Domain.ValueObjects;
 
 namespace WorldVolunteerNetwork.Domain.Entities
 {
-    public class SocialMedia
+    public class SocialMedia : Common.Entity
     {
         private SocialMedia() { }
         private SocialMedia(
