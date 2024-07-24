@@ -216,41 +216,6 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                     b.ToTable("posts", (string)null);
                 });
 
-            modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.SocialMedia", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<string>("Link")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("link");
-
-                    b.Property<Guid?>("OrganizerId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("organizer_id");
-
-                    b.ComplexProperty<Dictionary<string, object>>("Social", "WorldVolunteerNetwork.Domain.Entities.SocialMedia.Social#Social", b1 =>
-                        {
-                            b1.IsRequired();
-
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasColumnType("text")
-                                .HasColumnName("social");
-                        });
-
-                    b.HasKey("Id")
-                        .HasName("pk_social_media");
-
-                    b.HasIndex("OrganizerId")
-                        .HasDatabaseName("ix_social_media_organizer_id");
-
-                    b.ToTable("social_media", (string)null);
-                });
-
             modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Vaccination", b =>
                 {
                     b.Property<Guid>("Id")
@@ -280,6 +245,39 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                     b.ToTable("vaccinations", (string)null);
                 });
 
+            modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Organizer", b =>
+                {
+                    b.OwnsMany("WorldVolunteerNetwork.Domain.Entities.SocialMedia", "SocialMedias", b1 =>
+                        {
+                            b1.Property<Guid>("OrganizerId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
+
+                            b1.Property<string>("Link")
+                                .IsRequired()
+                                .HasColumnType("text");
+
+                            b1.Property<string>("Social")
+                                .IsRequired()
+                                .HasColumnType("text");
+
+                            b1.HasKey("OrganizerId", "Id");
+
+                            b1.ToTable("organizers");
+
+                            b1.ToJson("social_medias");
+
+                            b1.WithOwner()
+                                .HasForeignKey("OrganizerId")
+                                .HasConstraintName("fk_organizers_organizers_organizer_id");
+                        });
+
+                    b.Navigation("SocialMedias");
+                });
+
             modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Photo", b =>
                 {
                     b.HasOne("WorldVolunteerNetwork.Domain.Entities.Organizer", null)
@@ -301,14 +299,6 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                         .HasConstraintName("fk_posts_organizers_organizer_id");
                 });
 
-            modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.SocialMedia", b =>
-                {
-                    b.HasOne("WorldVolunteerNetwork.Domain.Entities.Organizer", null)
-                        .WithMany("SocialMedias")
-                        .HasForeignKey("OrganizerId")
-                        .HasConstraintName("fk_social_media_organizers_organizer_id");
-                });
-
             modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Vaccination", b =>
                 {
                     b.HasOne("WorldVolunteerNetwork.Domain.Entities.Post", null)
@@ -322,8 +312,6 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                     b.Navigation("Photos");
 
                     b.Navigation("Posts");
-
-                    b.Navigation("SocialMedias");
                 });
 
             modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Post", b =>

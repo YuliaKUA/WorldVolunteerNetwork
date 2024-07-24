@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WorldVolunteerNetwork.Domain.Entities;
+using WorldVolunteerNetwork.Domain.ValueObjects;
 
 namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
 {
@@ -17,8 +18,16 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
 
             builder.Property(v => v.ActsBehalfCharitableOrganization).IsRequired();
 
+            builder.OwnsMany(v => v.SocialMedias, navigationBuilder =>
+            {
+                navigationBuilder.ToJson();
+                navigationBuilder.Property(s => s.Social)
+                    .HasConversion(
+                        s => s.Value, 
+                        s => Social.Create(s).Value);
+            });
+
             builder.HasMany(v => v.Photos).WithOne();
-            builder.HasMany(v => v.SocialMedias).WithOne();
             builder.HasMany(v => v.Posts).WithOne();
         }
     }

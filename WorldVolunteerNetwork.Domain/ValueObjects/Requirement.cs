@@ -3,7 +3,7 @@ using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.Domain.ValueObjects
 {
-    public class Requirement
+    public class Requirement : Common.ValueObject
     {
         public string? Age { get; private set; }
         public string? Gender { get; private set; }
@@ -34,6 +34,12 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
             }
 
             return new Requirement(age, gender);
+        }
+
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Age;
+            yield return Gender;
         }
     }
 }

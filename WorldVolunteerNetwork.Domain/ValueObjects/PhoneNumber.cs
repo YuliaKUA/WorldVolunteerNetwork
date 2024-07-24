@@ -4,7 +4,7 @@ using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.Domain.ValueObjects
 {
-    public record PhoneNumber
+    public class PhoneNumber : Common.ValueObject
     {
         private const string russionPhoneRegex = @"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$";
         public string Number { get; }
@@ -26,6 +26,11 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
                 return Errors.General.ValueIsInvalid("phone number");
             }
             return new PhoneNumber(input);
+        }
+
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Number;
         }
     }
 }

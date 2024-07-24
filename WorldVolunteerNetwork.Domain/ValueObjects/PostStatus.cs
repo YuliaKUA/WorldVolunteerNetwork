@@ -4,7 +4,7 @@ using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.Domain.ValueObjects
 {
-    public record PostStatus
+    public class PostStatus : Common.ValueObject
     {
         public static readonly PostStatus Active = new(nameof(Active));
         public static readonly PostStatus Done = new(nameof(Done));
@@ -30,6 +30,11 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
             }
 
             return new PostStatus(status);
+        }
+
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Value;
         }
     }
 }

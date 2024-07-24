@@ -4,9 +4,8 @@ using WorldVolunteerNetwork.Domain.ValueObjects;
 
 namespace WorldVolunteerNetwork.Domain.Entities
 {
-    public class SocialMedia : Common.Entity
+    public class SocialMedia : Common.ValueObject
     {
-        private SocialMedia() { }
         private SocialMedia(
             string link,
             Social social)
@@ -15,7 +14,6 @@ namespace WorldVolunteerNetwork.Domain.Entities
             Social = social;
         }
 
-        public Guid Id { get; set; }
         public string Link { get; set; }
         public Social Social { get; set; }
 
@@ -29,6 +27,12 @@ namespace WorldVolunteerNetwork.Domain.Entities
             }
 
             return new SocialMedia(link, social);
+        }
+
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Link;
+            yield return Social;
         }
     }
 }

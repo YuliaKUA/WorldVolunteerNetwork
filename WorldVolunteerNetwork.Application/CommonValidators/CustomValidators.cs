@@ -41,6 +41,15 @@ namespace WorldVolunteerNetwork.Application.Validators
                 .WithError(Errors.General.InvalidLength());
         }
 
+        public static IRuleBuilderOptions<T, TProperty> GreaterThanWithError<T, TProperty>(
+         this IRuleBuilder<T, TProperty> ruleBuilder, TProperty valueToCompare)
+         where TProperty : IComparable<TProperty>, IComparable
+        {
+            return ruleBuilder
+                .GreaterThan(valueToCompare)
+                .WithError(Errors.General.InvalidLength());
+        }
+
         public static IRuleBuilderOptions<T, TProperty?> GreaterThanWithError<T, TProperty>(
             this IRuleBuilder<T, TProperty?> ruleBuilder, TProperty valueToCompare)
             where TProperty : struct, IComparable<TProperty>, IComparable

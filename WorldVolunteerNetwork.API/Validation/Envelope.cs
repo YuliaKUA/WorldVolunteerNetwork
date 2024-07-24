@@ -5,44 +5,37 @@ namespace WorldVolunteerNetwork.API.Validation;
 public class Envelope
 {
     public object? Result { get; }
-    public List<ErrorInfo>? errorInfo { get; }
-    private Envelope(object? result, List<ErrorInfo>? errors)
+    public List<ErrorInfo>? ErrorInfo { get; }
+    public DateTime TimeGenerated { get; }
+
+    private Envelope(object? result, IEnumerable<ErrorInfo>? errors)
     {
         Result = result;
-        errorInfo = errors;
+        ErrorInfo = errors?.ToList();
         TimeGenerated = DateTime.Now;
     }
-
-
-    public DateTime TimeGenerated { get; }
 
     public static Envelope Ok(object? result = null)
     {
         return new(result, null);
     }
-    public static Envelope Error(List<ErrorInfo>? errors)
+
+    public static Envelope Error(params ErrorInfo[] errors)
     {
         return new(null, errors);
     }
-
-    //public static Envelope Error(List<Error>? errors)
-    //{
-    //    var errorInfo = errors?.Select(e => new ErrorInfo(e));
-    //    return new(null, errorInfo);
-    //}
-
-    public class ErrorInfo
-    {
-        public string? ErrorCode { get; }
-        public string? ErrorMessage { get; }
-        public string? InvalidField { get; }
-
-        public ErrorInfo(Error? error, string? invalidField = null)
-        {
-            ErrorCode = error?.Code;
-            ErrorMessage = error?.Message;
-            InvalidField = invalidField;
-        }
-    }
 }
 
+public class ErrorInfo
+{
+    public string? ErrorCode { get; }
+    public string? ErrorMessage { get; }
+    public string? InvalidField { get; }
+
+    public ErrorInfo(Error? error, string? invalidField = null)
+    {
+        ErrorCode = error?.Code;
+        ErrorMessage = error?.Message;
+        InvalidField = invalidField;
+    }
+}

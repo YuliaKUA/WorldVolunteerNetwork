@@ -3,16 +3,16 @@ using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.Domain.ValueObjects
 {
-    public record Social
+    public class Social : Common.ValueObject
     {
         public static readonly Social Telegram = new(nameof(Telegram));
-        public static readonly Social Instargam = new(nameof(Instargam));
+        public static readonly Social Instagram = new(nameof(Instagram));
         public static readonly Social WhatsApp = new(nameof(WhatsApp));
         public static readonly Social VK = new(nameof(VK));
         public static readonly Social FaceBook = new(nameof(FaceBook));
         public static readonly Social YouTube = new(nameof(YouTube));
 
-        private static readonly Social[] _all = [Telegram, Instargam, WhatsApp, VK, FaceBook];
+        private static readonly Social[] _all = [Telegram, Instagram, WhatsApp, VK, FaceBook];
         public string Value { get; }
 
         public Social() { }
@@ -35,6 +35,11 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
             }
 
             return new Social(social);
+        }
+
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Value;
         }
     }
 }

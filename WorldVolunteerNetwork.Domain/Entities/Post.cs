@@ -42,8 +42,6 @@ namespace WorldVolunteerNetwork.Domain.Entities
             DateCreate = dateCreate;
         }
 
-        public Guid Id { get; private set; }
-
         public string Name { get; private set; } = string.Empty;
         public string? Duration { get; private set; }
         public string? Employment { get; private set; }

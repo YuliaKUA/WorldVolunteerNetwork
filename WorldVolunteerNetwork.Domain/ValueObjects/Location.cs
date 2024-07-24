@@ -1,10 +1,9 @@
 ﻿using CSharpFunctionalExtensions;
-using System.Text.RegularExpressions;
 using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.Domain.ValueObjects
 {
-    public record Location
+    public class Location : Common.ValueObject
     {
         public const int POSTAL_CODE_LENGTH = 6;
         public Location(string postalCode, string country, string city, string street, string building)
@@ -51,6 +50,15 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
             }
 
             return new Location(postalCode, country, city, street, building);
+        }
+
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return PostalCode;
+            yield return Country;
+            yield return City;
+            yield return Street;
+            yield return Building;
         }
     }
 
