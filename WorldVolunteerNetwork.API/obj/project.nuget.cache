@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "zMYDp7x4kIA=",
+  "dgSpecHash": "7+SUGZ65qh4=",
   "success": true,
   "projectFilePath": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alexey\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\communitytoolkit.highperformance\\8.2.2\\communitytoolkit.highperformance.8.2.2.nupkg.sha512",
-    "C:\\Users\\Alexey\\.nuget\\packages\\csharpfunctionalextensions\\2.42.5\\csharpfunctionalextensions.2.42.5.nupkg.sha512",
+    "C:\\Users\\Alexey\\.nuget\\packages\\csharpfunctionalextensions\\3.1.0\\csharpfunctionalextensions.3.1.0.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\efcore.namingconventions\\8.0.3\\efcore.namingconventions.8.0.3.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",

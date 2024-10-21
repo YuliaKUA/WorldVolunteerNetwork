@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Minio;
 using WorldVolunteerNetwork.Application.Abstractions;
 using WorldVolunteerNetwork.Application.Features.Organizers;
+using WorldVolunteerNetwork.Application.Features.Organizers.GetPhoto;
 using WorldVolunteerNetwork.Application.Features.Posts;
 using WorldVolunteerNetwork.Infrastructure.ClientServices;
 using WorldVolunteerNetwork.Infrastructure.DbContexts;
@@ -47,6 +48,7 @@ namespace WorldVolunteerNetwork.Infrastructure
         {
             services.AddScoped<GetPostsQuery>();
             services.AddScoped<GetAllPostsQuery>();
+            services.AddScoped<GetAllOrganizerPhotosQuery>();
 
             return services;
         }

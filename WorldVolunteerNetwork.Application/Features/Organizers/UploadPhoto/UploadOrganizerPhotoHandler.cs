@@ -31,7 +31,7 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto
             var path = photoId + Path.GetExtension(request.File.FileName);
 
             // create photo
-            var photo = Photo.Create(
+            var photo = OrganizerPhoto.Create(
                 path,
                 request.isMain);
 

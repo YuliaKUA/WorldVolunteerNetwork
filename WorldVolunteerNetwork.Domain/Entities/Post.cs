@@ -59,8 +59,8 @@ namespace WorldVolunteerNetwork.Domain.Entities
         public DateTimeOffset SubmissionDeadline { get; private set; }
         public DateTimeOffset DateCreate { get; private set; }
 
-        public IReadOnlyList<Photo> Photos => _photos;
-        private readonly List<Photo> _photos = [];
+        public IReadOnlyList<PostPhoto> Photos => _photos;
+        private readonly List<PostPhoto> _photos = [];
         public IReadOnlyList<Vaccination> Vaccinations => _vaccinations;
         private readonly List<Vaccination> _vaccinations = [];
 

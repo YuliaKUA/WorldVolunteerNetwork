@@ -56,7 +56,7 @@
           "dependencies": {
             "CSharpFunctionalExtensions": {
               "target": "Package",
-              "version": "[2.42.5, )"
+              "version": "[3.1.0, )"
             },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
@@ -135,7 +135,7 @@
           "dependencies": {
             "CSharpFunctionalExtensions": {
               "target": "Package",
-              "version": "[2.42.5, )"
+              "version": "[3.1.0, )"
             }
           },
           "imports": [

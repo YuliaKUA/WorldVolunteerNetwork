@@ -9,15 +9,15 @@ namespace WorldVolunteerNetwork.API.Controllers
     {
         
 
-        [HttpGet("ef-core")]
-        public async Task<IActionResult> Get(
-            [FromServices] GetPostsQuery query,
-            [FromQuery] GetPostsRequest request,
-            CancellationToken ct)
-        {
-            var response = await query.Handle(request, ct);
-            return Ok(response);
-        }
+        //[HttpGet("ef-core")]
+        //public async Task<IActionResult> Get(
+        //    [FromServices] GetPostsQuery query,
+        //    [FromQuery] GetPostsRequest request,
+        //    CancellationToken ct)
+        //{
+        //    var response = await query.Handle(request, ct);
+        //    return Ok(response);
+        //}
 
         [HttpGet("dapper")]
         public async Task<IActionResult> Get(

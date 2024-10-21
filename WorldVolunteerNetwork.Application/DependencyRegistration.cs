@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreatePost;
+using WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto;
 using WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto;
 
 namespace WorldVolunteerNetwork.Application
@@ -21,6 +22,7 @@ namespace WorldVolunteerNetwork.Application
             services.AddScoped<CreatePostsHandler>();
             services.AddScoped<CreateOrganizersHandler>();
             services.AddScoped<UploadOrganizerPhotoHandler>();
+            services.AddScoped<DeleteOrganizerPhotoHandler>();
             
             return services;
         }

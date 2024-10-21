@@ -15,7 +15,9 @@ namespace WorldVolunteerNetwork.Infrastructure.DbContexts
 
         public DbSet<Post> Posts => Set<Post>();
         public DbSet<Organizer> Organizers => Set<Organizer>();
-        public DbSet<Photo> Photos => Set<Photo>();
+        public DbSet<OrganizerPhoto> Photos => Set<OrganizerPhoto>();
+        public DbSet<PostPhoto> PostPhotos => Set<PostPhoto>();
+
         public DbSet<SocialMedia> SocialMedia => Set<SocialMedia>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

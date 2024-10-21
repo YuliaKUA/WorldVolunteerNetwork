@@ -3,10 +3,10 @@ using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.Domain.Entities
 {
-    public class Photo : Common.Entity
+    public class OrganizerPhoto : Common.Entity
     {
-        private Photo() { }
-        private Photo(string path, bool isMain)
+        private protected OrganizerPhoto() { }
+        private protected OrganizerPhoto(string path, bool isMain)
         {
             Path = path;
             IsMain = isMain;
@@ -14,7 +14,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
         public string Path { get; private set; }
         public bool IsMain { get; private set; }
 
-        public static Result<Photo, Error> Create(
+        public static Result<OrganizerPhoto, Error> Create(
             string path,
             bool isMain)
         {
@@ -23,7 +23,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
                 return Errors.General.ValueIsRequired("photo: path");
             }
 
-            return new Photo(path, isMain);
+            return new OrganizerPhoto(path, isMain);
         }
     }
 }

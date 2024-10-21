@@ -4,11 +4,11 @@ using WorldVolunteerNetwork.Domain.Entities;
 
 namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
 {
-    public class PhotoConfiguration : IEntityTypeConfiguration<Photo>
+    public class OrganizerPhotoConfiguration : IEntityTypeConfiguration<OrganizerPhoto>
     {
-        public void Configure(EntityTypeBuilder<Photo> builder)
+        public void Configure(EntityTypeBuilder<OrganizerPhoto> builder)
         {
-            builder.ToTable("photos");
+            builder.ToTable("organizer_photos");
 
             builder.HasKey(p => p.Id);
         }

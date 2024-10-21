@@ -8,6 +8,7 @@ namespace WorldVolunteerNetwork.Application.Abstractions
     {
         Task<Result<string, Error>> UploadPhoto(IFormFile photo, string path);
         Task<Result<bool, Error>> RemovePhoto(string path);
+        Task<Result<IReadOnlyList<string>, Error>> GetPhotos(List<string> paths);
 
      }
 }

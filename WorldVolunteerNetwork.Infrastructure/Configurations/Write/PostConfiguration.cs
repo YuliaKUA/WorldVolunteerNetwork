@@ -44,7 +44,7 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
             });
 
 
-            builder.HasMany(p => p.Photos).WithOne();
+            builder.HasMany(p => p.Photos).WithOne().IsRequired();
             builder.HasMany(p => p.Vaccinations).WithOne();
         }
     }

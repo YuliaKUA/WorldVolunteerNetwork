@@ -1,8 +1,7 @@
-﻿using WorldVolunteerNetwork.Application.Dtos;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using WorldVolunteerNetwork.Domain.Entities;
+using WorldVolunteerNetwork.Infrastructure.ReadModels;
 
 namespace WorldVolunteerNetwork.Infrastructure.DbContexts
 {
@@ -14,7 +13,9 @@ namespace WorldVolunteerNetwork.Infrastructure.DbContexts
             _configuration = configuration;
         }
 
-        public DbSet<PostDto> Posts => Set<PostDto>();
+        public DbSet<PostReadModel> Posts => Set<PostReadModel>();
+        //public DbSet<PhotoReadModel> Photos => Set<PhotoReadModel>();
+        public DbSet<OrganizerReadModel> Organizers => Set<OrganizerReadModel>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

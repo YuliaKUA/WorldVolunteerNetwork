@@ -1,8 +1,10 @@
+using Microsoft.EntityFrameworkCore;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
 using WorldVolunteerNetwork.API.Middlewares;
 using WorldVolunteerNetwork.API.Validation;
 using WorldVolunteerNetwork.Application;
 using WorldVolunteerNetwork.Infrastructure;
+using WorldVolunteerNetwork.Infrastructure.DbContexts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +26,15 @@ builder.Services.AddHttpLogging(options => { });
 builder.Services.AddHostedService<Cleaner>();
 
 var app = builder.Build();
+
+//Apply all migrations in project || Create new DB
+//Analogue "dotnet ef database update"
+//if (app.Environment.IsDevelopment())
+//{
+//    var scope = app.Services.CreateScope();
+//    var dbContext = scope.ServiceProvider.GetRequiredService<WorldVolunteerNetworkWriteDbContext>();
+//    await dbContext.Database.MigrateAsync();
+//}
 
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpLogging();

@@ -87,5 +87,30 @@ namespace WorldVolunteerNetwork.Infrastructure.ClientServices
                 return Errors.General.SaveFailure("photo");
             }
         }
+
+        public async Task<Result<IReadOnlyList<string>, Error>> GetPhotos(List<string> paths)
+        {
+            try
+            {
+                List<string> urls = [];
+
+                foreach (var path in paths)
+                {
+                    var presignedGetObjectArgs = new PresignedGetObjectArgs()
+                        .WithBucket(PhotoBucket)
+                        .WithObject(path)
+                        .WithExpiry(60 * 60 * 24);
+
+                    var url = await _minioClient.PresignedGetObjectAsync(presignedGetObjectArgs);
+                    urls.Add(url);
+                }
+                return urls;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return Errors.General.GetFailure("photo");
+            }
+        }
     }
 }

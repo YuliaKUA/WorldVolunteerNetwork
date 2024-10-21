@@ -27,8 +27,8 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
                         s => Social.Create(s).Value);
             });
 
-            builder.HasMany(v => v.Photos).WithOne();
-            builder.HasMany(v => v.Posts).WithOne();
+            builder.HasMany(v => v.Photos).WithOne().IsRequired();
+            builder.HasMany(v => v.Posts).WithOne().IsRequired();
         }
     }
 }

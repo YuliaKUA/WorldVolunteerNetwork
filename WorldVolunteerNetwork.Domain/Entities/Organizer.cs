@@ -34,8 +34,8 @@ namespace WorldVolunteerNetwork.Domain.Entities
         public bool ActsBehalfCharitableOrganization { get; private set; } = false;
 
         
-        private readonly List<Photo> _photos = [];
-        public IReadOnlyList<Photo> Photos => _photos;
+        private readonly List<OrganizerPhoto> _photos = [];
+        public IReadOnlyList<OrganizerPhoto> Photos => _photos;
 
 
         private readonly List<SocialMedia> _socialMedias = [];
@@ -51,12 +51,22 @@ namespace WorldVolunteerNetwork.Domain.Entities
             _posts.Add(post);
         }
 
-        public Result<bool, Error> AddPhoto(Photo photo)
+        public Result<bool, Error> AddPhoto(OrganizerPhoto photo)
         {
             if (_photos.Count >= PHOTO_COUNT_LIMIT)
                 return Errors.Organizers.PhotoCountLimit(PHOTO_COUNT_LIMIT);
             
             _photos.Add(photo);
+            return true;
+        }
+
+        public Result<bool, Error> DeletePhoto(string path)
+        {
+            var photo = _photos.FirstOrDefault(p => p.Path.Contains(path));
+            if (photo is null)
+                return Errors.Organizers.PhotoNotFound();
+
+            _photos.Remove(photo);
             return true;
         }
 

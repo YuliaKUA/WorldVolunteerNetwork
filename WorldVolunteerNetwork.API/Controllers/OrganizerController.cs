@@ -5,6 +5,8 @@ using WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreatePost;
 using WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto;
 using CSharpFunctionalExtensions;
+using WorldVolunteerNetwork.Application.Features.Organizers.GetPhoto;
+using WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
@@ -77,8 +79,38 @@ namespace WorldVolunteerNetwork.API.Controllers
                 .WithExpiry(604800); // link is valid for a week
 
             var url = await minioClient.PresignedGetObjectAsync(presignedGetObjectArgs);
-            
+
             return Ok(url);
+        }
+
+        [HttpGet("photos")]
+        public async Task<IActionResult> GetPhotos(
+            [FromServices] GetAllOrganizerPhotosQuery handler,
+            [FromQuery] GetAllOrganizerPhotosRequest request,
+            CancellationToken ct)
+        {
+            var result = await handler.Handle(request, ct);
+            if (result.IsFailure)
+            {
+                return BadRequest(result.Error);
+            }
+
+            return Ok(result.Value);
+        }
+
+        [HttpDelete("photo")]
+        public async Task<IActionResult> DeletePhoto(
+            [FromServices] DeleteOrganizerPhotoHandler handler,
+            [FromQuery] DeleteOrganizerPhotoRequest request,
+            CancellationToken ct)
+        {
+            var result = await handler.Handle(request, ct);
+            if (result.IsFailure)
+            {
+                return BadRequest(result.Error);
+            }
+
+            return Ok(result.Value);
         }
     }
 }

@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Project\\net\\WorldVolunteerNetwork\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.api\\controllers\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|solutionrelative:worldvolunteernetwork.api\\controllers\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.api\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|solutionrelative:worldvolunteernetwork.api\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.infrastructure\\queries\\organizers\\getphoto\\getallorganizerphotosquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|solutionrelative:worldvolunteernetwork.infrastructure\\queries\\organizers\\getphoto\\getallorganizerphotosquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.infrastructure\\clientservices\\minioprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|solutionrelative:worldvolunteernetwork.infrastructure\\clientservices\\minioprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 193,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,15 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApplicationController.cs",
-              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.API\\Controllers\\ApplicationController.cs",
-              "RelativeDocumentMoniker": "WorldVolunteerNetwork.API\\Controllers\\ApplicationController.cs",
-              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.API\\Controllers\\ApplicationController.cs",
-              "RelativeToolTip": "WorldVolunteerNetwork.API\\Controllers\\ApplicationController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "GetAllOrganizerPhotosQuery.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Infrastructure\\Queries\\Organizers\\GetPhoto\\GetAllOrganizerPhotosQuery.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Infrastructure\\Queries\\Organizers\\GetPhoto\\GetAllOrganizerPhotosQuery.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Infrastructure\\Queries\\Organizers\\GetPhoto\\GetAllOrganizerPhotosQuery.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.Infrastructure\\Queries\\Organizers\\GetPhoto\\GetAllOrganizerPhotosQuery.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAcwCsAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T15:02:28.389Z",
+              "WhenOpened": "2024-10-05T01:15:03.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MinioProvider.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Infrastructure\\ClientServices\\MinioProvider.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Infrastructure\\ClientServices\\MinioProvider.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Infrastructure\\ClientServices\\MinioProvider.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.Infrastructure\\ClientServices\\MinioProvider.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAwwG8AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T01:14:04.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrganizerController.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.API\\Controllers\\OrganizerController.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.API\\Controllers\\OrganizerController.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.API\\Controllers\\OrganizerController.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.API\\Controllers\\OrganizerController.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAIwGEAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T01:09:28.549Z",
               "EditorCaption": ""
             }
           ]

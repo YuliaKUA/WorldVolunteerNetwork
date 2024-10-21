@@ -66,6 +66,11 @@ public static class Errors
             var label = name ?? "Value";
             return new("record.save.failure", $"{label} failed to save");
         }
+        public static Error GetFailure(string? name = null)
+        {
+            var label = name ?? "Value";
+            return new("record.get.failure", $"{label} failed to get");
+        }
 
         public static Error ItsNotNumber(string? name = null)
         {
@@ -79,6 +84,11 @@ public static class Errors
         public static Error PhotoCountLimit(int limit)
         {
             return new("organizer.photo.limit", $"Max photo count limit is {limit}");
+        }
+
+        public static Error PhotoNotFound()
+        {
+            return new("organizer.photo.not.found", "Photo for removing not found");
         }
         public static Error NotFound(Guid? id = null)
         {
