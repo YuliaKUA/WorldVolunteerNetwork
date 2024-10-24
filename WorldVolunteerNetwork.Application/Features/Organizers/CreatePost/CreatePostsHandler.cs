@@ -1,4 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
+using WorldVolunteerNetwork.Application.Abstractions;
 using WorldVolunteerNetwork.Application.Features.Posts;
 using WorldVolunteerNetwork.Domain.Common;
 using WorldVolunteerNetwork.Domain.Entities;
@@ -11,10 +12,15 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreatePost
     {
         private readonly IPostsRepository _postsRepository;
         private readonly IOrganizersRepository _organizersRepository;
-        public CreatePostsHandler(IPostsRepository postsRepository, IOrganizersRepository organizersRepository)
+        private readonly IWorldVolunteerNetworkWriteDbContext _writeDbContext;
+        public CreatePostsHandler(
+            IPostsRepository postsRepository, 
+            IOrganizersRepository organizersRepository, 
+            IWorldVolunteerNetworkWriteDbContext dbContext)
         {
             _postsRepository = postsRepository;
             _organizersRepository = organizersRepository;
+            _writeDbContext = dbContext;
         }
         public async Task<Result<Guid, Error>> Handle(CreatePostRequest request, CancellationToken ct)
         {
@@ -58,10 +64,12 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreatePost
             // add post to organizer
             organizer.Value.PublishPost(post.Value);
 
-            var idResult = await _organizersRepository.Save(ct);
+            //var idResult = await _organizersRepository.Save(ct);
 
-            if (idResult.IsFailure)
-                return idResult.Error;
+            //if (idResult.IsFailure)
+            //    return idResult.Error;
+
+            await _writeDbContext.SaveChangesAsync(ct);
 
 
             return organizer.Value.Id;

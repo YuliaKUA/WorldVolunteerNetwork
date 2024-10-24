@@ -13,6 +13,6 @@ namespace WorldVolunteerNetwork.Infrastructure.ReadModels
         public float? Reward { get; init; }
         public DateTimeOffset SubmissionDeadline { get; init; }
         public DateTimeOffset DateCreate { get; init; }
-        public List<PhotoReadModel> Photos { get; init; } = [];
+        //public List<PhotoReadModel> Photos { get; init; } = [];
     }
 }

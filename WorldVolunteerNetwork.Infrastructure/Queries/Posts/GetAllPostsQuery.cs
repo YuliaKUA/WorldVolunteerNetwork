@@ -38,7 +38,7 @@ namespace WorldVolunteerNetwork.Infrastructure.Queries.Posts
 
             Dictionary<Guid, PostDto> postsDictionary = new();
 
-            await connection.QueryAsync<PostDto, PhotoDto, PostDto>(
+            await connection.QueryAsync<PostDto, OrganizerPhotoDto, PostDto>(
                 sql, 
                 (post, photo) =>
                 {

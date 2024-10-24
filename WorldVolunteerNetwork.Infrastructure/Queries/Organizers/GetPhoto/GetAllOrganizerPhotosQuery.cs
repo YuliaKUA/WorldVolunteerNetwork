@@ -1,14 +1,7 @@
 ﻿using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WorldVolunteerNetwork.Application.Abstractions;
-using WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto;
 using WorldVolunteerNetwork.Domain.Common;
-using WorldVolunteerNetwork.Domain.Entities;
 using WorldVolunteerNetwork.Infrastructure.DbContexts;
 using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetPhoto;
 

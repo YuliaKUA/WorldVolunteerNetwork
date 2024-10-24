@@ -9,7 +9,9 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer
     public record CreateOrganizerRequest(
         Guid AccountId,
 
-        string Name,
+        string FirstName,
+        string LastName,
+        string? Patronymic,
         string? Description,
 
         int VolunteeringExperience,
@@ -22,9 +24,9 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer
     {
         public CreateOrganizerRequestValidator()
         {
-            RuleFor(x => x.Name)
-                .NotEmptyWithError()
-                .MaximumLengthWithError(Constraints.SHORT_TITLE_LENGTH);
+            RuleFor(v => new { v.FirstName, v.LastName, v.Patronymic })
+                .MustBeValueObject(v => FullName.Create(v.FirstName, v.LastName, v.Patronymic));
+
             RuleFor(x => x.Description)
                 .MaximumLengthWithError(Constraints.LONG_TITLE_LENGTH);
 

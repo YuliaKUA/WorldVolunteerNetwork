@@ -10,5 +10,5 @@ public class PostDto
     public float? Reward { get; init; }
     public DateTimeOffset SubmissionDeadline { get; init; }
     public DateTimeOffset DateCreate { get; init; }
-    public List<PhotoDto> Photos { get; init; } = [];
+    public List<OrganizerPhotoDto> Photos { get; init; } = [];
 }

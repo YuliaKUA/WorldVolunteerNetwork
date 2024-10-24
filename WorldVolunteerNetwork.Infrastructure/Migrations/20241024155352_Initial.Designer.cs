@@ -13,8 +13,8 @@ using WorldVolunteerNetwork.Infrastructure.DbContexts;
 namespace WorldVolunteerNetwork.Infrastructure.Migrations
 {
     [DbContext(typeof(WorldVolunteerNetworkWriteDbContext))]
-    [Migration("20241004215902_PhotosSegregation")]
-    partial class PhotosSegregation
+    [Migration("20241024155352_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,14 +42,28 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("description");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("name");
-
                     b.Property<int>("YearsVolunteeringExperience")
                         .HasColumnType("integer")
                         .HasColumnName("years_volunteering_experience");
+
+                    b.ComplexProperty<Dictionary<string, object>>("FullName", "WorldVolunteerNetwork.Domain.Entities.Organizer.FullName#FullName", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<string>("FirstName")
+                                .IsRequired()
+                                .HasColumnType("text")
+                                .HasColumnName("first_name");
+
+                            b1.Property<string>("LastName")
+                                .IsRequired()
+                                .HasColumnType("text")
+                                .HasColumnName("last_name");
+
+                            b1.Property<string>("Patronymic")
+                                .HasColumnType("text")
+                                .HasColumnName("patronymic");
+                        });
 
                     b.HasKey("Id")
                         .HasName("pk_organizers");
@@ -117,7 +131,7 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("name");
 
-                    b.Property<Guid?>("OrganizerId")
+                    b.Property<Guid>("OrganizerId")
                         .HasColumnType("uuid")
                         .HasColumnName("organizer_id");
 
@@ -270,6 +284,66 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                     b.ToTable("vaccinations", (string)null);
                 });
 
+            modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.VolunteerApplication", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<string>("ExperienceDescription")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("experience_description");
+
+                    b.Property<bool>("IsMemberOfOrganization")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_member_of_organization");
+
+                    b.Property<string>("NameOfOrganization")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("name_of_organization");
+
+                    b.Property<int>("YearsVolunteeringExperience")
+                        .HasColumnType("integer")
+                        .HasColumnName("years_volunteering_experience");
+
+                    b.ComplexProperty<Dictionary<string, object>>("FullName", "WorldVolunteerNetwork.Domain.Entities.VolunteerApplication.FullName#FullName", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<string>("FirstName")
+                                .IsRequired()
+                                .HasColumnType("text")
+                                .HasColumnName("first_name");
+
+                            b1.Property<string>("LastName")
+                                .IsRequired()
+                                .HasColumnType("text")
+                                .HasColumnName("last_name");
+
+                            b1.Property<string>("Patronymic")
+                                .HasColumnType("text")
+                                .HasColumnName("patronymic");
+                        });
+
+                    b.ComplexProperty<Dictionary<string, object>>("StatusApplication", "WorldVolunteerNetwork.Domain.Entities.VolunteerApplication.StatusApplication#StatusApplication", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("text")
+                                .HasColumnName("status");
+                        });
+
+                    b.HasKey("Id")
+                        .HasName("pk_volunteer_application");
+
+                    b.ToTable("volunteer_application", (string)null);
+                });
+
             modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.Organizer", b =>
                 {
                     b.OwnsMany("WorldVolunteerNetwork.Domain.Entities.SocialMedia", "SocialMedias", b1 =>
@@ -318,6 +392,8 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                     b.HasOne("WorldVolunteerNetwork.Domain.Entities.Organizer", null)
                         .WithMany("Posts")
                         .HasForeignKey("OrganizerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("fk_posts_organizers_organizer_id");
                 });
 

@@ -12,7 +12,14 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
             builder.ToTable("organizers");
 
             builder.HasKey(v => v.Id);
-            builder.Property(v => v.Name).IsRequired();
+            
+            builder.ComplexProperty(v => v.FullName, b =>
+            {
+                b.Property(f => f.FirstName).HasColumnName("first_name");
+                b.Property(f => f.LastName).HasColumnName("last_name");
+                b.Property(f => f.Patronymic).HasColumnName("patronymic").IsRequired(false);
+            });
+
             builder.Property(v => v.Description).IsRequired();
             builder.Property(v => v.YearsVolunteeringExperience).IsRequired();
 

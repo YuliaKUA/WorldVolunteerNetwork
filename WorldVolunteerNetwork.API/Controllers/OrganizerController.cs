@@ -7,10 +7,10 @@ using WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto;
 using CSharpFunctionalExtensions;
 using WorldVolunteerNetwork.Application.Features.Organizers.GetPhoto;
 using WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto;
+using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetOrganizer;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
-    [Route("[controller]")]
     public class OrganizerController : ApplicationController
     {
         [HttpPost]
@@ -102,6 +102,21 @@ namespace WorldVolunteerNetwork.API.Controllers
         public async Task<IActionResult> DeletePhoto(
             [FromServices] DeleteOrganizerPhotoHandler handler,
             [FromQuery] DeleteOrganizerPhotoRequest request,
+            CancellationToken ct)
+        {
+            var result = await handler.Handle(request, ct);
+            if (result.IsFailure)
+            {
+                return BadRequest(result.Error);
+            }
+
+            return Ok(result.Value);
+        }
+
+        [HttpGet("photosByOrganizerId")]
+        public async Task<IActionResult> GetPhotosById(
+            [FromServices] GetOrganizerByIdQuery handler,
+            [FromQuery] GetAllOrganizerRequest request,
             CancellationToken ct)
         {
             var result = await handler.Handle(request, ct);

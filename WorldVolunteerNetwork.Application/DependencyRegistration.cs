@@ -4,6 +4,7 @@ using WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreatePost;
 using WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto;
 using WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto;
+using WorldVolunteerNetwork.Application.Features.VolunteerApplication.ApplyVolunteerApplication;
 
 namespace WorldVolunteerNetwork.Application
 {
@@ -20,9 +21,12 @@ namespace WorldVolunteerNetwork.Application
         private static IServiceCollection AddHandlers(this IServiceCollection services)
         {
             services.AddScoped<CreatePostsHandler>();
+
             services.AddScoped<CreateOrganizersHandler>();
             services.AddScoped<UploadOrganizerPhotoHandler>();
             services.AddScoped<DeleteOrganizerPhotoHandler>();
+
+            services.AddScoped<ApplyVolunteerApplicationHandler>();
             
             return services;
         }

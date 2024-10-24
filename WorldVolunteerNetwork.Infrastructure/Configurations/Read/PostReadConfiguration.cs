@@ -10,11 +10,14 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Read
         public void Configure(EntityTypeBuilder<PostReadModel> builder)
         {
             builder.ToTable("posts");
+            //builder.Property(x => x.Id).HasColumnName("id");
+            builder.HasKey(p => p.Id);
 
             builder
                 .HasOne<OrganizerReadModel>()
-                .WithMany(o => o.Posts)
-                .HasForeignKey(p => p.OrganizerId);
+                .WithMany(p => p.Posts)
+                .HasForeignKey(p => p.OrganizerId)
+                .IsRequired();
 
         }
     }

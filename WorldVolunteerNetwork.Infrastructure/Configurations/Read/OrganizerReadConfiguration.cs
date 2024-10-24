@@ -22,7 +22,7 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Read
                 .WithOne()
                 .HasForeignKey(ph => ph.OrganizerId)
                 .IsRequired();
-           
+
         }
     }
 }

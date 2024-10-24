@@ -21,8 +21,10 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer
                     return SocialMedia.Create(s.Link, social).Value;
                 });
 
+            var fullName = FullName.Create(request.FirstName, request.LastName, request.Patronymic).Value;
+
             var organizer = Organizer.Create(
-                request.Name,
+                fullName,
                 request.Description,
                 request.VolunteeringExperience,
                 request.ActsBehalfCharitableOrganization,

@@ -5,7 +5,9 @@ namespace WorldVolunteerNetwork.Infrastructure.ReadModels
     public class OrganizerReadModel
     {
         public Guid Id { get; init; }
-        public string Name { get; init; } = string.Empty;
+        public string FirstName { get; init; } = string.Empty;
+        public string LastName { get; init; } = string.Empty;
+        public string Patronymic { get; init; } = string.Empty;
         public string? Description { get; init; } = string.Empty;
 
         public int YearsVolunteeringExperience { get; init; }
@@ -14,10 +16,10 @@ namespace WorldVolunteerNetwork.Infrastructure.ReadModels
 
         public bool ActsBehalfCharitableOrganization { get; init; } = false;
 
-        public IReadOnlyList<PhotoReadModel> Photos { get; init; } = [];
+        public List<PhotoReadModel> Photos { get; init; } = [];
 
-        public IReadOnlyList<SocialMediaReadModel> SocialMedias { get; init; } = [];
+        public List<SocialMediaReadModel> SocialMedias { get; init; } = [];
 
-        public IReadOnlyList<PostReadModel> Posts { get; init; } = [];
+        public List<PostReadModel> Posts { get; init; } = [];
     }
 }

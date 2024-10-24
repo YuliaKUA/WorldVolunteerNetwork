@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using WorldVolunteerNetwork.Domain.Common;
+using WorldVolunteerNetwork.Domain.ValueObjects;
 
 namespace WorldVolunteerNetwork.Domain.Entities
 {
@@ -8,7 +9,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
         public const int PHOTO_COUNT_LIMIT = 5;
         private Organizer() { }
         private Organizer(
-            string name,
+            FullName fullName,
             string? description,
             int volunteeringExperience,
             bool actsBehalfCharitableOrganization,
@@ -16,7 +17,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
             //List<Photo> photos
             )
         {
-            Name = name;
+            FullName = fullName;
             Description = description;
             YearsVolunteeringExperience = volunteeringExperience;
             ActsBehalfCharitableOrganization = actsBehalfCharitableOrganization;
@@ -24,7 +25,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
             //_photos = photos;
         }
 
-        public string Name { get; private set; }
+        public FullName FullName { get; private set; }
         public string? Description { get; private set; }
 
         public int YearsVolunteeringExperience { get; private set; }
@@ -71,17 +72,14 @@ namespace WorldVolunteerNetwork.Domain.Entities
         }
 
         public static Result<Organizer, Error> Create(
-            string name,
+            FullName name,
             string? description,
             int volunteeringExperience,
             bool actsBehalfCharitableOrganization,
             IEnumerable<SocialMedia> socialMedias
             )
         {
-            if (name.IsEmpty())
-            {
-                return Errors.General.ValueIsRequired("organizer: name");
-            }
+            
             if (description.IsEmpty())
             {
                 return Errors.General.ValueIsRequired("organizer: description");

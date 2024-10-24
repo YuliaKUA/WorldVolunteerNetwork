@@ -4,7 +4,6 @@ using WorldVolunteerNetwork.Application.Features.Posts.GetPosts;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
-    [Route("[controller]")]
     public class PostController : ApplicationController
     {
         
