@@ -8,9 +8,11 @@ using CSharpFunctionalExtensions;
 using WorldVolunteerNetwork.Application.Features.Organizers.GetPhoto;
 using WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto;
 using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetOrganizer;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
+    [Authorize]
     public class OrganizerController : ApplicationController
     {
         [HttpPost]

@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
+using System.Text;
 using WorldVolunteerNetwork.API.Middlewares;
 using WorldVolunteerNetwork.API.Validation;
 using WorldVolunteerNetwork.Application;
@@ -24,6 +27,23 @@ builder.Services.AddFluentValidationAutoValidation(configuration =>
 
 builder.Services.AddHttpLogging(options => { });
 
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        var key = "secretKeyFromConfigurationKeyKey";
+        var symmetricKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+
+        options.TokenValidationParameters = new()
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            IssuerSigningKey = symmetricKey,
+        };
+    });
+builder.Services.AddAuthorization();
+
+
 builder.Services.AddHostedService<Cleaner>();
 
 var app = builder.Build();
@@ -36,7 +56,9 @@ if (app.Environment.IsDevelopment())
     var dbContext = scope.ServiceProvider.GetRequiredService<WorldVolunteerNetworkWriteDbContext>();
     await dbContext.Database.MigrateAsync();
 
-    //var admin = new User("admin", "admin", Role.Admin);
+    //var passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword("admin");
+
+    //var admin = new User("admin", passwordHash, Role.Admin);
     //await dbContext.Users.AddAsync(admin);
     //await dbContext.SaveChangesAsync();
 }
@@ -54,6 +76,9 @@ app.UseHttpLogging();
 
 app.UseSwagger();
 app.UseSwaggerUI();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

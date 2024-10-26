@@ -44,6 +44,11 @@ public static class Errors
             var forId = id == null ? "" : $" for Id {id}";
             return new("record.not.found", $"Record not found{forId}");
         }
+        public static Error NotFound(string? str = null)
+        {
+            var forEmail = str == null ? "" : $" for Email {str}";
+            return new("record.not.found", $"Record not found{forEmail}");
+        }
         public static Error ValueIsRequired(string? name = null)
         {
             var label = name ?? "Value";
@@ -105,6 +110,14 @@ public static class Errors
         {
             var label = name ?? "Value";
             return new("record.save.failure", $"{label} failed to save");
+        }
+    }
+
+    public static class Users
+    {
+        public static Error InvalidData()
+        {
+            return new("users.invalid.data", "User's data is invalid");
         }
     }
 }

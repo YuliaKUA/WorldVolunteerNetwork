@@ -271,3 +271,5 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.genruntimeconfig.cache
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\obj\Debug\net8.0\ref\WorldVolunteerNetwork.API.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

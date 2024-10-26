@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
+using WorldVolunteerNetwork.Application.Features.Accounts.Login;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreatePost;
 using WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto;
@@ -20,6 +21,8 @@ namespace WorldVolunteerNetwork.Application
 
         private static IServiceCollection AddHandlers(this IServiceCollection services)
         {
+            services.AddScoped<LoginHandler>();
+            
             services.AddScoped<CreatePostsHandler>();
 
             services.AddScoped<CreateOrganizersHandler>();

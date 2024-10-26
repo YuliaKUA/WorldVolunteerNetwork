@@ -3,9 +3,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Minio;
 using WorldVolunteerNetwork.Application.Abstractions;
+using WorldVolunteerNetwork.Application.Features.Accounts;
 using WorldVolunteerNetwork.Application.Features.Organizers;
 using WorldVolunteerNetwork.Application.Features.Organizers.GetPhoto;
 using WorldVolunteerNetwork.Application.Features.Posts;
+using WorldVolunteerNetwork.Application.Features.VolunteerApplication;
 using WorldVolunteerNetwork.Infrastructure.ClientServices;
 using WorldVolunteerNetwork.Infrastructure.DbContexts;
 using WorldVolunteerNetwork.Infrastructure.Options;
@@ -34,6 +36,8 @@ namespace WorldVolunteerNetwork.Infrastructure
         {
             services.AddScoped<IPostsRepository, PostRepository>();
             services.AddScoped<IOrganizersRepository, OrganizerRepository>();
+            services.AddScoped<IVolunteerApplicationRepository, VolunteerApplicationRepository>();
+            services.AddScoped<IUserRepository, UsersRepository>();
 
             return services;
         }
