@@ -9,13 +9,15 @@ using WorldVolunteerNetwork.Application.Features.Organizers.GetPhoto;
 using WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto;
 using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetOrganizer;
 using Microsoft.AspNetCore.Authorization;
+using WorldVolunteerNetwork.API.Attributes;
+using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
-    [Authorize]
     public class OrganizerController : ApplicationController
     {
         [HttpPost]
+        //[HasPermissions(Permissions.Organizers.Create)] //requirment
         public async Task<IActionResult> Create(
             [FromServices] CreateOrganizersHandler createHandler,
             [FromBody] CreateOrganizerRequest request,
@@ -31,6 +33,7 @@ namespace WorldVolunteerNetwork.API.Controllers
         }
 
         [HttpPost("post")]
+        //[HasPermissions(Permissions.Posts.Create)]
         public async Task<IActionResult> Create(
             [FromServices] CreatePostsHandler postsHandler,
             [FromBody] CreatePostRequest request,
@@ -85,8 +88,8 @@ namespace WorldVolunteerNetwork.API.Controllers
             return Ok(url);
         }
 
-        [HttpGet("photos")]
-        public async Task<IActionResult> GetPhotos(
+        [HttpGet("organiser-with-photo")]
+        public async Task<IActionResult> GetOrganizerWithPhotosById(
             [FromServices] GetAllOrganizerPhotosQuery handler,
             [FromQuery] GetAllOrganizerPhotosRequest request,
             CancellationToken ct)
@@ -115,8 +118,8 @@ namespace WorldVolunteerNetwork.API.Controllers
             return Ok(result.Value);
         }
 
-        [HttpGet("photosByOrganizerId")]
-        public async Task<IActionResult> GetPhotosById(
+        [HttpGet("organizer-with-photo-by-id")]
+        public async Task<IActionResult> GetOrganizerWithPhotoPhotosById(
             [FromServices] GetOrganizerByIdQuery handler,
             [FromQuery] GetAllOrganizerRequest request,
             CancellationToken ct)
@@ -128,6 +131,20 @@ namespace WorldVolunteerNetwork.API.Controllers
             }
 
             return Ok(result.Value);
+        }
+
+        [HttpGet("all-organizer")]
+        public async Task<IActionResult> GetAllOrganizers(
+            CancellationToken ct)
+        {
+            return Ok();
+        }
+
+        [HttpGet("organizer")]
+        public async Task<IActionResult> GetOrganizerById(
+            CancellationToken ct)
+        {
+            return Ok();
         }
     }
 }

@@ -14,6 +14,7 @@ using WorldVolunteerNetwork.Infrastructure.Options;
 using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetOrganizer;
 using WorldVolunteerNetwork.Infrastructure.Queries.Posts;
 using WorldVolunteerNetwork.Infrastructure.Repositories;
+using JwtProvider = WorldVolunteerNetwork.Infrastructure.ClientServices.JwtProvider;
 
 namespace WorldVolunteerNetwork.Infrastructure
 {
@@ -45,6 +46,7 @@ namespace WorldVolunteerNetwork.Infrastructure
         private static IServiceCollection AddProviders(this IServiceCollection services)
         {
             services.AddScoped<IMinioProvider, MinioProvider>();
+            services.AddScoped<IJwtProvider, JwtProvider>();
             
             return services;
         }
@@ -79,6 +81,8 @@ namespace WorldVolunteerNetwork.Infrastructure
                 options.WithSSL(false);
 
             });
+
+            services.Configure<JwtOptions>(configuration.GetSection(JwtOptions.Jwt));
 
             return services;
         }

@@ -1,8 +1,8 @@
 ﻿namespace WorldVolunteerNetwork.Domain.Common
 {
-    public class Permissions
+    public static class Permissions
     {
-        public class Organizers
+        public static class Organizers
         {
             public const string Read = "organizers.read";
             public const string Create = "organizers.create";
@@ -10,7 +10,7 @@
             public const string Delete = "organizers.delete";
 
         }
-        public class Posts
+        public static class Posts
         {
             public const string Read = "posts.read";
             public const string Create = "posts.create";
@@ -18,7 +18,7 @@
             public const string Delete = "posts.delete";
 
         }
-        public class VolunteerApplications
+        public static class VolunteerApplications
         {
             public const string Read = "volunteer.applications.read";
             public const string Create = "volunteer.applications.create";

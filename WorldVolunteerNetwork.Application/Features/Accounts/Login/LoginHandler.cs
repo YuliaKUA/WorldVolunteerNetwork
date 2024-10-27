@@ -14,15 +14,18 @@ namespace WorldVolunteerNetwork.Application.Features.Accounts.Login
     {
         private readonly IWorldVolunteerNetworkWriteDbContext _dbContext;
         private readonly IUserRepository _userRepository;
+        private readonly IJwtProvider _jwtProvider;
         private readonly ILogger<LoginHandler> _logger;
 
         public LoginHandler(
             IWorldVolunteerNetworkWriteDbContext dbContext,
             IUserRepository userRepository,
+            IJwtProvider jwtProvider,
             ILogger<LoginHandler> logger)
         {
             _dbContext = dbContext;
             _userRepository = userRepository;
+            _jwtProvider = jwtProvider;
             _logger = logger;
         }
         public async Task<Result<string, Error>> Handle(LoginRequest request, CancellationToken ct)
@@ -44,29 +47,7 @@ namespace WorldVolunteerNetwork.Application.Features.Accounts.Login
             }
 
             //generate token
-            var jwtHandler = new JsonWebTokenHandler();
-            var key = "secretKeyFromConfigurationKeyKey";
-
-            var symmetricKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
-
-            var permissionClaims = user.Value.Role.Permissions
-                .Select(p => new Claim(Constants.Constants.Permissions, p));
-
-            var claims = permissionClaims.Concat(
-                [
-                    new Claim(Constants.Constants.Role, user.Value.Role.RoleName),
-                    new Claim(Constants.Constants.UserId, user.Value.Id.ToString()),
-                ]);
-            
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new(claims),
-                SigningCredentials = new(symmetricKey, SecurityAlgorithms.HmacSha256),
-                //Expires = DateTime.,
-            };
-
-
-            var token = jwtHandler.CreateToken(tokenDescriptor);
+            var token = _jwtProvider.Generate(user.Value);
 
 
             //return token

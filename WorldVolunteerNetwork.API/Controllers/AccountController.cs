@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using WorldVolunteerNetwork.API.Attributes;
 using WorldVolunteerNetwork.Application.Features.Accounts.Login;
+using WorldVolunteerNetwork.Domain.Common;
 using LoginRequest = WorldVolunteerNetwork.Application.Features.Accounts.Login.LoginRequest;
 
 namespace WorldVolunteerNetwork.API.Controllers
@@ -21,6 +24,13 @@ namespace WorldVolunteerNetwork.API.Controllers
             }
 
             return Ok(token.Value);
+        }
+
+        [HasPermissions(Permissions.Organizers.Create)]
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            return Ok(HttpContext.User.Claims.Select(x => x.Value));
         }
     }
 }

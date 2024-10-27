@@ -1,18 +1,51 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
 using System.Text;
+using WorldVolunteerNetwork.API.Authorization;
 using WorldVolunteerNetwork.API.Middlewares;
 using WorldVolunteerNetwork.API.Validation;
 using WorldVolunteerNetwork.Application;
 using WorldVolunteerNetwork.Domain.Entities;
 using WorldVolunteerNetwork.Infrastructure;
 using WorldVolunteerNetwork.Infrastructure.DbContexts;
+using WorldVolunteerNetwork.Infrastructure.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition(name: "Bearer", securityScheme: new()
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter a valid token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "Bearer"
+    });
+
+    options.AddSecurityRequirement(new()
+    {
+        {
+            new()
+            {
+                In = ParameterLocation.Header,
+                Name = "Bearer",
+                Reference = new()
+                {
+                    Id = "Bearer",
+                    Type = ReferenceType.SecurityScheme
+                }
+            },
+           new string[]{}
+        }
+    });
+});
 builder.Services.AddControllers();
 
 builder.Services
@@ -31,8 +64,8 @@ builder.Services.AddHttpLogging(options => { });
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
-        var key = "secretKeyFromConfigurationKeyKey";
-        var symmetricKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+        var key = builder.Configuration.GetSection(JwtOptions.Jwt).Get<JwtOptions>() ?? throw new ApplicationException("Wrong configuration");
+        var symmetricKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key.SecretKey));
 
         options.TokenValidationParameters = new()
         {
@@ -41,15 +74,27 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = symmetricKey,
         };
     });
+
 builder.Services.AddAuthorization();
+builder.Services.AddSingleton<IAuthorizationHandler, PermissionsAuthorizationsHandler>();
+builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
+
+///policy role based checks
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.AddPolicy("organizers.create", policyBuilder =>
+//    {
+//        policyBuilder.RequireClaim("Permissions", "organizers.create");
+//    });
+//});
 
 
 builder.Services.AddHostedService<Cleaner>();
 
 var app = builder.Build();
 
-//Apply all migrations in project || Create new DB
-//Analogue "dotnet ef database update"
+///Apply all migrations in project || Create new DB
+///Analogue "dotnet ef database update"
 if (app.Environment.IsDevelopment())
 {
     var scope = app.Services.CreateScope();
