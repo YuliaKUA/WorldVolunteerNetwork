@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("WorldVolunteerNetwork.API")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("WorldVolunteerNetwork.UnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+421a6d576827016ef945bea84293b056566a5183")]
-[assembly: System.Reflection.AssemblyProductAttribute("WorldVolunteerNetwork.API")]
-[assembly: System.Reflection.AssemblyTitleAttribute("WorldVolunteerNetwork.API")]
+[assembly: System.Reflection.AssemblyProductAttribute("WorldVolunteerNetwork.UnitTests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("WorldVolunteerNetwork.UnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.

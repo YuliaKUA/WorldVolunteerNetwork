@@ -3,11 +3,12 @@
   "WorkspaceRootPath": "C:\\Project\\net\\WorldVolunteerNetwork\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4770C41A-037E-4425-A8AD-5157D8229D58}|..\\Tests\\WorldVolunteerNetwork.UnitTests\\WorldVolunteerNetwork.UnitTests.csproj|c:\\project\\net\\tests\\worldvolunteernetwork.unittests\\uploadorganizerphototests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF796DBC-0DC9-4A1A-82BA-A710D330F560}|Tests\\WorldVolunteerNetwork.UnitTests\\WorldVolunteerNetwork.UnitTests.csproj|c:\\project\\net\\worldvolunteernetwork\\tests\\worldvolunteernetwork.unittests\\uploadorganizerphototests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF796DBC-0DC9-4A1A-82BA-A710D330F560}|Tests\\WorldVolunteerNetwork.UnitTests\\WorldVolunteerNetwork.UnitTests.csproj|solutionrelative:tests\\worldvolunteernetwork.unittests\\uploadorganizerphototests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.application\\features\\organizers\\uploadphoto\\uploadorganizerphotohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|solutionrelative:worldvolunteernetwork.application\\features\\organizers\\uploadphoto\\uploadorganizerphotohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF796DBC-0DC9-4A1A-82BA-A710D330F560}|Tests\\WorldVolunteerNetwork.UnitTests\\WorldVolunteerNetwork.UnitTests.csproj|c:\\project\\net\\worldvolunteernetwork\\tests\\worldvolunteernetwork.unittests\\organizerstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF796DBC-0DC9-4A1A-82BA-A710D330F560}|Tests\\WorldVolunteerNetwork.UnitTests\\WorldVolunteerNetwork.UnitTests.csproj|solutionrelative:tests\\worldvolunteernetwork.unittests\\organizerstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,26 +28,26 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "UploadOrganizerPhotoTests.cs",
-              "DocumentMoniker": "C:\\Project\\net\\Tests\\WorldVolunteerNetwork.UnitTests\\UploadOrganizerPhotoTests.cs",
-              "RelativeDocumentMoniker": "..\\Tests\\WorldVolunteerNetwork.UnitTests\\UploadOrganizerPhotoTests.cs",
-              "ToolTip": "C:\\Project\\net\\Tests\\WorldVolunteerNetwork.UnitTests\\UploadOrganizerPhotoTests.cs",
-              "RelativeToolTip": "..\\Tests\\WorldVolunteerNetwork.UnitTests\\UploadOrganizerPhotoTests.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAowEcAAAAAAAAA",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\Tests\\WorldVolunteerNetwork.UnitTests\\UploadOrganizerPhotoTests.cs",
+              "RelativeDocumentMoniker": "Tests\\WorldVolunteerNetwork.UnitTests\\UploadOrganizerPhotoTests.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\Tests\\WorldVolunteerNetwork.UnitTests\\UploadOrganizerPhotoTests.cs",
+              "RelativeToolTip": "Tests\\WorldVolunteerNetwork.UnitTests\\UploadOrganizerPhotoTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T23:37:50.383Z",
+              "WhenOpened": "2024-10-28T21:03:54.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UploadOrganizerPhotoHandler.cs",
-              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Organizers\\UploadPhoto\\UploadOrganizerPhotoHandler.cs",
-              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Application\\Features\\Organizers\\UploadPhoto\\UploadOrganizerPhotoHandler.cs",
-              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Application\\Features\\Organizers\\UploadPhoto\\UploadOrganizerPhotoHandler.cs",
-              "RelativeToolTip": "WorldVolunteerNetwork.Application\\Features\\Organizers\\UploadPhoto\\UploadOrganizerPhotoHandler.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBcAAAAMAAAA",
+              "Title": "OrganizersTests.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\Tests\\WorldVolunteerNetwork.UnitTests\\OrganizersTests.cs",
+              "RelativeDocumentMoniker": "Tests\\WorldVolunteerNetwork.UnitTests\\OrganizersTests.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\Tests\\WorldVolunteerNetwork.UnitTests\\OrganizersTests.cs",
+              "RelativeToolTip": "Tests\\WorldVolunteerNetwork.UnitTests\\OrganizersTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T23:36:14.799Z",
+              "WhenOpened": "2024-10-28T21:03:53.134Z",
               "EditorCaption": ""
             }
           ]
