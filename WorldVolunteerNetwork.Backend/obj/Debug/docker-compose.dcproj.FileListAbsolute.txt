@@ -1,0 +1,2 @@
+C:\Project\net\WorldVolunteerNetwork\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
