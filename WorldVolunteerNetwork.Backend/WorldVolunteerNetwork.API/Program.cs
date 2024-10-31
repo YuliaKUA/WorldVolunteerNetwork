@@ -1,52 +1,33 @@
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
+using Serilog;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
-using System.Text;
 using WorldVolunteerNetwork.API.Authorization;
+using WorldVolunteerNetwork.API.Extentions;
 using WorldVolunteerNetwork.API.Middlewares;
 using WorldVolunteerNetwork.API.Validation;
 using WorldVolunteerNetwork.Application;
 using WorldVolunteerNetwork.Domain.Entities;
+using WorldVolunteerNetwork.Domain.ValueObjects;
 using WorldVolunteerNetwork.Infrastructure;
 using WorldVolunteerNetwork.Infrastructure.DbContexts;
-using WorldVolunteerNetwork.Infrastructure.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSwaggerGen(options =>
-{
-    options.AddSecurityDefinition(name: "Bearer", securityScheme: new()
-    {
-        In = ParameterLocation.Header,
-        Description = "Please enter a valid token",
-        Name = "Authorization",
-        Type = SecuritySchemeType.Http,
-        BearerFormat = "JWT",
-        Scheme = "Bearer"
-    });
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.Seq(builder.Configuration.GetSection("Seq").Value ?? throw new ApplicationException("Seq configuration not found"))
+    .WriteTo.Console()
+    .WriteTo.Debug()
+    .CreateLogger();
 
-    options.AddSecurityRequirement(new()
-    {
-        {
-            new()
-            {
-                In = ParameterLocation.Header,
-                Name = "Bearer",
-                Reference = new()
-                {
-                    Id = "Bearer",
-                    Type = ReferenceType.SecurityScheme
-                }
-            },
-           new string[]{}
-        }
-    });
-});
+Log.Information("Starting up application");
+
+builder.Services.AddSwagger();
 builder.Services.AddControllers();
+
+builder.Services.AddSerilog();
+builder.Host.UseSerilog(Log.Logger);
 
 builder.Services
     .AddApplication()
@@ -57,25 +38,10 @@ builder.Services.AddFluentValidationAutoValidation(configuration =>
     configuration.OverrideDefaultResultFactoryWith<CustomResultFactory>();
 });
 
-
 builder.Services.AddHttpLogging(options => { });
 
+builder.Services.AddAuth(builder.Configuration);
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        var key = builder.Configuration.GetSection(JwtOptions.Jwt).Get<JwtOptions>() ?? throw new ApplicationException("Wrong configuration");
-        var symmetricKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key.SecretKey));
-
-        options.TokenValidationParameters = new()
-        {
-            ValidateIssuer = false,
-            ValidateAudience = false,
-            IssuerSigningKey = symmetricKey,
-        };
-    });
-
-builder.Services.AddAuthorization();
 builder.Services.AddSingleton<IAuthorizationHandler, PermissionsAuthorizationsHandler>();
 builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
 
@@ -103,6 +69,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddHostedService<Cleaner>();
 
+
 var app = builder.Build();
 
 ///Apply all migrations in project || Create new DB
@@ -115,15 +82,14 @@ if (app.Environment.IsDevelopment())
 
     //var passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword("admin");
 
-    //var admin = new User("admin", passwordHash, Role.Admin);
+    //var admin = new User(Email.Create("admin@admin").Value, passwordHash, Role.Admin);
     //await dbContext.Users.AddAsync(admin);
     //await dbContext.SaveChangesAsync();
 }
 
-
-
 app.UseMiddleware<ExceptionMiddleware>();
-app.UseHttpLogging();
+app.UseSerilogRequestLogging();
+//app.UseHttpLogging();
 
 //using (var scope = app.Services.CreateScope())
 //{

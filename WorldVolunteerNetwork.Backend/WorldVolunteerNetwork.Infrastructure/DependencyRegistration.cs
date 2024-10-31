@@ -11,6 +11,8 @@ using WorldVolunteerNetwork.Application.Features.VolunteerApplication;
 using WorldVolunteerNetwork.Infrastructure.ClientServices;
 using WorldVolunteerNetwork.Infrastructure.DbContexts;
 using WorldVolunteerNetwork.Infrastructure.Options;
+using WorldVolunteerNetwork.Infrastructure.Providers;
+using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetAllOrganizers;
 using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetOrganizer;
 using WorldVolunteerNetwork.Infrastructure.Queries.Posts;
 using WorldVolunteerNetwork.Infrastructure.Repositories;
@@ -57,6 +59,7 @@ namespace WorldVolunteerNetwork.Infrastructure
             services.AddScoped<GetAllPostsQuery>();
             services.AddScoped<GetAllOrganizerPhotosQuery>();
             services.AddScoped<GetOrganizerByIdQuery>();
+            services.AddScoped<GetAllOrganizersQuery>();
 
             return services;
         }
@@ -65,7 +68,7 @@ namespace WorldVolunteerNetwork.Infrastructure
             this IServiceCollection services,
             IConfiguration configuration)
         {
-            services.AddScoped<IWorldVolunteerNetworkWriteDbContext, WorldVolunteerNetworkWriteDbContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<WorldVolunteerNetworkWriteDbContext>();
             services.AddScoped<WorldVolunteerNetworkReadDbContext>();
 

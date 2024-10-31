@@ -19,7 +19,7 @@ namespace WorldVolunteerNetwork.Infrastructure.Repositories
         {
             var user = await _writeDbContext.Users
                 .Include(u => u.Role)
-                .FirstOrDefaultAsync(u => u.Email == email, cancellationToken: ct);
+                .FirstOrDefaultAsync(u => u.Email.Value == email, cancellationToken: ct);
 
             if (user is null)
             {

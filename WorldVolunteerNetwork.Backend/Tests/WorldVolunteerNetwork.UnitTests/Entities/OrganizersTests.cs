@@ -2,7 +2,7 @@ using FluentAssertions;
 using WorldVolunteerNetwork.Domain.Entities;
 using WorldVolunteerNetwork.Domain.ValueObjects;
 
-namespace WorldVolunteerNetwork.UnitTests
+namespace WorldVolunteerNetwork.UnitTests.Entities
 {
     public class OrganizersTests()
     {

@@ -13,12 +13,16 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto
     {
         private readonly IMinioProvider _minioProvider;
         private readonly IOrganizersRepository _organizersRepository;
+        private readonly IUnitOfWork _unitOfWork;
+
         public DeleteOrganizerPhotoHandler( 
             IMinioProvider minioProvider,
-            IOrganizersRepository organizersRepository)
+            IOrganizersRepository organizersRepository,
+            IUnitOfWork unitOfWork)
         {
             _minioProvider = minioProvider;
             _organizersRepository = organizersRepository;
+            _unitOfWork = unitOfWork;
         }
         public async Task<Result<bool, Error>> Handle(
             DeleteOrganizerPhotoRequest request,
@@ -39,10 +43,7 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto
                 return isDelete.Error;
             }
 
-            var result = await _organizersRepository.Save(ct);
-            if (result.IsFailure) { 
-                return result.Error;
-            }
+            var result = await _unitOfWork.SaveChangesAsync(ct);
 
             return true;
         }

@@ -1,5 +1,4 @@
 ﻿using CSharpFunctionalExtensions;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using WorldVolunteerNetwork.Application.Abstractions;
 using WorldVolunteerNetwork.Domain.Common;
@@ -9,14 +8,17 @@ namespace WorldVolunteerNetwork.Application.Features.VolunteerApplication.ApplyV
 {
     public class ApplyVolunteerApplicationHandler
     {
-        private readonly IWorldVolunteerNetworkWriteDbContext _dbContext;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IVolunteerApplicationRepository _volunteerApplicationRepository;
         private readonly ILogger<ApplyVolunteerApplicationHandler> _logger;
 
         public ApplyVolunteerApplicationHandler(
-            IWorldVolunteerNetworkWriteDbContext dbContext,
+            IUnitOfWork dbContext,
+            IVolunteerApplicationRepository volunteerApplicationRepository,
             ILogger<ApplyVolunteerApplicationHandler> logger) 
         {
-            _dbContext = dbContext;
+            _unitOfWork = dbContext;
+            _volunteerApplicationRepository = volunteerApplicationRepository;
             _logger = logger;
         }
         public async Task<Result<Guid, Error>> Handle(ApplyVolunteerApplicationRequest request, CancellationToken ct)
@@ -34,8 +36,8 @@ namespace WorldVolunteerNetwork.Application.Features.VolunteerApplication.ApplyV
                request.IsMemberOfOrganization,
                request.NameOfOrganization).Value;
 
-            await _dbContext.volunteerApplications.AddAsync(volunteerApplication, ct);
-            await _dbContext.SaveChangesAsync(ct);
+            await _volunteerApplicationRepository.Add(volunteerApplication, ct);
+            await _unitOfWork.SaveChangesAsync(ct);
 
             _logger.LogInformation("Volunteer application has been created {id}", volunteerApplication.Id);
 

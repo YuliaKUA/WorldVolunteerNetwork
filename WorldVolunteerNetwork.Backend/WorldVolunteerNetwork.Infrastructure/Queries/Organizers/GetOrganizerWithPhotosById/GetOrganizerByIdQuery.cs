@@ -39,19 +39,19 @@ namespace WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetOrganizer
             if (photosUrls.IsFailure)
                 return photosUrls.Error;
 
-            var organizerDto = new OrganizerDto
-            {
-                FirstName = organizer.FirstName,
-                LastName = organizer.LastName,
-                Patronymic = organizer.Patronymic,
-                Photos = organizer.Photos.Select(p => new OrganizerPhotoDto
+            var organizerDto = new OrganizerDto(
+                organizer.Id,
+                organizer.FirstName,
+                organizer.LastName,
+                organizer.Patronymic,
+                organizer.Photos.Select(p => new OrganizerPhotoDto
                 {
                     Id = p.Id,
                     Path = p.Path,
                     OrganizerId = organizer.Id,
                     IsMain = p.IsMain
                 }).ToList()
-            };
+            );
 
             return new GetOrganizerByIdResponse(organizerDto);
 

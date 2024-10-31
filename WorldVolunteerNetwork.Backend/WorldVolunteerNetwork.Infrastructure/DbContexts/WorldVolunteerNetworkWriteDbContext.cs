@@ -6,7 +6,7 @@ using WorldVolunteerNetwork.Domain.Entities;
 
 namespace WorldVolunteerNetwork.Infrastructure.DbContexts
 {
-    public class WorldVolunteerNetworkWriteDbContext : DbContext, IWorldVolunteerNetworkWriteDbContext
+    public class WorldVolunteerNetworkWriteDbContext : DbContext, IUnitOfWork
     {
         private readonly IConfiguration _configuration;
         public WorldVolunteerNetworkWriteDbContext(IConfiguration configuration)

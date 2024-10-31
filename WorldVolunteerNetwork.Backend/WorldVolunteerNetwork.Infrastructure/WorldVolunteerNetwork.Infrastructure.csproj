@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <Folder Include="Queries\Organizers\GetOrganizerById\" />
-    <Folder Include="Queries\Organizers\GetAllOrganizers\" />
   </ItemGroup>
 
 </Project>

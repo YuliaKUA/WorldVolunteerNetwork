@@ -20,6 +20,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\WorldVolunteerNetwork.API\WorldVolunteerNetwork.API.csproj" />
+    <ProjectReference Include="..\..\WorldVolunteerNetwork.Application\WorldVolunteerNetwork.Application.csproj" />
+    <ProjectReference Include="..\..\WorldVolunteerNetwork.Domain\WorldVolunteerNetwork.Domain.csproj" />
+    <ProjectReference Include="..\..\WorldVolunteerNetwork.Infrastructure\WorldVolunteerNetwork.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

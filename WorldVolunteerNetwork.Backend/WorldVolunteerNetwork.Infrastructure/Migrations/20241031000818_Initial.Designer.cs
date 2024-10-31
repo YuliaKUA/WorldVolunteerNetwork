@@ -13,8 +13,8 @@ using WorldVolunteerNetwork.Infrastructure.DbContexts;
 namespace WorldVolunteerNetwork.Infrastructure.Migrations
 {
     [DbContext(typeof(WorldVolunteerNetworkWriteDbContext))]
-    [Migration("20241024190215_AddUser")]
-    partial class AddUser
+    [Migration("20241031000818_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -275,7 +275,24 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                     b.HasKey("Id")
                         .HasName("pk_roles");
 
+                    b.HasIndex("RoleName")
+                        .HasDatabaseName("ix_roles_role_name");
+
                     b.ToTable("roles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("b8c09528-1648-4921-b493-a66669854796"),
+                            Permissions = new[] { "volunteer.applications.read", "volunteer.applications.update", "organizers.create", "organizers.read", "organizers.delete", "posts.read", "posts.delete" },
+                            RoleName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = new Guid("abefff7f-c4af-40a4-8a57-e540a85f71a3"),
+                            Permissions = new[] { "posts.create", "posts.read", "posts.update", "posts.delete", "organizers.read" },
+                            RoleName = "ORGANIZER"
+                        });
                 });
 
             modelBuilder.Entity("WorldVolunteerNetwork.Domain.Entities.User", b =>
@@ -285,11 +302,6 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("email");
-
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("text")
@@ -298,6 +310,16 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                     b.Property<Guid>("RoleId")
                         .HasColumnType("uuid")
                         .HasColumnName("role_id");
+
+                    b.ComplexProperty<Dictionary<string, object>>("Email", "WorldVolunteerNetwork.Domain.Entities.User.Email#Email", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("text")
+                                .HasColumnName("email");
+                        });
 
                     b.HasKey("Id")
                         .HasName("pk_users");

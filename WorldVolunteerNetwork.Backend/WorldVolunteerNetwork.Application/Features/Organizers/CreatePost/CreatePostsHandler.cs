@@ -12,11 +12,11 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreatePost
     {
         private readonly IPostsRepository _postsRepository;
         private readonly IOrganizersRepository _organizersRepository;
-        private readonly IWorldVolunteerNetworkWriteDbContext _writeDbContext;
+        private readonly IUnitOfWork _writeDbContext;
         public CreatePostsHandler(
             IPostsRepository postsRepository, 
             IOrganizersRepository organizersRepository, 
-            IWorldVolunteerNetworkWriteDbContext dbContext)
+            IUnitOfWork dbContext)
         {
             _postsRepository = postsRepository;
             _organizersRepository = organizersRepository;

@@ -1059,3 +1059,13 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVo
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\obj\Debug\net8.0\WorldVolunteerNetwork.UnitTests.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\obj\Debug\net8.0\WorldVolunteerNetwork.UnitTests.genruntimeconfig.cache
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\obj\Debug\net8.0\ref\WorldVolunteerNetwork.UnitTests.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.Sinks.Seq.dll

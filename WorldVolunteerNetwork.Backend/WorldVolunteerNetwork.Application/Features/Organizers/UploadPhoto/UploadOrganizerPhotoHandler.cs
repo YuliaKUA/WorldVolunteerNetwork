@@ -9,12 +9,16 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto
     {
         private readonly IMinioProvider _minioProvider;
         private readonly IOrganizersRepository _organizersRepository;
+        private readonly IUnitOfWork _unitOfWork;
+
         public UploadOrganizerPhotoHandler(
             IMinioProvider minioProvider,
-            IOrganizersRepository organizersRepository)
+            IOrganizersRepository organizersRepository,
+            IUnitOfWork unitOfWork)
         {
             _minioProvider = minioProvider;
             _organizersRepository = organizersRepository;
+            _unitOfWork = unitOfWork;
         }
         public async Task<Result<string, Error>> Handle(
             UploadOrganizerPhotoRequest request,
@@ -55,12 +59,7 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto
             }
 
             // save photo to DB (for organizer)
-            var result = await _organizersRepository.Save(ct);
-            if (result.IsFailure)
-            {
-                await _minioProvider.RemovePhoto(path);
-                return result.Error;
-            }
+            await _unitOfWork.SaveChangesAsync(ct);
 
             return path;
         }

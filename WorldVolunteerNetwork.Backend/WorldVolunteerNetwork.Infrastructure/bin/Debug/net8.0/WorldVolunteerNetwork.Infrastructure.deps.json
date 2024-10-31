@@ -2021,7 +2021,6 @@
           "CSharpFunctionalExtensions": "3.1.0",
           "FluentValidation.DependencyInjectionExtensions": "11.9.2",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.10",
-          "Microsoft.EntityFrameworkCore": "8.0.6",
           "SharpGrip.FluentValidation.AutoValidation.Mvc": "1.4.0",
           "WorldVolunteerNetwork.Domain": "1.0.0"
         },

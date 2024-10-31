@@ -10,15 +10,16 @@ using WorldVolunteerNetwork.Domain.Common;
 using WorldVolunteerNetwork.Domain.Entities;
 using WorldVolunteerNetwork.Domain.ValueObjects;
 
-namespace WorldVolunteerNetwork.UnitTests
+namespace WorldVolunteerNetwork.UnitTests.Features
 {
     public class UploadOrganizerPhotoTests
     {
         private readonly Mock<IMinioProvider> _minioProviderMock = new Mock<IMinioProvider>();
         private readonly Mock<IOrganizersRepository> _organizersRepositoryMock = new Mock<IOrganizersRepository>();
         private readonly Mock<IFormFile> _formFileMock = new();
+        private readonly Mock<IUnitOfWork> _unitOfWorkMock = new Mock<IUnitOfWork>();
 
-        public UploadOrganizerPhotoTests() 
+        public UploadOrganizerPhotoTests()
         {
             var fileName = "file.png";
 
@@ -33,10 +34,10 @@ namespace WorldVolunteerNetwork.UnitTests
             var isMain = true;
 
             var request = new UploadOrganizerPhotoRequest(
-                organizerId, 
-                _formFileMock.Object, 
+                organizerId,
+                _formFileMock.Object,
                 isMain);
-            
+
             var ct = new CancellationToken();
 
             var organizer = Organizer.Create(
@@ -51,16 +52,16 @@ namespace WorldVolunteerNetwork.UnitTests
 
             _organizersRepositoryMock.Setup(x => x.GetById(organizerId, ct))
                 .ReturnsAsync(organizer);
-            _organizersRepositoryMock.Setup(x => x.Save(ct))
-                .ReturnsAsync(1);
+            _unitOfWorkMock.Setup(x => x.SaveChangesAsync(ct)).ReturnsAsync(1);
 
             var path = "";
             _minioProviderMock.Setup(x => x.UploadPhoto(_formFileMock.Object, It.IsAny<string>()))
                .ReturnsAsync(Result.Success<string, Error>("path"));
 
             var sut = new UploadOrganizerPhotoHandler(
-                _minioProviderMock.Object, 
-                _organizersRepositoryMock.Object);
+                _minioProviderMock.Object,
+                _organizersRepositoryMock.Object,
+                _unitOfWorkMock.Object);
 
 
             //Act
@@ -68,7 +69,7 @@ namespace WorldVolunteerNetwork.UnitTests
 
             //Asssert
             _organizersRepositoryMock.Verify(x => x.GetById(organizerId, ct), Times.Once);
-            _organizersRepositoryMock.Verify(x => x.Save(ct), Times.Once);
+            _unitOfWorkMock.Verify(x => x.SaveChangesAsync(ct), Times.Once);
 
             _minioProviderMock.Verify(x => x.UploadPhoto(_formFileMock.Object, It.IsAny<string>()), Times.Once);
 

@@ -5,7 +5,9 @@ namespace WorldVolunteerNetwork.Domain.Entities
 {
     public class Role : Entity
     {
-        public static readonly Role Admin = new Role(nameof(Admin).ToUpper(), 
+        public static readonly Role Admin = new Role(
+            Guid.NewGuid(),
+            nameof(Admin).ToUpper(), 
             [
                 Common.Permissions.VolunteerApplications.Read,
                 Common.Permissions.VolunteerApplications.Update,
@@ -18,7 +20,9 @@ namespace WorldVolunteerNetwork.Domain.Entities
                 Common.Permissions.Posts.Delete
             ]);
 
-        public static readonly Role Organizer = new Role(nameof(Organizer).ToUpper(), 
+        public static readonly Role Organizer = new Role(
+            Guid.NewGuid(),
+            nameof(Organizer).ToUpper(), 
             [
                 Common.Permissions.Posts.Create,
                 Common.Permissions.Posts.Read,
@@ -28,8 +32,8 @@ namespace WorldVolunteerNetwork.Domain.Entities
                 Common.Permissions.Organizers.Read
             ]);
         private Role() { }
-        private Role(string name, string[] permissions)
-        {
+        private Role(Guid id, string name, string[] permissions) : base(id)
+        { 
             RoleName = name;
             Permissions = permissions;
 

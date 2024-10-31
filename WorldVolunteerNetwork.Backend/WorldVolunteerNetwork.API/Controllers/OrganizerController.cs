@@ -4,18 +4,17 @@ using Minio.DataModel.Args;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreatePost;
 using WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto;
-using CSharpFunctionalExtensions;
 using WorldVolunteerNetwork.Application.Features.Organizers.GetPhoto;
 using WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto;
 using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetOrganizer;
-using Microsoft.AspNetCore.Authorization;
-using WorldVolunteerNetwork.API.Attributes;
-using WorldVolunteerNetwork.Domain.Common;
+using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetAllOrganizers;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
     public class OrganizerController : ApplicationController
     {
+        public OrganizerController() { }
+
         [HttpPost]
         //[HasPermissions(Permissions.Organizers.Create)] //requirment
         public async Task<IActionResult> Create(
@@ -134,10 +133,12 @@ namespace WorldVolunteerNetwork.API.Controllers
         }
 
         [HttpGet("all-organizer")]
-        public async Task<IActionResult> GetAllOrganizers(
+        public async Task<ActionResult<GetOrganizersResponse>> GetAllOrganizers(
+            [FromServices] GetAllOrganizersQuery query,
             CancellationToken ct)
         {
-            return Ok();
+            var response = await query.Handle();
+            return Ok(response);
         }
 
         [HttpGet("organizer")]

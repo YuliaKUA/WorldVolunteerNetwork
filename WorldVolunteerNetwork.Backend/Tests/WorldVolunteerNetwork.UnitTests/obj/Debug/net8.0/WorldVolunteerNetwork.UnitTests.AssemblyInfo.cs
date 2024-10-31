@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorldVolunteerNetwork.UnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+791ed99e7cb75b685bf65ceaa424dbf8efdee110")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9941dda4d01385b4d87e7c1b002a3eaed30c06e7")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorldVolunteerNetwork.UnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorldVolunteerNetwork.UnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

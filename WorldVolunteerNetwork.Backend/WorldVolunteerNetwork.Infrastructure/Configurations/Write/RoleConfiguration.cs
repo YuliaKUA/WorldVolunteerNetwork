@@ -11,8 +11,10 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
             builder.ToTable("roles");
 
             builder.HasKey(r => r.Id);
+            builder.HasIndex(r => r.RoleName);
 
             builder.Property(r => r.Permissions);
+            builder.HasData(Role.Admin, Role.Organizer);
         }
     }
 }

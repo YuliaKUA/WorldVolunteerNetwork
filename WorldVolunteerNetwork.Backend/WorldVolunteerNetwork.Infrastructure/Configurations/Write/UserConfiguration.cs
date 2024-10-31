@@ -12,8 +12,13 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
 
             builder.HasKey(v => v.Id);
 
-            builder.Property(u => u.Email).IsRequired();
             builder.Property(u => u.PasswordHash).IsRequired();
+
+            builder.ComplexProperty(u => u.Email, b =>
+            {
+                b.Property(a => a.Value).HasColumnName("email")
+                    .IsRequired();
+            });
 
             builder.HasOne(u => u.Role).WithMany();
         }

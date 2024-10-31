@@ -36,17 +36,17 @@ namespace WorldVolunteerNetwork.Infrastructure.Repositories
             return organizer;
         }
 
-        public async Task<Result<int, Error>> Save(CancellationToken ct)
-        {
-            //_writeDbContext.Organizers.Attach(organizer);
-            //var state = _writeDbContext.Entry(organizer).State;
+        //public async Task<Result<int, Error>> Save(CancellationToken ct)
+        //{
+        //    //_writeDbContext.Organizers.Attach(organizer);
+        //    //var state = _writeDbContext.Entry(organizer).State;
 
-            var result = await _writeDbContext.SaveChangesAsync(ct);
+        //    var result = await _writeDbContext.SaveChangesAsync(ct);
 
-            if (result == 0)
-                return Errors.General.SaveFailure("Organizer");
+        //    if (result == 0)
+        //        return Errors.General.SaveFailure("Organizer");
 
-            return result;
-        }
+        //    return result;
+        //}
     }
 }

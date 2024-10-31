@@ -10,8 +10,8 @@ namespace WorldVolunteerNetwork.Infrastructure.Repositories
 {
     public class VolunteerApplicationRepository : IVolunteerApplicationRepository
     {
-        private readonly IWorldVolunteerNetworkWriteDbContext _writeDbContext;
-        public VolunteerApplicationRepository(IWorldVolunteerNetworkWriteDbContext writeDbContext) 
+        private readonly WorldVolunteerNetworkWriteDbContext _writeDbContext;
+        public VolunteerApplicationRepository(WorldVolunteerNetworkWriteDbContext writeDbContext) 
         {
             _writeDbContext = writeDbContext;
         }

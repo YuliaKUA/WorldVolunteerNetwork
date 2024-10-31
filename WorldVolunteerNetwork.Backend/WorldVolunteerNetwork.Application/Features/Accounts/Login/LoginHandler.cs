@@ -12,13 +12,13 @@ namespace WorldVolunteerNetwork.Application.Features.Accounts.Login
 {
     public class LoginHandler
     {
-        private readonly IWorldVolunteerNetworkWriteDbContext _dbContext;
+        private readonly IUnitOfWork _dbContext;
         private readonly IUserRepository _userRepository;
         private readonly IJwtProvider _jwtProvider;
         private readonly ILogger<LoginHandler> _logger;
 
         public LoginHandler(
-            IWorldVolunteerNetworkWriteDbContext dbContext,
+            IUnitOfWork dbContext,
             IUserRepository userRepository,
             IJwtProvider jwtProvider,
             ILogger<LoginHandler> logger)
