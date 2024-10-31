@@ -14,7 +14,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
         private VolunteerApplication() { }
         private VolunteerApplication(
             FullName fullName,
-            string email,
+            Email email,
             int yearsVolunteeringExperience,
             string experienceDescription,
             bool isMemberOfOrganization,
@@ -36,11 +36,11 @@ namespace WorldVolunteerNetwork.Domain.Entities
         public bool IsMemberOfOrganization { get; private set; }
         public string? NameOfOrganization { get; private set; }
         public StatusApplication StatusApplication { get; private set; }
-        public string Email {  get; private set; }
+        public Email Email {  get; private set; }
 
         public static Result<VolunteerApplication, Error> Create(
             FullName fullName,
-            string email,
+            Email email,
             int yearsVolunteeringExperience,
             string experienceDescription,
             bool isMemberOfOrganization,
@@ -61,9 +61,13 @@ namespace WorldVolunteerNetwork.Domain.Entities
                 nameOfOrganization);
         }
 
-        public void Approve()
+        public Result<bool, Error> Approve()
         {
+            if (StatusApplication == StatusApplication.Approved)
+                return Errors.VolunteersApplications.AlredyApproved();
+
             StatusApplication = StatusApplication.Approved;
+            return true;
         }
         public void Deny()
         {

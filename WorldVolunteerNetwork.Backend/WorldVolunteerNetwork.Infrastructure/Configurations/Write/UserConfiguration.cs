@@ -20,7 +20,11 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
                     .IsRequired();
             });
 
-            builder.HasOne(u => u.Role).WithMany();
+            builder.ComplexProperty(u => u.Role, builder =>
+            {
+                builder.Property(r => r.RoleName).HasColumnName("role");
+                builder.Property(r => r.Permissions).HasColumnName("permissions");
+            });
         }
     }
 }

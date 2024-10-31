@@ -34,6 +34,7 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer
             var fullName = FullName.Create(request.FirstName, request.LastName, request.Patronymic).Value;
 
             var organizer = Organizer.Create(
+                Guid.NewGuid(),
                 fullName,
                 request.Description,
                 request.VolunteeringExperience,

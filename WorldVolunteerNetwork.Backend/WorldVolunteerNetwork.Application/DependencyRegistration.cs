@@ -6,6 +6,7 @@ using WorldVolunteerNetwork.Application.Features.Organizers.CreatePost;
 using WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto;
 using WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto;
 using WorldVolunteerNetwork.Application.Features.VolunteerApplication.ApplyVolunteerApplication;
+using WorldVolunteerNetwork.Application.Features.VolunteerApplications.ApproveOrganizerApplication;
 
 namespace WorldVolunteerNetwork.Application
 {
@@ -30,6 +31,7 @@ namespace WorldVolunteerNetwork.Application
             services.AddScoped<DeleteOrganizerPhotoHandler>();
 
             services.AddScoped<ApplyVolunteerApplicationHandler>();
+            services.AddScoped<ApproveVolunteerApplicationHandler>();
             
             return services;
         }

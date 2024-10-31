@@ -12,6 +12,10 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
             builder.ToTable("organizers");
 
             builder.HasKey(v => v.Id);
+
+            builder.HasOne<User>()
+                .WithOne()
+                .HasForeignKey<Organizer>(o => o.Id);
             
             builder.ComplexProperty(v => v.FullName, b =>
             {
@@ -28,7 +32,7 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
             builder.OwnsMany(v => v.SocialMedias, navigationBuilder =>
             {
                 navigationBuilder.ToJson();
-                navigationBuilder.Property(s => s.Social)
+                navigationBuilder.Property(s => s.Social).IsRequired(false)
                     .HasConversion(
                         s => s.Value, 
                         s => Social.Create(s).Value);

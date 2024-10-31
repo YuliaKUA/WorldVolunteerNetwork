@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer;
 using WorldVolunteerNetwork.Application.Features.VolunteerApplication.ApplyVolunteerApplication;
+using WorldVolunteerNetwork.Application.Features.VolunteerApplications.ApproveOrganizerApplication;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
@@ -20,5 +21,25 @@ namespace WorldVolunteerNetwork.API.Controllers
 
             return Ok(idResult.Value);
         }
+
+        [HttpPost("approve")]
+        public async Task<IActionResult> Approve(
+            [FromServices] ApproveVolunteerApplicationHandler handler,
+            [FromBody] ApproveVolunteerApplicationRequest request,
+            CancellationToken ct)
+        {
+            var result = await handler.Handle(request, ct);
+            if (result.IsFailure)
+                return BadRequest(result.Error);
+
+            return Ok(result.Value);
+        }
+        //[HttpPost]
+        //public async Task<IActionResult> Reject(
+        //    [FromServices] ApproveOrganizerApplicationHandler handler,
+        //    [FromBody] ApproveOrganizerApplicationRequest request)
+        //{
+
+        //}
     }
 }

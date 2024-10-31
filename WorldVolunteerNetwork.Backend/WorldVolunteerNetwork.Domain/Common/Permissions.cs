@@ -10,6 +10,15 @@
             public const string Delete = "organizers.delete";
 
         }
+
+        public static class Volunteers
+        {
+            public const string Read = "volunteer.read";
+            public const string Create = "volunteer.create";
+            public const string Update = "volunteer.update";
+            public const string Delete = "volunteer.delete";
+
+        }
         public static class Posts
         {
             public const string Read = "posts.read";

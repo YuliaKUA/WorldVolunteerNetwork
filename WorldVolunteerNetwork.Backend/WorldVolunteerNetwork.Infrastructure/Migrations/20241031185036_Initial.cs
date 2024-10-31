@@ -3,8 +3,6 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace WorldVolunteerNetwork.Infrastructure.Migrations
 {
     /// <inheritdoc />
@@ -14,34 +12,18 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "organizers",
+                name: "users",
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
-                    description = table.Column<string>(type: "text", nullable: false),
-                    years_volunteering_experience = table.Column<int>(type: "integer", nullable: false),
-                    acts_behalf_charitable_organization = table.Column<bool>(type: "boolean", nullable: false),
-                    first_name = table.Column<string>(type: "text", nullable: false),
-                    last_name = table.Column<string>(type: "text", nullable: false),
-                    patronymic = table.Column<string>(type: "text", nullable: true),
-                    social_medias = table.Column<string>(type: "jsonb", nullable: true)
+                    password_hash = table.Column<string>(type: "text", nullable: false),
+                    email = table.Column<string>(type: "text", nullable: false),
+                    permissions = table.Column<string[]>(type: "text[]", nullable: false),
+                    role = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("pk_organizers", x => x.id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "roles",
-                columns: table => new
-                {
-                    id = table.Column<Guid>(type: "uuid", nullable: false),
-                    role_name = table.Column<string>(type: "text", nullable: false),
-                    permissions = table.Column<string[]>(type: "text[]", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("pk_roles", x => x.id);
+                    table.PrimaryKey("pk_users", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -62,6 +44,64 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("pk_volunteer_application", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "admin",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_admin", x => x.id);
+                    table.ForeignKey(
+                        name: "fk_admin_users_id",
+                        column: x => x.id,
+                        principalTable: "users",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "organizers",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(type: "uuid", nullable: false),
+                    description = table.Column<string>(type: "text", nullable: false),
+                    years_volunteering_experience = table.Column<int>(type: "integer", nullable: false),
+                    acts_behalf_charitable_organization = table.Column<bool>(type: "boolean", nullable: false),
+                    first_name = table.Column<string>(type: "text", nullable: false),
+                    last_name = table.Column<string>(type: "text", nullable: false),
+                    patronymic = table.Column<string>(type: "text", nullable: true),
+                    social_medias = table.Column<string>(type: "jsonb", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_organizers", x => x.id);
+                    table.ForeignKey(
+                        name: "fk_organizers_users_id",
+                        column: x => x.id,
+                        principalTable: "users",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "regular_users",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_regular_users", x => x.id);
+                    table.ForeignKey(
+                        name: "fk_regular_users_users_id",
+                        column: x => x.id,
+                        principalTable: "users",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -121,26 +161,6 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "users",
-                columns: table => new
-                {
-                    id = table.Column<Guid>(type: "uuid", nullable: false),
-                    password_hash = table.Column<string>(type: "text", nullable: false),
-                    role_id = table.Column<Guid>(type: "uuid", nullable: false),
-                    email = table.Column<string>(type: "text", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("pk_users", x => x.id);
-                    table.ForeignKey(
-                        name: "fk_users_roles_role_id",
-                        column: x => x.role_id,
-                        principalTable: "roles",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "post_photos",
                 columns: table => new
                 {
@@ -179,15 +199,6 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                         principalColumn: "id");
                 });
 
-            migrationBuilder.InsertData(
-                table: "roles",
-                columns: new[] { "id", "permissions", "role_name" },
-                values: new object[,]
-                {
-                    { new Guid("abefff7f-c4af-40a4-8a57-e540a85f71a3"), new[] { "posts.create", "posts.read", "posts.update", "posts.delete", "organizers.read" }, "ORGANIZER" },
-                    { new Guid("b8c09528-1648-4921-b493-a66669854796"), new[] { "volunteer.applications.read", "volunteer.applications.update", "organizers.create", "organizers.read", "organizers.delete", "posts.read", "posts.delete" }, "ADMIN" }
-                });
-
             migrationBuilder.CreateIndex(
                 name: "ix_organizer_photos_organizer_id",
                 table: "organizer_photos",
@@ -204,16 +215,6 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                 column: "organizer_id");
 
             migrationBuilder.CreateIndex(
-                name: "ix_roles_role_name",
-                table: "roles",
-                column: "role_name");
-
-            migrationBuilder.CreateIndex(
-                name: "ix_users_role_id",
-                table: "users",
-                column: "role_id");
-
-            migrationBuilder.CreateIndex(
                 name: "ix_vaccinations_post_id",
                 table: "vaccinations",
                 column: "post_id");
@@ -223,13 +224,16 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "admin");
+
+            migrationBuilder.DropTable(
                 name: "organizer_photos");
 
             migrationBuilder.DropTable(
                 name: "post_photos");
 
             migrationBuilder.DropTable(
-                name: "users");
+                name: "regular_users");
 
             migrationBuilder.DropTable(
                 name: "vaccinations");
@@ -238,13 +242,13 @@ namespace WorldVolunteerNetwork.Infrastructure.Migrations
                 name: "volunteer_application");
 
             migrationBuilder.DropTable(
-                name: "roles");
-
-            migrationBuilder.DropTable(
                 name: "posts");
 
             migrationBuilder.DropTable(
                 name: "organizers");
+
+            migrationBuilder.DropTable(
+                name: "users");
         }
     }
 }

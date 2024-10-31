@@ -15,6 +15,12 @@ namespace WorldVolunteerNetwork.Infrastructure.Repositories
             _writeDbContext = writeDbContext;
         }
 
+        public async Task<Result<User, Error>> Add(User user, CancellationToken ct)
+        {
+            await _writeDbContext.AddAsync(user, ct);
+            return user;
+        }
+
         public async Task<Result<User, Error>> GetByEmail(string email, CancellationToken ct)
         {
             var user = await _writeDbContext.Users

@@ -9,13 +9,14 @@ namespace WorldVolunteerNetwork.Domain.Entities
         public const int PHOTO_COUNT_LIMIT = 5;
         private Organizer() { }
         private Organizer(
+            Guid userId,
             FullName fullName,
             string? description,
             int volunteeringExperience,
             bool actsBehalfCharitableOrganization,
             IEnumerable<SocialMedia> socialMedias
             //List<Photo> photos
-            )
+            ) : base (userId)
         {
             FullName = fullName;
             Description = description;
@@ -72,6 +73,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
         }
 
         public static Result<Organizer, Error> Create(
+            Guid userId,
             FullName name,
             string? description,
             int volunteeringExperience,
@@ -79,6 +81,8 @@ namespace WorldVolunteerNetwork.Domain.Entities
             IEnumerable<SocialMedia> socialMedias
             )
         {
+            if(userId == Guid.Empty)
+                return Errors.General.ValueIsInvalid(nameof(userId));
             
             if (description.IsEmpty())
             {
@@ -86,6 +90,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
             }
 
             return new Organizer(
+                userId,
                 name,
                 description,
                 volunteeringExperience,

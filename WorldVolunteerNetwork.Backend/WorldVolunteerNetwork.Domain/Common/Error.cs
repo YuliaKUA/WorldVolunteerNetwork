@@ -120,4 +120,12 @@ public static class Errors
             return new("users.invalid.data", "User's data is invalid");
         }
     }
+
+    public static class VolunteersApplications
+    {
+        public static Error AlredyApproved()
+        {
+            return new("volunteers.applications", "Volunteer application has been already approved");
+        }
+    }
 }

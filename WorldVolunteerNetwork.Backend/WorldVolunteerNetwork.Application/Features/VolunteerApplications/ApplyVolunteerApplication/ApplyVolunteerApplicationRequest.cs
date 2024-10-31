@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer;
 using WorldVolunteerNetwork.Application.Validators;
 using WorldVolunteerNetwork.Domain.ValueObjects;
 
@@ -17,8 +16,8 @@ namespace WorldVolunteerNetwork.Application.Features.VolunteerApplication.ApplyV
             string ExperienceDescription,
             bool IsMemberOfOrganization,
 
-            string? NameOfOrganization,
-            string StatusApplication);
+            string? NameOfOrganization
+        );
 
 
     public class ApplyVolunteerApplicationRequestValidator : AbstractValidator<ApplyVolunteerApplicationRequest>
@@ -28,8 +27,6 @@ namespace WorldVolunteerNetwork.Application.Features.VolunteerApplication.ApplyV
             RuleFor(v => new { v.FirstName, v.LastName, v.Patronymic })
                .MustBeValueObject(v => FullName.Create(v.FirstName, v.LastName, v.Patronymic));
 
-            RuleFor(v => new { v.StatusApplication})
-                .MustBeValueObject(v => StatusApplication.Create(v.StatusApplication));
         }
     }
 }

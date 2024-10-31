@@ -19,7 +19,10 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
                 b.Property(f => f.LastName).HasColumnName("last_name");
                 b.Property(f => f.Patronymic).HasColumnName("patronymic").IsRequired(false);
             });
-            builder.Property(v => v.Email).HasColumnName("email").IsRequired();
+            builder.ComplexProperty(v => v.Email, b =>
+            {
+                b.Property(f => f.Value).HasColumnName("email").IsRequired();
+            });
             builder.Property(v => v.YearsVolunteeringExperience).IsRequired();
             builder.Property(v => v.ExperienceDescription).IsRequired();
 

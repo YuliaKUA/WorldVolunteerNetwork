@@ -9,6 +9,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
         [Theory]
         [MemberData(nameof(CreateValidOrganizerData))]
         public void Create_with_valid_parameters_return_organizer(
+            Guid id,
             FullName fullName,
             string description,
             int volunteeringExperience,
@@ -20,6 +21,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
 
             //Act
             var result = Organizer.Create(
+                id,
                 fullName,
                 description,
                 volunteeringExperience,
@@ -39,6 +41,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
             {
                 new object[]
                 {
+                    Guid.NewGuid(),
                     FullName.Create("Yul", "Kuz", "Alex").Value,
                     "Ghjkls brkwld,o op49gj4mc  ooemvm",
                     0,
@@ -50,6 +53,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
                 },
                 new object[]
                 {
+                    Guid.NewGuid(),
                     FullName.Create("Yul", "Kuz", null).Value,
                     "G",
                     0,
@@ -61,6 +65,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
                 },
                 new object[]
                 {
+                    Guid.NewGuid(),
                     FullName.Create("Yul", "Kuz", "Alex").Value,
                     "Ghjkls brkwld,o op49gj4mc  ooemvm",
                     10000,
@@ -72,6 +77,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
                 },
                 new object[]
                 {
+                    Guid.NewGuid(),
                     FullName.Create("Yul", "Kuz", "Alex").Value,
                     "Ghjkls brkwld,o op49gj4mc  ooemvm",
                     0,
@@ -83,6 +89,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
         [Theory]
         [MemberData(nameof(CreateInvalidOrganizerData))]
         public void Create_with_invalid_parameters_return_error(
+            Guid id,
             FullName fullName,
             string description,
             int volunteeringExperience,
@@ -94,6 +101,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
 
             //Act
             var result = Organizer.Create(
+                id,
                 fullName,
                 description,
                 volunteeringExperience,
@@ -114,6 +122,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
            {
                 new object[]
                 {
+                    Guid.NewGuid(),
                     FullName.Create("Yul", "Kuz", "Alex").Value,
                     "",
                     -1,
@@ -125,6 +134,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
                 },
                 new object[]
                 {
+                    Guid.NewGuid(),
                     FullName.Create("Yul", "Kuz", "Alex").Value,
                     "",
                     10000,
@@ -138,6 +148,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
         {
             //Arrange
             var organizer = Organizer.Create(
+                Guid.NewGuid(),
                 FullName.Create("Yul", "Kuz", "Alex").Value,
                 "Ghjkls brkwld,o op49gj4mc  ooemvm",
                 0,
@@ -163,6 +174,7 @@ namespace WorldVolunteerNetwork.UnitTests.Entities
         {
             //Arrange
             var organizer = Organizer.Create(
+                Guid.NewGuid(),
                 FullName.Create("Yul", "Kuz", "Alex").Value,
                 "Ghjkls brkwld,o op49gj4mc  ooemvm",
                 0,

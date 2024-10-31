@@ -41,6 +41,7 @@ namespace WorldVolunteerNetwork.UnitTests.Features
             var ct = new CancellationToken();
 
             var organizer = Organizer.Create(
+                Guid.NewGuid(),
                 FullName.Create("Yul", "Kuz", "Alex").Value,
                 "Ghjkls brkwld,o op49gj4mc  ooemvm",
                 0,

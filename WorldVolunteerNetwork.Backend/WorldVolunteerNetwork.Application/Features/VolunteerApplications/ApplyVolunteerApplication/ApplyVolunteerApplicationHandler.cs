@@ -28,9 +28,11 @@ namespace WorldVolunteerNetwork.Application.Features.VolunteerApplication.ApplyV
                 request.LastName, 
                 request.Patronymic).Value;
 
+            var email = Email.Create(request.Email).Value;
+
             var volunteerApplication = Domain.Entities.VolunteerApplication.Create(
                fullName,
-               request.Email,
+               email,
                request.YearsVolunteeringExperience,
                request.ExperienceDescription,
                request.IsMemberOfOrganization,
