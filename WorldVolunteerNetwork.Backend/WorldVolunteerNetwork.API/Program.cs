@@ -27,6 +27,13 @@ builder.Services.AddSwagger();
 builder.Services.AddControllers();
 
 builder.Services.AddSerilog();
+
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+});
+//builder.Services.AddMemoryCache();
+
 builder.Host.UseSerilog(Log.Logger);
 
 builder.Services
@@ -37,6 +44,7 @@ builder.Services.AddFluentValidationAutoValidation(configuration =>
 {
     configuration.OverrideDefaultResultFactoryWith<CustomResultFactory>();
 });
+
 
 builder.Services.AddHttpLogging(options => { });
 

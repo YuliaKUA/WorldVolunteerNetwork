@@ -3,15 +3,22 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using WorldVolunteerNetwork.Application.Abstractions;
 using WorldVolunteerNetwork.Domain.Entities;
+using WorldVolunteerNetwork.Infrastructure.Interceptors;
 
 namespace WorldVolunteerNetwork.Infrastructure.DbContexts
 {
     public class WorldVolunteerNetworkWriteDbContext : DbContext, IUnitOfWork
     {
         private readonly IConfiguration _configuration;
-        public WorldVolunteerNetworkWriteDbContext(IConfiguration configuration)
+        private readonly CacheInvalidationInterceptor _cacheInvalidationInterceptor;
+
+        public WorldVolunteerNetworkWriteDbContext(
+            IConfiguration configuration,
+            CacheInvalidationInterceptor cacheInvalidationInterceptor)
         {
             _configuration = configuration;
+            _cacheInvalidationInterceptor = cacheInvalidationInterceptor;
+
         }
 
         public DbSet<Post> Posts => Set<Post>();
@@ -29,6 +36,8 @@ namespace WorldVolunteerNetwork.Infrastructure.DbContexts
 
             optionsBuilder.UseSnakeCaseNamingConvention();
             optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
+
+            optionsBuilder.AddInterceptors(_cacheInvalidationInterceptor);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

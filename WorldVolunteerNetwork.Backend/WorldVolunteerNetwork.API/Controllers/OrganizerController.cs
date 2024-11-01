@@ -8,12 +8,23 @@ using WorldVolunteerNetwork.Application.Features.Organizers.GetPhoto;
 using WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto;
 using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetOrganizer;
 using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetAllOrganizers;
+using Microsoft.Extensions.Caching.Distributed;
+using System.Text.Json;
+using Microsoft.Extensions.Caching.Memory;
+using WorldVolunteerNetwork.Application.Providers;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
     public class OrganizerController : ApplicationController
     {
-        public OrganizerController() { }
+        private readonly IDistributedCache _distributedCache;
+        private readonly IMemoryCache _memoryCache;
+        private readonly ICacheProvider _cache;
+
+        public OrganizerController(ICacheProvider cache)
+        {
+            _cache = cache;
+        }
 
         [HttpPost]
         //[HasPermissions(Permissions.Organizers.Create)] //requirment
@@ -137,8 +148,67 @@ namespace WorldVolunteerNetwork.API.Controllers
             [FromServices] GetAllOrganizersQuery query,
             CancellationToken ct)
         {
-            var response = await query.Handle();
+            var response = await query.Handle(ct);
+
             return Ok(response);
+
+
+            /////////////////////////////////
+            ///IDISTRIBUTED CASH
+            //var organizersKey = "organizers";
+
+            //var cashedString = await _distributedCache.GetStringAsync(organizersKey, ct);
+            //if (!string.IsNullOrWhiteSpace(cashedString))
+            //{
+            //    var value = JsonSerializer.Deserialize<GetOrganizersResponse>(cashedString);
+            //    return Ok(value!);
+            //}
+
+            //var response = await query.Handle();
+
+            //var responseString = JsonSerializer.Serialize(response);
+
+            //await _distributedCache.SetStringAsync(
+            //    organizersKey,
+            //    responseString,
+            //    new DistributedCacheEntryOptions()
+            //    {
+            //        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5),
+            //    },
+            //    ct);
+
+            //return Ok(response);
+
+
+            ////////////////////////////////
+            ///IMEMORY CASH
+            ///// try get data from cash
+            //var organizersKey = "organizers";
+            //var data = _memoryCache.Get<GetOrganizersResponse>(organizersKey);
+
+            //var response = _memoryCache.GetOrCreateAsync(organizersKey, async _ => await query.Handle());
+
+            ///// if success, return data
+
+            //if (data is not null) {
+            //    return Ok(data);
+            //}
+
+            ///// else, get data from DB
+            //var response = await query.Handle();
+
+            ///// set data in cash
+            //_memoryCache.Set(organizersKey, response, new MemoryCacheEntryOptions()
+            //{
+            //    SlidingExpiration = TimeSpan.FromSeconds(5)
+            //});
+
+            //return Ok(response);
+
+
+            ///////////////////////////////////////////////
+            //var response = await query.Handle();
+            //return Ok(response);
         }
 
         [HttpGet("organizer")]

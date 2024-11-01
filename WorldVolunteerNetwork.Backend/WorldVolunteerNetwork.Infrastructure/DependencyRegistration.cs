@@ -8,8 +8,10 @@ using WorldVolunteerNetwork.Application.Features.Organizers;
 using WorldVolunteerNetwork.Application.Features.Organizers.GetPhoto;
 using WorldVolunteerNetwork.Application.Features.Posts;
 using WorldVolunteerNetwork.Application.Features.VolunteerApplication;
+using WorldVolunteerNetwork.Application.Providers;
 using WorldVolunteerNetwork.Infrastructure.ClientServices;
 using WorldVolunteerNetwork.Infrastructure.DbContexts;
+using WorldVolunteerNetwork.Infrastructure.Interceptors;
 using WorldVolunteerNetwork.Infrastructure.Options;
 using WorldVolunteerNetwork.Infrastructure.Providers;
 using WorldVolunteerNetwork.Infrastructure.Queries.Organizers.GetAllOrganizers;
@@ -30,11 +32,18 @@ namespace WorldVolunteerNetwork.Infrastructure
                 .AddDataStorages(configuration)
                 .AddRepositories()
                 .AddQueries()
-                .AddProviders();
+                .AddProviders()
+                .AddInterseptors();
 
             return services;
         }
 
+        private static IServiceCollection AddInterseptors(this IServiceCollection services)
+        {
+            services.AddScoped<CacheInvalidationInterceptor>();
+
+            return services;
+        }
         private static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<IPostsRepository, PostRepository>();
@@ -49,6 +58,7 @@ namespace WorldVolunteerNetwork.Infrastructure
         {
             services.AddScoped<IMinioProvider, MinioProvider>();
             services.AddScoped<IJwtProvider, JwtProvider>();
+            services.AddSingleton<ICacheProvider, CacheProvider>();
             
             return services;
         }

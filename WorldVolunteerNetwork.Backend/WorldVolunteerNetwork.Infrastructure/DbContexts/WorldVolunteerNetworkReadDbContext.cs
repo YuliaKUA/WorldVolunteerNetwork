@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using WorldVolunteerNetwork.Infrastructure.Interceptors;
 using WorldVolunteerNetwork.Infrastructure.ReadModels;
 
 namespace WorldVolunteerNetwork.Infrastructure.DbContexts
@@ -8,7 +9,9 @@ namespace WorldVolunteerNetwork.Infrastructure.DbContexts
     public class WorldVolunteerNetworkReadDbContext : DbContext
     {
         private readonly IConfiguration _configuration;
-        public WorldVolunteerNetworkReadDbContext(IConfiguration configuration)
+
+        public WorldVolunteerNetworkReadDbContext(
+            IConfiguration configuration)
         {
             _configuration = configuration;
         }
