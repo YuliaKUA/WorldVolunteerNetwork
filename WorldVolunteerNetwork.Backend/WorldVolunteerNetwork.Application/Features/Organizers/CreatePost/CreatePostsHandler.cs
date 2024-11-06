@@ -1,5 +1,4 @@
-﻿using Contracts.Requests;
-using CSharpFunctionalExtensions;
+﻿using CSharpFunctionalExtensions;
 using WorldVolunteerNetwork.Application.Abstractions;
 using WorldVolunteerNetwork.Application.Features.Posts;
 using WorldVolunteerNetwork.Domain.Common;
@@ -7,7 +6,6 @@ using WorldVolunteerNetwork.Domain.Entities;
 using WorldVolunteerNetwork.Domain.ValueObjects;
 
 
-<<<<<<<< HEAD:WorldVolunteerNetwork.Backend/WorldVolunteerNetwork.Application/Features/Organizers/CreatePost/CreatePostsHandler.cs
 namespace WorldVolunteerNetwork.Application.Features.Organizers.CreatePost
 {
     public class CreatePostsHandler
@@ -19,20 +17,12 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreatePost
             IPostsRepository postsRepository,
             IOrganizersRepository organizersRepository,
             IUnitOfWork dbContext)
-========
-namespace WorldVolunteerNetwork.Application
-{
-    public class PostsService
-    {
-        private readonly IPostsRepository _postsRepository;
-        public PostsService(IPostsRepository postsRepository)
->>>>>>>> origin/main:WorldVolunteerNetwork.Backend/WorldVolunteerNetwork.Application/PostsService.cs
         {
             _postsRepository = postsRepository;
             _organizersRepository = organizersRepository;
             _writeDbContext = dbContext;
         }
-        public async Task<Result<Guid, Error>> CreatePost(CreatePostRequest request, CancellationToken ct)
+        public async Task<Result<Guid, Error>> Handle(CreatePostRequest request, CancellationToken ct)
         {
             // get organizer
             var organizer = await _organizersRepository.GetById(request.OrganizerId, ct);
@@ -84,5 +74,14 @@ namespace WorldVolunteerNetwork.Application
 
             return organizer.Value.Id;
         }
+
+        //public async Task<GetPostsResponse> Get(GetPostsRequest request, CancellationToken ct)
+        //{
+        //    var posts = await _postsRepository.GetByPage(request.Page, request.Size, ct);
+
+        //    var postDtos = posts.Select(p => p.ToDto());
+
+        //    return new GetPostsResponse(postDtos, 1);
+        //}
     }
 }
