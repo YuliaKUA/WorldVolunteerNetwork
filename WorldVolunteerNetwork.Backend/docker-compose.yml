@@ -1,0 +1,59 @@
+services:
+    api:
+        container_name: api
+        image: worldvolunteernetwork.api
+        build:
+            context: .
+            dockerfile: WorldVolunteerNetwork.API/Dockerfile
+        ports:
+            - 5000:5000
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://+:5000
+            - ASPNETCORE_HTTP_PORTS=5000
+        volumes:
+            - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+        depends_on:
+            - postgres
+    postgres:
+        container_name: postgres
+        image: postgres:16.4@sha256:91f464e7ba0ad91a106c94cff079fb4384139291b8c0502fd36989cf2c788bbb
+        restart: always
+        environment:
+            POSTGRES_DB: world_volunteer_network
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+        ports:
+        - 5432:5432
+        volumes:
+        - ./postgres_data:/var/lib/postgresql/data/
+    minio:
+        container_name: minio
+        image: minio/minio
+        ports:
+        - 9000:9000
+        - 9001:9001  
+        volumes:
+        - minio_data:/data
+        command: server --console-address ":9001" /data
+        restart: always
+    seq:
+        image: datalust/seq:latest
+        container_name: seq
+        restart: always
+        environment:
+            - ACCEPT_EULA=Y
+        ports:
+            - 5341:5341
+            - 8081:80
+    redis:
+        image: redis
+        container_name: redis
+        restart: always
+        ports:
+            - 6379:6379
+
+volumes:
+    postgres-data:
+    minio_data:
+
