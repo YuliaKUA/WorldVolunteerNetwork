@@ -1,10 +1,5 @@
-﻿using Contracts.Requests;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using WorldVolunteerNetwork.Application.Features.Organizers.CreatePost;
 using WorldVolunteerNetwork.Domain.ValueObjects;
 
 namespace WorldVolunteerNetwork.Application.Validators.Posts

@@ -1,5 +1,4 @@
 C:\Project\net\WorldVolunteerNetwork\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
-C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.API.deps.json
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.API.runtimeconfig.json
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\appsettings.Development.json
@@ -57,4 +56,5 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Wor
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.Domain.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.Application.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\obj\Debug\docker-c.35A3FFBA.Up2Date

@@ -16,8 +16,8 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreatePost
         private readonly IOrganizersRepository _organizersRepository;
         private readonly IUnitOfWork _writeDbContext;
         public CreatePostsHandler(
-            IPostsRepository postsRepository, 
-            IOrganizersRepository organizersRepository, 
+            IPostsRepository postsRepository,
+            IOrganizersRepository organizersRepository,
             IUnitOfWork dbContext)
 ========
 namespace WorldVolunteerNetwork.Application
@@ -36,7 +36,7 @@ namespace WorldVolunteerNetwork.Application
         {
             // get organizer
             var organizer = await _organizersRepository.GetById(request.OrganizerId, ct);
-            if (organizer.IsFailure) 
+            if (organizer.IsFailure)
             {
                 return organizer.Error;
             }
@@ -68,7 +68,7 @@ namespace WorldVolunteerNetwork.Application
                 request.SubmissionDeadline,
                 request.DateCreate);
 
-            if (post.IsFailure) 
+            if (post.IsFailure)
                 return post.Error;
 
             // add post to organizer

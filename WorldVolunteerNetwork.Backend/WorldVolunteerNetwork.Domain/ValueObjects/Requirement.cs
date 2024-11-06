@@ -1,5 +1,7 @@
 ﻿using CSharpFunctionalExtensions;
+using System.ComponentModel.DataAnnotations.Schema;
 using WorldVolunteerNetwork.Domain.Common;
+using WorldVolunteerNetwork.Domain.Entities;
 
 namespace WorldVolunteerNetwork.Domain.ValueObjects
 {
