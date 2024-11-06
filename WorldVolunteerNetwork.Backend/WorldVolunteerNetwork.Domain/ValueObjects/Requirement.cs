@@ -1,5 +1,7 @@
 ﻿using CSharpFunctionalExtensions;
+using System.ComponentModel.DataAnnotations.Schema;
 using WorldVolunteerNetwork.Domain.Common;
+using WorldVolunteerNetwork.Domain.Entities;
 
 namespace WorldVolunteerNetwork.Domain.ValueObjects
 {
@@ -7,6 +9,9 @@ namespace WorldVolunteerNetwork.Domain.ValueObjects
     {
         public string? Age { get; private set; }
         public string? Gender { get; private set; }
+        [NotMapped]
+        public IReadOnlyList<Vaccination> Vaccinations => _vaccinations;
+        private readonly List<Vaccination> _vaccinations = [];
 
         public Requirement(string age, string gender)
         {

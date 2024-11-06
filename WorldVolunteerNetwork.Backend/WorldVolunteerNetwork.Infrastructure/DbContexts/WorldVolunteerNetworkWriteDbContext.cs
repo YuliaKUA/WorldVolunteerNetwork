@@ -11,14 +11,12 @@ namespace WorldVolunteerNetwork.Infrastructure.DbContexts
     {
         private readonly IConfiguration _configuration;
         private readonly CacheInvalidationInterceptor _cacheInvalidationInterceptor;
-
         public WorldVolunteerNetworkWriteDbContext(
             IConfiguration configuration,
             CacheInvalidationInterceptor cacheInvalidationInterceptor)
         {
             _configuration = configuration;
             _cacheInvalidationInterceptor = cacheInvalidationInterceptor;
-
         }
 
         public DbSet<Post> Posts => Set<Post>();
@@ -36,7 +34,6 @@ namespace WorldVolunteerNetwork.Infrastructure.DbContexts
 
             optionsBuilder.UseSnakeCaseNamingConvention();
             optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
-
             optionsBuilder.AddInterceptors(_cacheInvalidationInterceptor);
         }
 
