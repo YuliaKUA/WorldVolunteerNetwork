@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreatePost;
 using WorldVolunteerNetwork.Domain.ValueObjects;
 

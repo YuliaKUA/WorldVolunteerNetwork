@@ -2,14 +2,12 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WorldVolunteerNetwork.Domain.Entities;
 
-namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
+namespace WorldVolunteerNetwork.Infrastructure.Configurations
 {
     public class PostConfiguration : IEntityTypeConfiguration<Post>
     {
         public void Configure(EntityTypeBuilder<Post> builder)
         {
-            builder.ToTable("posts");
-
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Name).IsRequired();
             builder.ComplexProperty(p => p.Location, b =>
@@ -44,8 +42,12 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Write
             });
 
 
+<<<<<<<< HEAD:WorldVolunteerNetwork.Backend/WorldVolunteerNetwork.Infrastructure/Configurations/Write/PostConfiguration.cs
             builder.HasMany(p => p.Photos).WithOne().IsRequired();
             builder.HasMany(p => p.Vaccinations).WithOne();
+========
+            builder.HasMany(p => p.Photos).WithOne();
+>>>>>>>> origin/main:WorldVolunteerNetwork.Backend/WorldVolunteerNetwork.Infrastructure/Configurations/PostConfiguration.cs
         }
     }
 }
