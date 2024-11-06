@@ -84,6 +84,12 @@ namespace WorldVolunteerNetwork.Infrastructure
 
             services.AddSingleton<SqlConnectionFactory>();
 
+            //services.AddMemoryCache();
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = configuration.GetConnectionString("Redis");
+            });
+
             services.AddMinio(options =>
             {
                 var minioOptions = configuration.GetSection(MinioOptions.Minio)

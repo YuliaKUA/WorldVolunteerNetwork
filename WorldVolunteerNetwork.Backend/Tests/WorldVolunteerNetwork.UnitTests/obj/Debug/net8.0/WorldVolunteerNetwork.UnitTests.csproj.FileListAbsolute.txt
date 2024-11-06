@@ -1069,3 +1069,8 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVo
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.Sinks.File.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Serilog.Sinks.Seq.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\Tests\WorldVolunteerNetwork.UnitTests\bin\Debug\net8.0\StackExchange.Redis.dll

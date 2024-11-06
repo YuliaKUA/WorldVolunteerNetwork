@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("84adaf6e-ce60-4753-ab2c-4b8d01ad64b0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorldVolunteerNetwork.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45c320ec5dcb9fc409383bae27f0e0cc298ec367")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b8dc57a43284098a6c40874a4d82fac3e92d9e7")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorldVolunteerNetwork.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorldVolunteerNetwork.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

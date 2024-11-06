@@ -1,7 +1,23 @@
 services:
+    api:
+        container_name: api
+        image: worldvolunteernetwork.api
+        build:
+            context: .
+            dockerfile: WorldVolunteerNetwork.API/Dockerfile
+        ports:
+            - 5000:5000
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://+:5000
+            - ASPNETCORE_HTTP_PORTS=5000
+        volumes:
+            - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+        depends_on:
+            - postgres
     postgres:
         container_name: postgres
-        image: postgres
+        image: postgres:16.4@sha256:91f464e7ba0ad91a106c94cff079fb4384139291b8c0502fd36989cf2c788bbb
         restart: always
         environment:
             POSTGRES_DB: world_volunteer_network

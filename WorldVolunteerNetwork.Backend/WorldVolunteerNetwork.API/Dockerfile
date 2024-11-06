@@ -3,14 +3,15 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
-EXPOSE 8080
+EXPOSE 5000
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["WorldVolunteerNetwork.API/WorldVolunteerNetwork.API.csproj", "WorldVolunteerNetwork.API/"]
-COPY ["WorldVolunteerNetwork.Domain/WorldVolunteerNetwork.Domain.csproj", "WorldVolunteerNetwork.Domain/"]
 COPY ["WorldVolunteerNetwork.Infrastructure/WorldVolunteerNetwork.Infrastructure.csproj", "WorldVolunteerNetwork.Infrastructure/"]
+COPY ["WorldVolunteerNetwork.Application/WorldVolunteerNetwork.Application.csproj", "WorldVolunteerNetwork.Application/"]
+COPY ["WorldVolunteerNetwork.Domain/WorldVolunteerNetwork.Domain.csproj", "WorldVolunteerNetwork.Domain/"]
 RUN dotnet restore "./WorldVolunteerNetwork.API/WorldVolunteerNetwork.API.csproj"
 COPY . .
 WORKDIR "/src/WorldVolunteerNetwork.API"
