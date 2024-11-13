@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { Link, redirect } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -10,12 +11,15 @@ const Header = () => {
         style={{ color: "white" }}
       />
       <span className="text-3xl text-white">World volunteer network</span>
-      <Icon
-        width="52"
-        height="52"
-        icon="game-icons:sea-turtle"
-        style={{ color: "white" }}
-      />
+      <Link to={"/login"}>
+        <Icon
+          width="52"
+          height="52"
+          icon="circum:login"
+          style={{ color: "white" }}
+          onClick={() => redirect("/login")}
+        />
+      </Link>
     </header>
   );
 };

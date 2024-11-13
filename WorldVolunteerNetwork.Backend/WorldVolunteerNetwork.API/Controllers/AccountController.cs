@@ -11,7 +11,7 @@ namespace WorldVolunteerNetwork.API.Controllers
 {
     public class AccountController : ApplicationController
     {
-        [HttpPost]
+        [HttpPost("login")]
         public async Task<IActionResult> Login(
             [FromServices] LoginHandler handler, 
             [FromBody] LoginRequest request,

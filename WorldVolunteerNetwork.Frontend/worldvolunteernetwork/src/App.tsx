@@ -1,17 +1,31 @@
+import { Tab, TabList, Tabs } from "@chakra-ui/react";
 import "./App.css";
 import Header from "./components/Header";
-import { Posts } from "./pages/Posts";
+import { Link, Outlet } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
     <div>
       <Header />
-      <main>
-        <Posts />
+      <Tabs colorScheme="teal" isFitted>
+        <TabList>
+          <Tab as={Link} to={"/"}>
+            Posts
+          </Tab>
+          <Tab as={Link} to={"/organizers"}>
+            Organizers
+          </Tab>
+          <Tab as={Link} to={"/news"}>
+            News and Update
+          </Tab>
+        </TabList>
+      </Tabs>
+      <main className="min-h-screen">
+        <Outlet />
       </main>
-      <footer></footer>
+      <footer />
     </div>
   );
-}
+};
 
 export default App;

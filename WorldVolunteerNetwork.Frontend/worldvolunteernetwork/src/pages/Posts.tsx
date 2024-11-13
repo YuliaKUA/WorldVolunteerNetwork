@@ -1,18 +1,7 @@
 import { useEffect, useState } from "react";
 import { PostCard } from "../components/PostCard";
 import { getPosts } from "../services/postsService";
-
-export type Post = {
-  id: string;
-  name: string;
-  duration: string;
-  description: string;
-  status: string;
-  reward: number;
-  submissionDeadline: Date;
-  DateCreate: Date;
-  Photos: [];
-};
+import { Post } from "../types/Post";
 
 const Posts = () => {
   const [posts, setPosts] = useState<Post[] | null>([]);

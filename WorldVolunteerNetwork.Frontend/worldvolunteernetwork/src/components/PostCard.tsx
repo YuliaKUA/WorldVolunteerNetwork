@@ -8,7 +8,7 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
-import { Post } from "../pages/Posts";
+import { Post } from "../types/Post";
 
 type Props = {
   post: Post;
