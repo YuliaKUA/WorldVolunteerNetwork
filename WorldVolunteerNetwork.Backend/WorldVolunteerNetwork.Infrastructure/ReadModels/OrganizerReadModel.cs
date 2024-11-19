@@ -16,7 +16,7 @@ namespace WorldVolunteerNetwork.Infrastructure.ReadModels
 
         public bool ActsBehalfCharitableOrganization { get; init; } = false;
 
-        public List<PhotoReadModel> Photos { get; init; } = [];
+        public List<OrganizerPhotoReadModel> Photos { get; init; } = [];
 
         public List<SocialMediaReadModel> SocialMedias { get; init; } = [];
 

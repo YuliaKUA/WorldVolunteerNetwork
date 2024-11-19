@@ -546,7 +546,6 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVoluntee
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.AssemblyInfoInputs.cache
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.AssemblyInfo.cs
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.csproj.CoreCompileInputs.cache
-C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.API\obj\Debug\net8.0\WorldVolunteerNetwork.API.sourcelink.json
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.API\obj\Debug\net8.0\staticwebassets.build.json

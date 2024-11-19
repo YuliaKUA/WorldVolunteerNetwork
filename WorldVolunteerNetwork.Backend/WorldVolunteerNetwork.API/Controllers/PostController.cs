@@ -11,7 +11,7 @@ namespace WorldVolunteerNetwork.API.Controllers
 {
     public class PostController : ApplicationController
     {
-        [HttpGet]
+        [HttpGet("test")]
         public async Task<IActionResult> GetAll()
         {
             List<PostDto> postDtos =
@@ -75,14 +75,20 @@ namespace WorldVolunteerNetwork.API.Controllers
         //    return Ok(response);
         //}
 
-        //[HttpGet("dapper")]
-        //public async Task<IActionResult> Get(
-        //    [FromServices] GetAllPostsQuery query,
-        //    [FromQuery] GetPostsRequest request,
-        //    CancellationToken ct)
-        //{
-        //    var response = await query.Handle();
-        //    return Ok(response);
-        //}
+        [HttpGet("dapper/all")]
+        public async Task<ActionResult<GetPostsResponse>> Get(
+            [FromServices] GetAllPostsQuery query,
+            [FromQuery] GetPostsRequest request,
+            CancellationToken ct)
+        {
+            var response = await query.Handle();
+            return response;
+        }
+
+        [HttpPost("photos")]
+        public async Task<IActionResult> UploadPhotos(List<IFormFile> files)
+        {
+            return Ok(files.Count);
+        }
     }
 }

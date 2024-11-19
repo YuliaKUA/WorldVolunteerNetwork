@@ -3,9 +3,6 @@
 namespace WorldVolunteerNetwork.Application.Features.Posts.GetPosts
 {
     public record GetPostsRequest(
-        string? Name,
-        string? Description,
-        string? Status,
         int Page = 1,
         int Size = 10);
 

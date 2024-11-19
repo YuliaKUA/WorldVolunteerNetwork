@@ -19,6 +19,11 @@ namespace WorldVolunteerNetwork.Infrastructure.Configurations.Read
                 .HasForeignKey(p => p.OrganizerId)
                 .IsRequired();
 
+            builder
+                .HasMany(o => o.Photos)
+                .WithOne()
+                .HasForeignKey(ph => ph.PostId)
+                .IsRequired();
         }
     }
 }

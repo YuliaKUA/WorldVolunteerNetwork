@@ -31,14 +31,15 @@ namespace WorldVolunteerNetwork.Infrastructure.Queries.Posts
                 p.date_create,
                 ph.id,
                 ph.path,
-                ph.is_main
+                ph.is_main,
+                ph.post_id
                 FROM posts p
-                LEFT JOIN photos ph ON p.id = ph.post_id
+                LEFT JOIN post_photos ph ON p.id = ph.post_id
                 """;
 
             Dictionary<Guid, PostDto> postsDictionary = new();
 
-            await connection.QueryAsync<PostDto, OrganizerPhotoDto, PostDto>(
+            await connection.QueryAsync<PostDto, PostPhotoDto, PostDto>(
                 sql, 
                 (post, photo) =>
                 {
@@ -50,7 +51,6 @@ namespace WorldVolunteerNetwork.Infrastructure.Queries.Posts
                     {
                         postsDictionary.Add(post.Id, post);
                     }
-
                     post.Photos.Add(photo);
                     return post;
                 },

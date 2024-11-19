@@ -18,7 +18,7 @@ namespace WorldVolunteerNetwork.Infrastructure.DbContexts
 
         public DbSet<OrganizerReadModel> Organizers => Set<OrganizerReadModel>();
         //public DbSet<PostReadModel> Posts => Set<PostReadModel>();
-        public DbSet<PhotoReadModel> Photos => Set<PhotoReadModel>();
+        public DbSet<OrganizerPhotoReadModel> Photos => Set<OrganizerPhotoReadModel>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

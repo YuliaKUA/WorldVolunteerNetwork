@@ -6,6 +6,7 @@ using Minio;
 using Minio.DataModel.Args;
 using WorldVolunteerNetwork.Application.Abstractions;
 using WorldVolunteerNetwork.Domain.Common;
+using WorldVolunteerNetwork.Domain.Entities;
 
 namespace WorldVolunteerNetwork.Infrastructure.ClientServices
 {
@@ -135,6 +136,38 @@ namespace WorldVolunteerNetwork.Infrastructure.ClientServices
             {
                 _logger.LogError(ex.Message);
                 return Errors.General.GetFailure("photo");
+            }
+        }
+
+        public async Task<Result<string, Error>> UploadPhoto(Stream stream, string path)
+        {
+            try
+            {
+                var bucketExistsArgs = new BucketExistsArgs()
+                    .WithBucket(PhotoBucket);
+                var bucketExist = await _minioClient.BucketExistsAsync(bucketExistsArgs);
+
+                if (bucketExist == false)
+                {
+                    var makeBucketArgs = new MakeBucketArgs()
+                        .WithBucket(PhotoBucket);
+                    await _minioClient.MakeBucketAsync(makeBucketArgs);
+                }
+
+                    var putObjectArgs = new PutObjectArgs()
+                        .WithBucket(PhotoBucket)
+                        .WithStreamData(stream)
+                        .WithObjectSize(stream.Length)
+                        .WithObject(path);
+
+                    var response = await _minioClient.PutObjectAsync(putObjectArgs);
+
+                    return response.ObjectName;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return Errors.General.SaveFailure("photo");
             }
         }
     }

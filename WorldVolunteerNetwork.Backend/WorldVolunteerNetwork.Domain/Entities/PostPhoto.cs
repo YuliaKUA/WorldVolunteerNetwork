@@ -3,27 +3,39 @@ using WorldVolunteerNetwork.Domain.Common;
 
 namespace WorldVolunteerNetwork.Domain.Entities
 {
-    public class PostPhoto : Common.Entity
+    public class PostPhoto : Photo
     {
-        private protected PostPhoto() { }
-        private protected PostPhoto(string path, bool isMain)
+        public PostPhoto(string path, bool isMain) : base(path, isMain)
         {
-            Path = path;
-            IsMain = isMain;
+           
         }
-        public string Path { get; private set; }
-        public bool IsMain { get; private set; }
 
-        public static Result<PostPhoto, Error> Create(
-            string path,
+        public static Result<PostPhoto, Error> CreateAndActivaePostPhoto(
+            string path, 
+            string contentType, 
+            long length, 
             bool isMain)
         {
-            if (path.IsEmpty())
-            {
-                return Errors.General.ValueIsRequired("photo: path");
-            }
+            if (contentType != JPEG && contentType != JPG && contentType != PNG)
+                return Errors.Organizers.FileTypeInvalid(contentType);
 
+            if (length > 10000000)
+                return Errors.Organizers.FileLengthInvalid(length);
             return new PostPhoto(path, isMain);
+        }
+
+        public static Result<PostPhoto, Error> Create(
+            string contentType,
+            long length)
+        {
+            if (contentType != JPEG && contentType != JPG && contentType != PNG)
+                return Errors.Organizers.FileTypeInvalid(contentType);
+
+            if (length > 10000000)
+                return Errors.Organizers.FileLengthInvalid(length);
+
+            var path = Guid.NewGuid() + contentType;
+            return new PostPhoto(path, false);
         }
     }
 }

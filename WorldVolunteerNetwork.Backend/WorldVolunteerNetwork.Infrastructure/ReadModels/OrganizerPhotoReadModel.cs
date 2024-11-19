@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorldVolunteerNetwork.Infrastructure.ReadModels
 {
-    public class PhotoReadModel
+    public class OrganizerPhotoReadModel
     {
         public Guid Id { get; init; }
         public string Path { get; init; } = string.Empty;

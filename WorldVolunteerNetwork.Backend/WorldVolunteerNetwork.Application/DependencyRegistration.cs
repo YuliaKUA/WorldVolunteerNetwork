@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WorldVolunteerNetwork.Application.Features.Accounts.Login;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreateOrganizer;
 using WorldVolunteerNetwork.Application.Features.Organizers.CreatePost;
+using WorldVolunteerNetwork.Application.Features.Organizers.CreatePostWithPhoto;
 using WorldVolunteerNetwork.Application.Features.Organizers.DeletePhoto;
 using WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto;
 using WorldVolunteerNetwork.Application.Features.VolunteerApplication.ApplyVolunteerApplication;
@@ -32,6 +33,8 @@ namespace WorldVolunteerNetwork.Application
 
             services.AddScoped<ApplyVolunteerApplicationHandler>();
             services.AddScoped<ApproveVolunteerApplicationHandler>();
+
+            services.AddScoped<CreatePostWithPhotoHandler>();
             
             return services;
         }

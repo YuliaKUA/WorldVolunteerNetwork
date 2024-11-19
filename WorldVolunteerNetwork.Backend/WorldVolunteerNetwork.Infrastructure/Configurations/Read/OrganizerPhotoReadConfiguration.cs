@@ -11,9 +11,9 @@ using WorldVolunteerNetwork.Infrastructure.ReadModels;
 
 namespace WorldVolunteerNetwork.Infrastructure.Configurations.Read
 {
-    public class OrganizerPhotoReadConfiguration : IEntityTypeConfiguration<PhotoReadModel>
+    public class OrganizerPhotoReadConfiguration : IEntityTypeConfiguration<OrganizerPhotoReadModel>
     {
-        public void Configure(EntityTypeBuilder<PhotoReadModel> builder)
+        public void Configure(EntityTypeBuilder<OrganizerPhotoReadModel> builder)
         {
             builder.ToTable("organizer_photos");
 

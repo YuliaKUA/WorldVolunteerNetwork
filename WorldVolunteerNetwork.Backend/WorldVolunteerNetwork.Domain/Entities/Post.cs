@@ -8,6 +8,8 @@ namespace WorldVolunteerNetwork.Domain.Entities
     {
         public const int MAX_PROPERTY_LENGHT = 500;
         public const int MAX_NAME_LENGHT = 250;
+        public const int PHOTO_COUNT_LIMIT = 10;
+        public const int PHOTO_COUNT_MIN = 1;
         private Post() { }
 
         private Post(
@@ -23,7 +25,8 @@ namespace WorldVolunteerNetwork.Domain.Entities
             PostStatus status,
             Requirement requirement,
             DateTimeOffset submissionDeadline,
-            DateTimeOffset dateCreate
+            DateTimeOffset dateCreate,
+            List<PostPhoto> photos
             )
         {
 
@@ -40,6 +43,7 @@ namespace WorldVolunteerNetwork.Domain.Entities
             Reward = reward;
             SubmissionDeadline = submissionDeadline;
             DateCreate = dateCreate;
+            _photos = photos;
         }
 
         public string Name { get; private set; } = string.Empty;
@@ -78,7 +82,8 @@ namespace WorldVolunteerNetwork.Domain.Entities
             PostStatus status,
             Requirement requirement,
             DateTimeOffset submissionDeadline,
-            DateTimeOffset dateCreate
+            DateTimeOffset dateCreate,
+            IEnumerable<PostPhoto> photos
             )
         {
             if (name.IsEmpty())
@@ -106,6 +111,11 @@ namespace WorldVolunteerNetwork.Domain.Entities
                 return Errors.General.ValueIsRequired("post: description");
             }
 
+            if(photos.Count() >= PHOTO_COUNT_LIMIT)
+            {
+                return Errors.Organizers.PhotoCountLimit(10);
+            }
+
             return new Post(
                 name,
                 duration,
@@ -119,8 +129,18 @@ namespace WorldVolunteerNetwork.Domain.Entities
                 status,
                 requirement,
                 submissionDeadline,
-                dateCreate
+                dateCreate,
+                photos.ToList()
                 );
+        }
+
+        public Result<bool, Error> AddPhoto(List<PostPhoto> photos)
+        {
+            if (_photos.Count > PHOTO_COUNT_LIMIT || _photos.Count < PHOTO_COUNT_MIN)
+                return Errors.Organizers.PhotoCountLimit(PHOTO_COUNT_LIMIT);
+
+            _photos.AddRange(photos);
+            return true;
         }
     }
 }

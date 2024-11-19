@@ -43,6 +43,8 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreatePost
             var status = PostStatus.Create(request.PostStatus).Value;
             var requirement = Requirement.Create(request.Age, request.Gender).Value;
 
+            List<PostPhoto> photos = [];
+
             var post = Post.Create(
                 request.Name,
                 request.Duration,
@@ -56,7 +58,8 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.CreatePost
                 status,
                 requirement,
                 request.SubmissionDeadline,
-                request.DateCreate);
+                request.DateCreate,
+                photos);
 
             if (post.IsFailure)
                 return post.Error;

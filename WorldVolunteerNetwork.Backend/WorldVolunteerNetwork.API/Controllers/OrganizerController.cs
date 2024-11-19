@@ -12,6 +12,8 @@ using Microsoft.Extensions.Caching.Distributed;
 using System.Text.Json;
 using Microsoft.Extensions.Caching.Memory;
 using WorldVolunteerNetwork.Application.Providers;
+using WorldVolunteerNetwork.Infrastructure.Queries.Posts;
+using WorldVolunteerNetwork.Application.Features.Organizers.CreatePostWithPhoto;
 
 namespace WorldVolunteerNetwork.API.Controllers
 {
@@ -44,7 +46,7 @@ namespace WorldVolunteerNetwork.API.Controllers
 
         [HttpPost("post")]
         //[HasPermissions(Permissions.Posts.Create)]
-        public async Task<IActionResult> Create(
+        public async Task<IActionResult> PublishPost(
             [FromServices] CreatePostsHandler postsHandler,
             [FromBody] CreatePostRequest request,
             CancellationToken ct)
@@ -57,6 +59,23 @@ namespace WorldVolunteerNetwork.API.Controllers
             //    return BadRequest(result.Errors);
             //}
 
+            var idResult = await postsHandler.Handle(request, ct);
+
+            if (idResult.IsFailure)
+            {
+                return BadRequest(idResult.Error);
+            }
+
+            return Ok(idResult.Value);
+        }
+
+        [HttpPost("post-with-photos")]
+        //[HasPermissions(Permissions.Posts.Create)]
+        public async Task<IActionResult> CreatePostWithPhotos(
+            [FromServices] CreatePostWithPhotoHandler postsHandler,
+            [FromForm] CreatePostWithPhotoRequest request,
+            CancellationToken ct)
+        {
             var idResult = await postsHandler.Handle(request, ct);
 
             if (idResult.IsFailure)
@@ -98,20 +117,20 @@ namespace WorldVolunteerNetwork.API.Controllers
             return Ok(url);
         }
 
-        [HttpGet("organiser-with-photo")]
-        public async Task<IActionResult> GetOrganizerWithPhotosById(
-            [FromServices] GetAllOrganizerPhotosQuery handler,
-            [FromQuery] GetAllOrganizerPhotosRequest request,
-            CancellationToken ct)
-        {
-            var result = await handler.Handle(request, ct);
-            if (result.IsFailure)
-            {
-                return BadRequest(result.Error);
-            }
+        //[HttpGet("organiser-with-photo")]
+        //public async Task<IActionResult> GetOrganizerWithPhotosById(
+        //    [FromServices] GetAllOrganizerPhotosQuery handler,
+        //    [FromQuery] GetAllOrganizerPhotosRequest request,
+        //    CancellationToken ct)
+        //{
+        //    var result = await handler.Handle(request, ct);
+        //    if (result.IsFailure)
+        //    {
+        //        return BadRequest(result.Error);
+        //    }
 
-            return Ok(result.Value);
-        }
+        //    return Ok(result.Value);
+        //}
 
         [HttpDelete("photo")]
         public async Task<IActionResult> DeletePhoto(
@@ -128,7 +147,7 @@ namespace WorldVolunteerNetwork.API.Controllers
             return Ok(result.Value);
         }
 
-        [HttpGet("organizer-with-photo-by-id")]
+        [HttpGet]
         public async Task<IActionResult> GetOrganizerWithPhotoPhotosById(
             [FromServices] GetOrganizerByIdQuery handler,
             [FromQuery] GetAllOrganizerRequest request,
@@ -143,7 +162,7 @@ namespace WorldVolunteerNetwork.API.Controllers
             return Ok(result.Value);
         }
 
-        [HttpGet("all-organizer")]
+        [HttpGet("all")]
         public async Task<ActionResult<GetOrganizersResponse>> GetAllOrganizers(
             [FromServices] GetAllOrganizersQuery query,
             CancellationToken ct)
@@ -209,13 +228,6 @@ namespace WorldVolunteerNetwork.API.Controllers
             ///////////////////////////////////////////////
             //var response = await query.Handle();
             //return Ok(response);
-        }
-
-        [HttpGet("organizer")]
-        public async Task<IActionResult> GetOrganizerById(
-            CancellationToken ct)
-        {
-            return Ok();
         }
     }
 }

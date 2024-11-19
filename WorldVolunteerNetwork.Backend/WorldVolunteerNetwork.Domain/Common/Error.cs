@@ -86,6 +86,10 @@ public static class Errors
 
     public static class Organizers
     {
+        public static Error FileLengthInvalid(long limit)
+        {
+            return new("file.length.invalid", $"File length {limit} is invalid");
+        }
         public static Error PhotoCountLimit(int limit)
         {
             return new("organizer.photo.limit", $"Max photo count limit is {limit}");
@@ -110,6 +114,12 @@ public static class Errors
         {
             var label = name ?? "Value";
             return new("record.save.failure", $"{label} failed to save");
+        }
+
+        public static Error FileTypeInvalid(string? name = null)
+        {
+            var label = name ?? "Value";
+            return new("invalid.file.type", $"{label} type is invalid");
         }
     }
 

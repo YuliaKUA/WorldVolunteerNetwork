@@ -51,8 +51,10 @@ namespace WorldVolunteerNetwork.Application.Features.Organizers.UploadPhoto
                 return isSuccessUpload.Error;
             }
 
+
+            await using var stream = request.File.OpenReadStream();
             // upload photo to minio
-            var objectName = await _minioProvider.UploadPhoto(request.File, path);
+            var objectName = await _minioProvider.UploadPhoto(stream, path);
             if (objectName.IsFailure)
             {
                 return objectName.Error;
