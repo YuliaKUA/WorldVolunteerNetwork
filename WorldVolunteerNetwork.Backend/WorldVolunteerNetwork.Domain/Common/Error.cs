@@ -131,6 +131,14 @@ public static class Errors
         }
     }
 
+    public static class Kafka
+    {
+        public static Error PersistFail()
+        {
+            return new("kafka.persist.fail", "Fail to persist message");
+        }
+    }
+
     public static class VolunteersApplications
     {
         public static Error AlredyApproved()

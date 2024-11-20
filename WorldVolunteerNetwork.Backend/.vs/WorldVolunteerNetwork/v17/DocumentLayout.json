@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.backend\\worldvolunteernetwork.application\\dtos\\postdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|solutionrelative:worldvolunteernetwork.application\\dtos\\postdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E685B35E-C61A-4F46-9F65-51A19EFAF8F9}|WorldVolunteerNetwork.Infrastructure.Kafka\\WorldVolunteerNetwork.Infrastructure.Kafka.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.backend\\worldvolunteernetwork.infrastructure.kafka\\kafkamessageconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E685B35E-C61A-4F46-9F65-51A19EFAF8F9}|WorldVolunteerNetwork.Infrastructure.Kafka\\WorldVolunteerNetwork.Infrastructure.Kafka.csproj|solutionrelative:worldvolunteernetwork.infrastructure.kafka\\kafkamessageconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.backend\\worldvolunteernetwork.api\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|solutionrelative:worldvolunteernetwork.api\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E685B35E-C61A-4F46-9F65-51A19EFAF8F9}|WorldVolunteerNetwork.Infrastructure.Kafka\\WorldVolunteerNetwork.Infrastructure.Kafka.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.backend\\worldvolunteernetwork.infrastructure.kafka\\kafkamessageproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E685B35E-C61A-4F46-9F65-51A19EFAF8F9}|WorldVolunteerNetwork.Infrastructure.Kafka\\WorldVolunteerNetwork.Infrastructure.Kafka.csproj|solutionrelative:worldvolunteernetwork.infrastructure.kafka\\kafkamessageproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.backend\\worldvolunteernetwork.application\\dtos\\postphotodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}|WorldVolunteerNetwork.Application\\WorldVolunteerNetwork.Application.csproj|solutionrelative:worldvolunteernetwork.application\\dtos\\postphotodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.backend\\worldvolunteernetwork.infrastructure\\queries\\posts\\getallpostsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE0936C-EDAE-4B9D-84CC-5AE4C62DC6B2}|WorldVolunteerNetwork.Infrastructure\\WorldVolunteerNetwork.Infrastructure.csproj|solutionrelative:worldvolunteernetwork.infrastructure\\queries\\posts\\getallpostsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C98D88B9-95CF-417F-AC53-AF7B7821878B}|WorldVolunteerNetwork.Domain\\WorldVolunteerNetwork.Domain.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.backend\\worldvolunteernetwork.domain\\entities\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C98D88B9-95CF-417F-AC53-AF7B7821878B}|WorldVolunteerNetwork.Domain\\WorldVolunteerNetwork.Domain.csproj|solutionrelative:worldvolunteernetwork.domain\\entities\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|c:\\project\\net\\worldvolunteernetwork\\worldvolunteernetwork.backend\\worldvolunteernetwork.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B7B851-F7DF-47F0-9719-C139811E2936}|WorldVolunteerNetwork.API\\WorldVolunteerNetwork.API.csproj|solutionrelative:worldvolunteernetwork.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Alexey\\AppData\\Roaming\\Microsoft\\UserSecrets\\84adaf6e-ce60-4753-ab2c-4b8d01ad64b0\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
@@ -42,79 +34,54 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PostDto.cs",
-              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Application\\Dtos\\PostDto.cs",
-              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Application\\Dtos\\PostDto.cs",
-              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Application\\Dtos\\PostDto.cs",
-              "RelativeToolTip": "WorldVolunteerNetwork.Application\\Dtos\\PostDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAABAAAA",
+              "Title": "KafkaMessageConsumer.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Infrastructure.Kafka\\KafkaMessageConsumer.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Infrastructure.Kafka\\KafkaMessageConsumer.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Infrastructure.Kafka\\KafkaMessageConsumer.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.Infrastructure.Kafka\\KafkaMessageConsumer.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowC4AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T19:42:15.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PostPhotoDto.cs",
-              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Application\\Dtos\\PostPhotoDto.cs",
-              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Application\\Dtos\\PostPhotoDto.cs",
-              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Application\\Dtos\\PostPhotoDto.cs",
-              "RelativeToolTip": "WorldVolunteerNetwork.Application\\Dtos\\PostPhotoDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T19:36:28.628Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetAllPostsQuery.cs",
-              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Infrastructure\\Queries\\Posts\\GetAllPostsQuery.cs",
-              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Infrastructure\\Queries\\Posts\\GetAllPostsQuery.cs",
-              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Infrastructure\\Queries\\Posts\\GetAllPostsQuery.cs",
-              "RelativeToolTip": "WorldVolunteerNetwork.Infrastructure\\Queries\\Posts\\GetAllPostsQuery.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAD4vy0AAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T19:25:23.409Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Post.cs",
-              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Domain\\Entities\\Post.cs",
-              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Domain\\Entities\\Post.cs",
-              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Domain\\Entities\\Post.cs",
-              "RelativeToolTip": "WorldVolunteerNetwork.Domain\\Entities\\Post.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAAgwIwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T15:11:18.509Z",
+              "WhenOpened": "2024-11-19T07:46:49.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PostController.cs",
-              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.API\\Controllers\\PostController.cs",
-              "RelativeDocumentMoniker": "WorldVolunteerNetwork.API\\Controllers\\PostController.cs",
-              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.API\\Controllers\\PostController.cs",
-              "RelativeToolTip": "WorldVolunteerNetwork.API\\Controllers\\PostController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAVAAAA",
+              "Title": "KafkaMessageProducer.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Infrastructure.Kafka\\KafkaMessageProducer.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.Infrastructure.Kafka\\KafkaMessageProducer.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.Infrastructure.Kafka\\KafkaMessageProducer.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.Infrastructure.Kafka\\KafkaMessageProducer.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAASwBYAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T12:45:39.961Z",
+              "WhenOpened": "2024-11-19T07:43:36.867Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.API\\Program.cs",
+              "RelativeDocumentMoniker": "WorldVolunteerNetwork.API\\Program.cs",
+              "ToolTip": "C:\\Project\\net\\WorldVolunteerNetwork\\WorldVolunteerNetwork.Backend\\WorldVolunteerNetwork.API\\Program.cs",
+              "RelativeToolTip": "WorldVolunteerNetwork.API\\Program.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAWwCMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T07:20:48.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\Alexey\\AppData\\Roaming\\Microsoft\\UserSecrets\\84adaf6e-ce60-4753-ab2c-4b8d01ad64b0\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\Alexey\\AppData\\Roaming\\Microsoft\\UserSecrets\\84adaf6e-ce60-4753-ab2c-4b8d01ad64b0\\secrets.json",
               "ToolTip": "C:\\Users\\Alexey\\AppData\\Roaming\\Microsoft\\UserSecrets\\84adaf6e-ce60-4753-ab2c-4b8d01ad64b0\\secrets.json",
               "RelativeToolTip": "..\\..\\..\\..\\Users\\Alexey\\AppData\\Roaming\\Microsoft\\UserSecrets\\84adaf6e-ce60-4753-ab2c-4b8d01ad64b0\\secrets.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAALAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-04T16:37:49.104Z"
+              "WhenOpened": "2024-11-04T16:37:49.104Z",
+              "EditorCaption": ""
             }
           ]
         }

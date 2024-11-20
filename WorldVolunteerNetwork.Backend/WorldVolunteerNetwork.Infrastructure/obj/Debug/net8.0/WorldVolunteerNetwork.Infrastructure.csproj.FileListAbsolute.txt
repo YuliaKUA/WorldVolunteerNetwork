@@ -24,7 +24,9 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVoluntee
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.Infrastructure\bin\Debug\net8.0\WorldVolunteerNetwork.Infrastructure.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.Infrastructure\bin\Debug\net8.0\WorldVolunteerNetwork.Application.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.Infrastructure\bin\Debug\net8.0\WorldVolunteerNetwork.Domain.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.Infrastructure\bin\Debug\net8.0\WorldVolunteerNetwork.Infrastructure.Kafka.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.Infrastructure\bin\Debug\net8.0\WorldVolunteerNetwork.Application.pdb
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.Infrastructure\bin\Debug\net8.0\WorldVolunteerNetwork.Infrastructure.Kafka.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.Infrastructure\bin\Debug\net8.0\WorldVolunteerNetwork.Domain.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.Infrastructure\obj\Debug\net8.0\WorldVolunteerNetwork.Infrastructure.csproj.AssemblyReference.cache
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\WorldVolunteerNetwork.Infrastructure\obj\Debug\net8.0\WorldVolunteerNetwork.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig

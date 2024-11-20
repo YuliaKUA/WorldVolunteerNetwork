@@ -5,7 +5,6 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldVolunteerNetwork.API", "WorldVolunteerNetwork.API\WorldVolunteerNetwork.API.csproj", "{34B7B851-F7DF-47F0-9719-C139811E2936}"
 	ProjectSection(ProjectDependencies) = postProject
-		{4219C0D8-E768-44CE-9A64-61631E574FB7} = {4219C0D8-E768-44CE-9A64-61631E574FB7}
 		{C98D88B9-95CF-417F-AC53-AF7B7821878B} = {C98D88B9-95CF-417F-AC53-AF7B7821878B}
 	EndProjectSection
 EndProject
@@ -18,16 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldVolunteerNetwork.Infra
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B5948728-653C-4C75-AFBB-3963DC7A2613}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "..\Contracts\Contracts.csproj", "{4219C0D8-E768-44CE-9A64-61631E574FB7}"
-	ProjectSection(ProjectDependencies) = postProject
-		{C98D88B9-95CF-417F-AC53-AF7B7821878B} = {C98D88B9-95CF-417F-AC53-AF7B7821878B}
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldVolunteerNetwork.Application", "WorldVolunteerNetwork.Application\WorldVolunteerNetwork.Application.csproj", "{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{81FB7FA6-D9C6-41AB-8029-0E8CFE55D524}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldVolunteerNetwork.UnitTests", "Tests\WorldVolunteerNetwork.UnitTests\WorldVolunteerNetwork.UnitTests.csproj", "{BF796DBC-0DC9-4A1A-82BA-A710D330F560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldVolunteerNetwork.Infrastructure.Kafka", "WorldVolunteerNetwork.Infrastructure.Kafka\WorldVolunteerNetwork.Infrastructure.Kafka.csproj", "{E685B35E-C61A-4F46-9F65-51A19EFAF8F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,10 +47,6 @@ Global
 		{B5948728-653C-4C75-AFBB-3963DC7A2613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5948728-653C-4C75-AFBB-3963DC7A2613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5948728-653C-4C75-AFBB-3963DC7A2613}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4219C0D8-E768-44CE-9A64-61631E574FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4219C0D8-E768-44CE-9A64-61631E574FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4219C0D8-E768-44CE-9A64-61631E574FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4219C0D8-E768-44CE-9A64-61631E574FB7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40EDDAFD-D597-4B28-B9E7-54AC7C7C3689}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +55,10 @@ Global
 		{BF796DBC-0DC9-4A1A-82BA-A710D330F560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF796DBC-0DC9-4A1A-82BA-A710D330F560}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF796DBC-0DC9-4A1A-82BA-A710D330F560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E685B35E-C61A-4F46-9F65-51A19EFAF8F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E685B35E-C61A-4F46-9F65-51A19EFAF8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E685B35E-C61A-4F46-9F65-51A19EFAF8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E685B35E-C61A-4F46-9F65-51A19EFAF8F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

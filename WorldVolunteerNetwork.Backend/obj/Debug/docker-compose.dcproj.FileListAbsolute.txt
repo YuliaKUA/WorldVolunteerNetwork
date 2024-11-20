@@ -9,6 +9,8 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Ser
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.Infrastructure.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\SharpGrip.FluentValidation.AutoValidation.Mvc.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.Infrastructure.Kafka.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\CSharpFunctionalExtensions.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.Domain.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -16,7 +18,6 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Mic
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Microsoft.IdentityModel.Tokens.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.Application.dll
-C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\CSharpFunctionalExtensions.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Minio.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Serilog.Sinks.Seq.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Serilog.Sinks.Console.dll
@@ -28,6 +29,7 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Mic
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Serilog.AspNetCore.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Microsoft.Extensions.Caching.StackExchangeRedis.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Microsoft.Extensions.Options.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -38,6 +40,8 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Dap
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\FluentValidation.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\SharpGrip.FluentValidation.AutoValidation.Shared.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Confluent.Kafka.dll
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Microsoft.Extensions.Primitives.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Microsoft.IdentityModel.Protocols.dll
@@ -53,6 +57,7 @@ C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Sta
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\Pipelines.Sockets.Unofficial.dll
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.API.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.Infrastructure.pdb
+C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.Infrastructure.Kafka.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.Domain.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\bin\Debug\WorldVolunteerNetwork.Application.pdb
 C:\Project\net\WorldVolunteerNetwork\WorldVolunteerNetwork.Backend\obj\Debug\docker-compose.dcproj.AssemblyReference.cache

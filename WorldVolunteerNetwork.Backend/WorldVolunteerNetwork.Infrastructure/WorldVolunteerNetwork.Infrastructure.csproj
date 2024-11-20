@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WorldVolunteerNetwork.Application\WorldVolunteerNetwork.Application.csproj" />
+    <ProjectReference Include="..\WorldVolunteerNetwork.Infrastructure.Kafka\WorldVolunteerNetwork.Infrastructure.Kafka.csproj" />
   </ItemGroup>
 
   <ItemGroup>
